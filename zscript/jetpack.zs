@@ -12,7 +12,7 @@ class HDJetPack:HDCellWeapon{
 		hdweapon.refid HDLD_JETPACK;
 	}
 	override double weaponbulk(){
-		return 500+(weaponstatus[JETPACKS_BATTERY]>=0?ENC_BATTERY_LOADED:0);
+		return 250+(weaponstatus[JETPACKS_BATTERY]>=0?ENC_BATTERY_LOADED:0);
 	}
 	override bool IsBeingWorn(){return owner&&owner.player&&owner.player.readyweapon==self;}
 	override inventory CreateTossable(int amt){
