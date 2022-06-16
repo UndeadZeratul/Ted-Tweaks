@@ -186,7 +186,7 @@ class PortableRadsuit:HDPickup replaces PortableRadsuit{
 		inventory.pickupmessage "Environmental shielding suit.";
 		inventory.pickupsound "weapons/pocket";
 		inventory.icon "SUITB0";
-		hdpickup.bulk 25; //halving it bc why not for testing
+		hdpickup.bulk 10; //MUCH lighter
 		tag "environment suit";
 		hdpickup.refid HDLD_RADSUIT;
 	}
