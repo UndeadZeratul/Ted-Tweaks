@@ -24,7 +24,7 @@ class PortableLiteAmp:HDMagAmmo replaces Infrared{
 	override void DetachFromOwner(){
 		if(owner&&owner.player){
 			UndoFullbright();
-			SetShader.SetEnabled("NiteVis",false);
+			SetShader("NiteVis",false);
 			if(worn)owner.A_SetBlend("01 00 00",0.8,16);
 		}
 		worn=false;
@@ -168,7 +168,7 @@ class PortableLiteAmp:HDMagAmmo replaces Infrared{
 //				A_LogInt(bkn);
 				if(!random[rand1](0,max(0,random[rand1](1,bkn)))){
 					UndoFullbright();
-					SetShader.SetEnabled("NiteVis",false);
+					SetShader("NiteVis",false);
 				}
 			}
 
