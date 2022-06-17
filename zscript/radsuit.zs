@@ -1,7 +1,7 @@
 //-------------------------------------------------
 // Environment/Radiation Suit
 //-------------------------------------------------
-class WornRadsuit:HDDamageHandler replaces WornRadsuit{
+class WornRadsuit:HDDamageHandler{
 	default{
 		+nointeraction;+noblockmap;
 		+hdpickup.fullcoverage
@@ -177,7 +177,7 @@ class WornRadsuit:HDDamageHandler replaces WornRadsuit{
 	}
 
 }
-class PortableRadsuit:HDPickup replaces PortableRadsuit{
+class PortableRadsuit:HDPickup{
 	default{
 		//$Category "Gear/Hideous Destructor/Supplies"
 		//$Title "Environment Suit"
