@@ -177,7 +177,7 @@ class WornRadsuit:HDDamageHandler{
 	}
 
 }
-class PortableRadsuit:HDPickup{
+class PortableRadsuit:HDPickup replaces RadSuit{
 	default{
 		//$Category "Gear/Hideous Destructor/Supplies"
 		//$Title "Environment Suit"
