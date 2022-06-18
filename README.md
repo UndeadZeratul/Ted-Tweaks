@@ -8,6 +8,9 @@ A large collection of various tweaks I enjoy using for 'Hideous Destructor'. Cur
 - Radsuit now has a unique overlay instead of just a screen tint and weighs less.
 - Decreased ladder weight.
 - Added the compass changes from Cozi's Hideous Helmet fork.
+- Improved Player Climbing.
+- Removed Zerk constant wounding and messages.
+- Integrated keeper, updated for both.
 
 
 // Keeper Readme
