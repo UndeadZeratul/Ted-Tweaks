@@ -394,7 +394,9 @@ extend class HDPlayerPawn{
 		}
 		if(oldinput&BT_ATTACK)hasgrabbed=true;
 		else if(!(oldinput&BT_USE))hasgrabbed=false;
-        PickupGrabber(incapacitated?2:-1);
+
+		PickupGrabber(incapacitated?2:-1);
+
 		//check here because we still need the above pickup checks when incap'd
 		if(incapacitated)return;
 		//door kicking
@@ -425,7 +427,7 @@ extend class HDPlayerPawn{
 				kickback*=frandom(1,2);
 				A_MuzzleClimb((frandom(-1,1),4),(frandom(-1,1),-1),(frandom(-1,1),-1),(frandom(-1,1),-1));
 			}
-			if(!random(0,db?3:6))hdbleedingwound.inflict(self,1,source:self);
+			if(!random(0,db?3:6))hdbleedingwound.inflict(self,1,source:self,damagetype:"cutting");
 			A_MuzzleClimb((0,-1),(0,-1),(0,-1),(0,-1));
 			A_ChangeVelocity(-kickback,0,0,CVF_RELATIVE);
 			A_StartSound("*fist",CHAN_BODY,CHANF_OVERLAP);
@@ -435,6 +437,7 @@ extend class HDPlayerPawn{
 				offsetz:height*0.3
 			);
 		}
+
 		bpickup=!hasgrabbed;
 		//corpse kicking
 		if(
