@@ -640,7 +640,7 @@ class HDStatusBar:DoomStatusBar{
 					DTA_VirtualWidth,640,DTA_VirtualHeight,480
 				);
 				
-			/*string s=hpl.wephelptext;
+			string s=hpl.wephelptext;
 			if(s!="")screen.DrawText(NewSmallFont,OptionMenuSettings.mFontColorValue,
 				8,
 				wephelpheight,
@@ -658,7 +658,7 @@ class HDStatusBar:DoomStatusBar{
 				"^",
 				DTA_VirtualWidth,640,DTA_VirtualHeight,480
 			);
-			string postxt=string.format("%i,%i,%i",hpl.pos.x,hpl.pos.y,hpl.pos.z);
+			/*string postxt=string.format("%i,%i,%i",hpl.pos.x,hpl.pos.y,hpl.pos.z);
 			screen.DrawText(NewSmallFont,
 				font.CR_OLIVE,
 				600-(NewSmallFont.StringWidth(postxt)>>1),
