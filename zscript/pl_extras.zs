@@ -527,22 +527,29 @@ extend class HDPlayerPawn{
 	}
 }
 extend class HDHandlers{
-	static void FindRange(hdplayerpawn ppp){
+	static void FindRange(
+		hdplayerpawn hdp,
+		bool usegunposxy=false
+	){
 		flinetracedata frt;
-		ppp.linetrace(
-			ppp.angle,65536,ppp.pitch,flags:TRF_NOSKY,
-			offsetz:ppp.height*0.89,
+		hdp.linetrace(
+			hdp.angle,65536,
+			hdp.pitch,
+			flags:TRF_NOSKY|TRF_ABSOFFSET,
+			offsetz:hdp.gunpos.z,
+			offsetforward:usegunposxy?hdp.gunpos.x:0,
+			offsetside:usegunposxy?hdp.gunpos.y:0,
 			data:frt
 		);
 		double c=frt.distance;
 		double b=c/HDCONST_ONEMETRE;
-		ppp.A_Log(string.format("\cd[\cuRF\cd]\cj \cf%.2f\cj metre%s",b,b==1?"":"s"),true);
-		if(hd_debug)ppp.A_Log(string.format("("..(ppp.player?ppp.player.getusername():"something").." measured %.2f DU%s)",c,c==1?"":"s"),true);
+		hdp.A_Log(string.format("\cd[\cuRF\cd]\cj \cf%.2f\cj metre%s",b,b==1?"":"s"),true);
+		if(hd_debug)hdp.A_Log(string.format("("..(hdp.player?hdp.player.getusername():"something").." measured %.2f DU%s)",c,c==1?"":"s"),true);
 		if(
-			ppp.player
-			&&ppp.player.cmd.buttons&BT_USE
+			hdp.player
+			&&hdp.player.cmd.buttons&BT_USE
 		){
-			let hdw=HDWeapon(ppp.player.readyweapon);
+			let hdw=HDWeapon(hdp.player.readyweapon);
 			if(hdw)hdw.airburst=int(b*100);
 		}
 	}

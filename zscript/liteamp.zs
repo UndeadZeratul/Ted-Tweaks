@@ -257,7 +257,7 @@ class VisorLight:PointLight{
 			target.findinventory("PortableLiteAmp")
 			&&portableliteamp(target.findinventory("PortableLiteAmp")).worn
 		)args[3]=256;else args[3]=0;
-		setorigin((target.pos.xy,target.pos.z+target.height-6),true);
+		setorigin((target.pos.xy,target.pos.z+target.height),true);
 	}
 }
 extend class PortableLiteAmp {

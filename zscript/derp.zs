@@ -615,7 +615,7 @@ class DERPUsable:HDWeapon{
 				return;
 			}
 			actor a;int b;
-			[b,a]=A_SpawnItemEx("DERPBot",12,0,height-12,
+			[b,a]=A_SpawnItemEx("DERPBot",12,0,gunheight()-4,
 				cos(pitch)*6,0,-sin(pitch)*6,0,
 				SXF_NOCHECKPOSITION|SXF_TRANSFERPOINTERS|
 				SXF_SETMASTER|SXF_TRANSFERTRANSLATION|SXF_SETTARGET
@@ -771,7 +771,7 @@ extend class HDHandlers{
 			flinetracedata dlt;
 			ppp.linetrace(
 				ppp.angle,48,ppp.pitch,flags:TRF_THRUACTORS,
-				offsetz:ppp.height-9,
+				offsetz:ppp.height*0.8,
 				data:dlt
 			);
 			if(
@@ -869,7 +869,7 @@ extend class HDHandlers{
 					ppp.linetrace(
 						ppp.angle,2048,ppp.pitch,
 						TRF_NOSKY,
-						offsetz:ppp.height-6,
+						offsetz:ppp.height*0.8,
 						data:derpgoal
 					);
 					if(derpgoal.hittype!=Trace_HitNone){
