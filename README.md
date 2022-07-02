@@ -10,12 +10,12 @@ A large collection of various tweaks I enjoy using for 'Hideous Destructor'. Cur
 - Added the compass changes from Cozi's Hideous Helmet fork.
 - Improved Player Climbing.
 - Removed Zerk constant wounding and messages.
-- Integrated keeper, updated for both.
-- Added a CVAR to make Invulnerability Spheres not break if wanted.
-
-
-### Notes
-- The following stats are restored (by default):
-	- 60% of bleeding, wounds, aggro, burns, bloodloss, and diseases (if applicable);
-- CVars are:
-	- `keeper_percent_* [0.0 - 1.0]`: Sets the percentage of stats restored on respawn, where * is one of the following: `bleeding`, `blues`, `burns`, `aggro`, `bloodloss`, `diseases`.
+- Cacodemon Corpse volume decreased.
+- Modern Green lite amp type made more... green.
+- Blursphere no longer hides lite amp overlay.
+- Blursphere now uses blurspheretexts lump.
+- Air Supply is now 90 seconds.
+- Operators now have more names and lines.
+- Invulnerability Sphere now has a CVAR associated with it of **hd_nonecroghost** and it defaults to 'false'.
+- Keeper integration, patched for new wounds also and re-added keeping Blues on death.
+- Light corruption cards support.
