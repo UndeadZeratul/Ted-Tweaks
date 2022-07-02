@@ -159,7 +159,7 @@ class PortableLiteAmp:HDMagAmmo replaces Infrared{
 				SetShaderU1f("NiteVis","u_desat",desat);
 			}
 
-			//flicker
+/*			//flicker
 			int integrity=(mags[0]%NITEVIS_CYCLEUNIT);
 			if(integrity<NITEVIS_MAXINTEGRITY){
 				int bkn=integrity+(chargedamount>>17)-abs(int(nv));
@@ -169,7 +169,7 @@ class PortableLiteAmp:HDMagAmmo replaces Infrared{
 					SetShader("NiteVis",false);
 				}
 			}
-
+*/
 			//drain
 			if(!(level.time&(1|2|4|8|16|32)))mags[0]-=NITEVIS_CYCLEUNIT*spent;
 
