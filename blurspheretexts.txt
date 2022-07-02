@@ -1,32 +1,7 @@
-\comy eyes\
-\cg. . .\
-\ct. . .\
-\cy. . .\
-\co. . .\
-\cu. . .\
-\cf. . .\
-\caALERT: This user has been terminated from further UAC positioning.\
-\cd[DERP] \cjEngaging hostile.
-\caWarning: helmet visor registering high temperatures near users' sightline.\
-\caTargeting error: failure to locate users' pupils.\
-\cyrun\
-\cfi can't take it off\
-\cdOut of sync with: 2\
-\cuHold onto us longer.\
-\cfit hurts\
-\caError: users' EKG readings displaying erratic and unstable status.\
-\cgcan't let them see me\
-\cuDon't lose us.\
-\cdOut of sync with: 1\
-\cgbehind you\
-\cuYou will grow powerful from us.\
-\cythey won't stop\
-\cdOut of sync with: 3\
-\cgprecious\
-\cuPrecious.\
-\ctprecious\
-\cuPrecious.\
-\cfprecious\
-\cuPrecious.\
-\coprecious\
+\cgyou die\
+\cublood.\
+\cti hate you\
+\cuit hurts.\
+\cfworthless\
+\cuerror.\
 \cuHello.\
