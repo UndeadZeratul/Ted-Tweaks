@@ -2,32 +2,32 @@ Acknowledged.
 Clear.
 I'm here.
 I see you.
-$YOU.
+$YOU\c[Green].
 I've got this area covered.
 Watch your fire.
 You should look for the exit.
 Let me know if you see anything.
-Following your lead, $YOU.
+Following your lead, $YOU\c[Green].
 Roger that.
 What.
 Over.
 Over and out.
-Bro I love {$YOU|DRAGONS} so much, I don't know how to tell them though!
+Bro I love {$YOU\c[Green]|DRAGONS} so much, I don't know how to tell them though!
 What's our kill count?
 I want {coffee|wine|pizza|to kill something|pictures of spiderman|dragon plushes|to change my OS again}.
-If I had a {BFG|rocket launcher|blursphere|say in where we were deploying|few more grenades|better team|couple more people just as good as $YOU} we'd have won by now.
+If I had a {BFG|rocket launcher|blursphere|say in where we were deploying|few more grenades|better team|couple more people just as good as $YOU\c[Green]} we'd have won by now.
 Where can I find a fourth for bridge?
 I like shorts! They're comfy and easy to wear!
 I used to quote Monty Python a lot but then I took a bullet to the Ni.
 So quirky bestie.
-Hey, everybody! $YOU is looking at GAY PORNO!
-So then I says to {Mabel|Frances|Gertrude|$YOU}...
-$YOU is such {an idiot|an asshole|a dick|a nice person|an ltt enjoyer}--oh hi, didn't see you there.
+Hey, everybody! $YOU\c[Green] is looking at GAY PORNO!
+So then I says to {Mabel|Frances|Gertrude|$YOU\c[Green]}...
+$YOU\c[Green] is such {an idiot|an asshole|a dick|a nice person|an ltt enjoyer}--oh hi, didn't see you there.
 (it's me, i'm gay porno)
 Have you read Knee-Deep In The Strange yet? It's the best fanfic I've read in years!
 I should enable Intel XMP...
 But I'm stuff!
-God I love the {Boss|ZM66|Pipegun}. How about $YOU?
+God I love the {Boss|ZM66|Pipegun}. How about $YOU\c[Green]?
 God the fuckin' liberator sucks {ass|dick|scrotum|nips}, hate that heavy sack of shit.
 I need to change my hyperspeed...
 God is watching.
