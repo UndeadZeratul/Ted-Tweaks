@@ -1,0 +1,6 @@
+$volume jetpack/fwoosh 0.15
+$volume misc/arczap 0.4
+$volume misc/zap 0.4
+$volume misc/zap2 0.4
+$volume misc/zap3 0.4
+$volume misc/arccrackle 0.4
