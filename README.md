@@ -19,3 +19,6 @@ A large collection of various tweaks I enjoy using for 'Hideous Destructor'. Cur
 - Invulnerability Sphere now has a CVAR associated with it of **hd_nonecroghost** and it defaults to 'false'.
 - Keeper integration, patched for new wounds also and re-added keeping Blues on death.
 - Light corruption cards support.
+- Friendly marines have more name potential and voice line potential.
+- Light Amplification Goggles no longer flicker.
+- IEDs no longer explode on dormant enemies.
