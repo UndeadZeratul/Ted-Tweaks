@@ -41,7 +41,7 @@ class WornRadsuit:HDDamageHandler{
 		int MaskOffX = -((MaskWidth - Screen.GetWidth()) >> 1);
 		int MaskOffY = -((MaskHeight - Screen.GetHeight()) >> 1);
 
-		Screen.DrawTexture(TexMan.CheckForTexture("DESPMASK"), true, MaskOffX - (int(hpl.hudbob.x * 0.5)), MaskOffY - (int(hpl.hudbob.y * 0.5)), DTA_DestWidth, MaskWidth, DTA_DestHeight, MaskHeight);
+		Screen.DrawTexture(TexMan.CheckForTexture("DESPMASK"), true, MaskOffX - (int(hpl.wepbob.x * 0.5)), MaskOffY - (int(hpl.wepbob.y * 0.5)), DTA_DestWidth, MaskWidth, DTA_DestHeight, MaskHeight);
 		/*sb.fill(
 			color(sb.blurred?(level.time&(1|2|4))<<2:160,10,40,14),
 			0,0,screen.getwidth(),screen.getheight()

@@ -225,7 +225,7 @@ class HDStatusBar:DoomStatusBar{
 			DrawAutomapHUD(ticfrac);
 			DrawAutomapStuff();
 		}else if(cplayer.mo==cplayer.camera){
-			DrawAlwaysStuff();
+			DrawAlwaysStuff(ticfrac);
 			if(hpl.health>0){
 				BeginHUD(forcescaled:false);
 
@@ -339,7 +339,7 @@ class HDStatusBar:DoomStatusBar{
 			default:return "STC";
 		}else return mugshot;
 	}
-	void DrawAlwaysStuff(){
+	void DrawAlwaysStuff(double ticfrac){
 		if(
 			hpl.health>0&&(
 				hpl.binvisible
@@ -417,7 +417,7 @@ class HDStatusBar:DoomStatusBar{
 		if(
 			!blurred
 			&&hpl.health>0
-		)DrawHDXHair(hpl);
+		)DrawHDXHair(hpl, ticfrac);
 
 
 

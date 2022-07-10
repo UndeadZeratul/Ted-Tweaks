@@ -612,8 +612,8 @@ class HDSoulSphere:HDUPK replaces Soulsphere{
 		bnointeraction=true;
 		PlantBit.SpawnPlants(self,70,144);
 		let hdp=hdplayerpawn(picktarget);
-		if(hdp)hdp.A_GiveInventory("HDBlues",HDBLU_BALL);
-		else picktarget.givebody(HDBLU_BALL);
+		if(hdp)hdp.A_GiveInventory("HealingMagic",HDHM_BALL);
+		else picktarget.givebody(HDHM_BALL);
 		setstatelabel("fadeout");
 	}
 	states{
