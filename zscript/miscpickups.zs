@@ -571,7 +571,7 @@ class HelmFrag:HDInvRandomSpawner replaces ArmorBonus{
 class BlueFrag:HDInvRandomSpawner replaces HealthBonus{
 	default{
 		dropitem "DecoPusher",96,20;
-		dropitem "BluePotion",96,2;
+		dropitem "HDHealingPotion",96,2;
 		dropitem "HDFragGrenades",72,1;
 		dropitem "BFGNecroShard",96,1;
 		dropitem "HD9mMag15",48,1;
@@ -590,16 +590,16 @@ class RedSphere:HDInvRandomSpawner replaces BlurSphere{
 		dropitem "HDFragGrenades",256,6;
 		dropitem "HDBlurSphere",256,1;
 		dropitem "GarrisonArmour",256,2;
-		dropitem "BluePotion",256,2;
+		dropitem "HDHealingPotion",256,2;
 		dropitem "HDJetpack",256,1;
 	}
 }
-enum BlueGiveAmounts{
-	HDBLU_BALL=210,
-	HDBLU_BOTTLE=12,
-	HDBLU_MOUTH=7,
+enum HealingMagicGiveAmounts{
+	HDHM_BALL=210,
+	HDHM_BOTTLE=12,
+	HDHM_MOUTH=7,
 }
-class BlueSphere:HDUPK replaces Soulsphere{
+class HDSoulSphere:HDUPK replaces Soulsphere{
 	default{
 		//$Category "Items/Hideous Destructor/Magic"
 		//$Title "Soul Sphere"
@@ -638,7 +638,7 @@ class BlueSphere:HDUPK replaces Soulsphere{
 		}wait;
 	}
 }
-class BrownSphere:BlueSphere replaces Megasphere{
+class HDMegaSphere:HDSoulSphere replaces Megasphere{
 		//$Category "Items/Hideous Destructor/Magic"
 		//$Title "Megasphere"
 		//$Sprite "MEGAA0"
@@ -708,7 +708,7 @@ class PlantBit:IdleDummy{
 		stop;
 	}
 }
-class GreenSphere:BlueSphere replaces Invulnerabilitysphere{
+class HDInvulnerabilitySphere:HDSoulSphere replaces Invulnerabilitysphere{
 	default{
 		//$Category "Items/Hideous Destructor/Magic"
 		//$Title "Invulnerability Sphere"

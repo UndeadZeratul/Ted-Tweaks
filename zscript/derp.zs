@@ -409,7 +409,7 @@ class DERPUsable:HDWeapon{
 		let ddd=DERPUsable(owner.findinventory("DERPUsable"));
 		if(!ddd||ddd.amount<1)return;
 		let pmags=HD9mMag15(owner.findinventory("HD9mMag15"));
-		vector2 bob=hpl.hudbob*0.2;
+		vector2 bob=hpl.wepbob*0.2;
 		bob.y+=ofs;
 		sb.drawimage("DERPA8A2",(0,22)+bob,
 			sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER|sb.DI_TRANSLATABLE,

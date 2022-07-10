@@ -845,7 +845,7 @@ class HERPUsable:HDWeapon{
 		if(barrellength>0)return;
 		int yofs=weaponstatus[HERP_YOFS];
 		if(yofs<70){
-			vector2 bob=hpl.hudbob*0.2;
+			vector2 bob=hpl.wepbob*0.2;
 			bob.y+=yofs;
 			sb.drawimage("HERPA7A3",(10,14)+bob,
 				sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER|sb.DI_TRANSLATABLE,

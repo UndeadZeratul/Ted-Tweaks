@@ -202,8 +202,8 @@ class PortableLiteAmp:HDMagAmmo replaces Infrared{
 		screen.drawtexture(
 			texman.checkfortexture("gogmask",texman.type_any),
 			true,
-			gogoffsx-(int(hpl.hudbob.x)),
-			gogoffsy-(int(hpl.hudbob.y)),
+			gogoffsx-(int(hpl.wepbob.x)),
+			gogoffsy-(int(hpl.wepbob.y)),
 			DTA_DestWidth,gogwidth,DTA_DestHeight,gogheight,
 			true
 		);
