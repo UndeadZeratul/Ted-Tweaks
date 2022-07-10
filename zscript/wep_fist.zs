@@ -380,7 +380,6 @@ class HDFist:HDWeaponGrabber replaces Fist{
 			}
 		}
 	}
-	vector2 lungedir;
 	states{
 	preload:
 		PUNF ABCD 0;
@@ -389,7 +388,19 @@ class HDFist:HDWeaponGrabber replaces Fist{
 		goto nope;
 	ready:
 		TNT1 A 1{
-			if(invoker.washolding&&pressingfire()){
+			if(
+				invoker.washolding
+				&&player.cmd.buttons&(
+					BT_ATTACK
+					|BT_ALTATTACK
+					|BT_RELOAD
+					|BT_ZOOM
+					|BT_USER1
+					|BT_USER2
+					|BT_USER3
+					|BT_USER4
+				)
+			){
 				setweaponstate("nope");
 				return;
 			}
@@ -456,5 +467,15 @@ class HDFist:HDWeaponGrabber replaces Fist{
 	spawn:
 		TNT1 A 1;
 		stop;
+	}
+}
+
+extend class HDWeapon{
+	action void A_FistNope(){
+		hdweaponselector.select(self,"HDFist");
+		let fff=HDFist(findinventory("HDFist"));
+		fff.washolding=true;
+		A_ClearRefire();
+		A_WEaponReady(WRF_NONE);
 	}
 }
