@@ -98,7 +98,7 @@ class hdladdertop:hdactor{
 				if(!master)return;
 				if(pos.z-master.pos.z<108){
 					A_StartSound("misc/ladder");
-					master.A_Log(string.format("You hang up a ladder.%s",master.getcvar("hd_helptext")?" Use the ladder to climb.":""),true);
+					master.A_Log(string.format("You hang up a ladder.%s",HDWeapon.CheckDoHelpText(master)?" Use the ladder to climb.":""),true);
 					master.A_TakeInventory("PortableLadder",1);
 					return;
 				}
@@ -169,7 +169,7 @@ class hdladderbottom:hdactor{
 		if (!thinker) thinker = HDLadderThinker(user.GiveInventoryType('HDLadderThinker'));
 		thinker.LinkToLadder(self);
 
-		user.A_Log(string.format("You climb the ladder.%s",user.getcvar("hd_helptext")?" Use again or jump to disengage; crouch and jump to pull down the ladder with you.":""),true);
+		user.A_Log(string.format("You climb the ladder.%s",HDWeapon.CheckDoHelpText(user)?" Use again or jump to disengage; crouch and jump to pull down the ladder with you.":""),true);
 		return true;
 	}
 	override void postbeginplay(){

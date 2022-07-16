@@ -476,6 +476,6 @@ extend class HDWeapon{
 		let fff=HDFist(findinventory("HDFist"));
 		fff.washolding=true;
 		A_ClearRefire();
-		A_WEaponReady(WRF_NONE);
+		A_WEaponReady(WRF_NOFIRE);
 	}
 }
