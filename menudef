@@ -1,0 +1,42 @@
+OptionMenu TedTweaks
+{
+    Title "------ Ted Tweaks ------"
+    StaticText ""
+    StaticText " Keepers Options ", "Gold"
+    StaticText ""
+    StaticText "All of these options are percents!", "white"
+    StaticText "The higher the percent, the more you keep.", "White"
+    StaticText "This is intended for Power of Friendship multiplayer!", "White"
+    StaticText ""
+    Option " Kept Burns Amount: ", "keeper_percent_burns", "KeeperPercent"
+    Option " Kept Bloodloss Amount: ", "keeper_percent_blood", "KeeperPercent"
+    Option " Kept Blues Amount: ", "keeper_percent_blues", "KeeperPercent"
+    Option " Kept Aggro Amount: ", "keeper_percent_aggro", "KeeperPercent"
+    Option " Kept Disease Amount: ", "keeper_percent_diseases", "KeeperPercent"
+    StaticText ""
+    SafeCommand "Reset Keepers Options?", "keepers_rest_cvars", "This will reset all of Keeper's options to their default!"
+    StaticText ""
+    StaticText " Misc. Options ", "Green"
+    StaticText ""
+    Option "No Invuln Breaking: ", "hd_nonecroghost", "OnOff"
+}
+
+AddOptionMenu "OptionsMenu"
+{
+    SubMenu "Ted Tweaks Options", "TedTweaks"
+}
+
+OptionValue "KeeperPercent"
+{
+    0, "Disabled"
+    0.1, "10%"
+    0.2, "20%"
+    0.3, "30%"
+    0.4, "40%"
+    0.5, "50%"
+    0.6, "60%"
+    0.7, "70%"
+    0.8, "80%"
+    0.9, "90%"
+    1, "100%"
+}
