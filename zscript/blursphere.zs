@@ -276,6 +276,7 @@ class HDBlurSphere:HDDamageHandler{
 	}
 	override void DisplayOverlay(hdstatusbar sb,hdplayerpawn hpl){
 		if(!sb.blurred)return;
+		double sclx=(2./1.2);
 		double scly=2.;
 		name ctex="HDXCAM_BLUR";
 		sb.SetSize(0,300,200);
