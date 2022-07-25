@@ -18,7 +18,19 @@ OptionMenu TedTweaks
     StaticText ""
     StaticText " Misc. Options ", "Green"
     StaticText ""
+    StaticText "Controls if Invulnerability Spheres can be broken to spawn friendly Necromancers.", "white"
     Option "No Invuln Breaking: ", "hd_nonecroghost", "OnOff"
+    SafeCommand "Reset Invuln Breaking Option", "resetcvar hd_nonecroghost"
+    StaticText ""
+    StaticText "-----", "Gold"
+    StaticText ""
+    StaticText "Controls if Health Bonuses and Armor Bonuses spawn debris or not.", "white"
+    Option "Cleaner Bonus Rate: ", "bonus_clean_bias", "CleanBias"
+    SafeCommand "Reset Cleaner spawn options", "resetcvar bonus_clean_bias"
+    StaticText ""
+    StaticText "Control weather cleaner happens after a mapload.", "white"
+    Option "Persistent Spawns: ", "bonus_persistent_spawning", "OnOff"
+    SafeCommand "Reset Persistence Options", "resetcvar bonus_persistent_spawning"
 }
 
 AddOptionMenu "OptionsMenu"
@@ -39,4 +51,10 @@ OptionValue "KeeperPercent"
     0.8, "80%"
     0.9, "90%"
     1, "100%"
+}
+
+OptionValue "CleanBias"
+{
+    -1, "Disabled"
+    0, "Clean All"
 }
