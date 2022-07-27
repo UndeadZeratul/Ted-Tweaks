@@ -41,7 +41,7 @@ extend class hdplayerpawn{
 			"Hit \cdUse\cu on a ladder to start climbing, and again or \cdJump\cu to dismount.\nHit \cdJump\cu while \cdcrouching\cu to take down the ladder.",
 			"Your movement and turning affect your punches and grenades.\nGo to the range and practice!",
 			"Use stimpacks to slow down bleeding and to help with incap.",
-			"There's lots of options in HD Options and for GZDoom itself! I suggest spending some time going through them to suit you, it helps a lot.",
+			"There's lots of options in \cdHD Options\cu and for GZDoom itself! I suggest spending some time going through them to suit you, it helps a lot.",
 			"Holding \cdZoom\cu will greatly stabilize your aim,\nand implicitly brace your weapon\nagainst nearby map geometry.",
 			"Hold \cdZoom\cu when firing an airburst rocket or grenade\nto prevent the airburst value from resetting.",
 			"Hit the \cdDrop One\cu key or use the \cdhd_dropone\cu command\nto drop a single unit of each ammo type used by your current weapon.",
@@ -58,7 +58,9 @@ extend class hdplayerpawn{
             "Too dark for your tastes? Try out the light amplification goggles! Just make sure it's not pitch black.",
 			"Make sure to keep your mags in check! You can use the mag manager to check up and refill them!",
 			"Playing Dead can allow you to reach through tight corridors you otherwise wouldn't be able to fit in, becoming exponentially more useful the taller your player gets!",
-			"You can set your airburst distance with the rangefinder!"
+			"You can set your airburst distance with the rangefinder!",
+			"You can use \cdnetevent herphack\cu and \cdnetevent derphack\cu to \nhack nearby DERPs and HERPs!\n Use your controller and turn off your deployed robot, if you can, and then wait.",
+			"If the mod feels to difficult, don't be afraid to turn down \cdhd_encumbrance\cu, \cdhd_damagefactor\cu or any of the difficulty options! You can view all of them in \cdHD Options\cu."
 		};
 		int newtip=random(0,specialtips.size()-1);
 //		newtip=specialtips.size()-1;
