@@ -54,8 +54,11 @@ extend class hdplayerpawn{
 			"To remote activate a switch or door,\ntype \cdderp 555\cu to stick a D.E.R.P. on to it,\nthen \cdderp 556\cu to make it flick the switch.",
 			"Hold \cdZoom\cu and/or \cdUse\cu when you use the goggles to set the amplitude.\nBoth together decrements; \cdUse\cu alone increments.\n\cdZoom\cu alone toggles red/green mode.",
 			"Check your corpses! Enemies follow the same rules you do, so check for incap with your fists or another round.",
-			"Make sure to bind all of your keys! HD options has a menu specifically for it."
-            "Too dark for your tastes? Try out the light amplification goggles! Just make sure it's not pitch black."
+			"Make sure to bind all of your keys! HD options has a menu specifically for it.",
+            "Too dark for your tastes? Try out the light amplification goggles! Just make sure it's not pitch black.",
+			"Make sure to keep your mags in check! You can use the mag manager to check up and refill them!",
+			"Playing Dead can allow you to reach through tight corridors you otherwise wouldn't be able to fit in, becoming exponentially more useful the taller your player gets!",
+			"You can set your airburst distance with the rangefinder!"
 		};
 		int newtip=random(0,specialtips.size()-1);
 //		newtip=specialtips.size()-1;
