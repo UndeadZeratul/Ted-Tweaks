@@ -292,8 +292,9 @@ class HDPistol:HDHandgun replaces Pistol{
 			){
 				let pnr=HDPlayerPawn(self);
 				if(
-					pnr&&countinv("IsMoving")
+					pnr
 					&&pnr.fatigue<12
+					&&IsMoving.Count(pnr)
 				)pnr.fatigue++;
 				A_GiveInventory("IsMoving",5);
 				A_Refire("fire");

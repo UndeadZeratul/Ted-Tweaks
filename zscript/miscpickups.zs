@@ -211,7 +211,7 @@ class HDAmBox:HDUPK{
 		if(
 			bnointeraction
 			||!user
-			||user.countinv("IsMoving")
+			||IsMoving.Count(user)
 		)return;
 		if(tapped){
 			target=user;

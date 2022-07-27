@@ -329,7 +329,9 @@ extend class HDPlayerPawn{
 			)
 		){
 			lastthingthatwoundedyou=source;
-			hdbleedingwound.inflict(self,towound,wwidth,source:source,damagetype:mod);
+				hdbleedingwound.inflict(self,towound,wwidth,source:source,damagetype:mod,
+				hitlocation:!!inflictor?inflictor.pos:!!source?source.pos+HDMath.GetGunPos(source):(0,0,0)
+			);
 		}
 		if(toburn>0)burncount+=toburn;
 		if(tostun>0)stunned+=tostun;
