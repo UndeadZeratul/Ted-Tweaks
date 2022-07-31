@@ -1,7 +1,7 @@
 [en enc enu eng eni ena enz default]
 
 STARTUP1="        \cq~ \cr* \cq~";
-STARTUP2=" \cyHideous Destructor \cx4.8.2a \cypre \c[Cyan]Ted's Tweaks\c-";
+STARTUP2=" \cyHideous Destructor \cx4.8.2a \cypre \c[Cyan]Ted-Tweaks\c-";
 STARTUP3=" Please read the manual.";
 STARTUP4="       Have fun!";
 STARTUP5="        \cq~ \cr* \cq~";
