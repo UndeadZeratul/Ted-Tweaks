@@ -66,7 +66,7 @@ class HDPistol:HDHandgun replaces Pistol{
 	}
 	override double gunmass(){
 		int mgg=weaponstatus[PISS_MAG];
-		return 8+(mgg<0?0:0.25*(mgg+1));
+		return 3.5+(mgg<0?0:0.08*(mgg+1));
 	}
 	override void failedpickupunload(){
 		failedpickupunloadmag(PISS_MAG,"HD9mMag15");
