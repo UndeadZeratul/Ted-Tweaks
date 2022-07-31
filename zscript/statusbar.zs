@@ -621,13 +621,13 @@ class HDStatusBar:DoomStatusBar{
 				// Angle
 				let whh=wephelpheight+NewSmallFont.GetHeight();
 				//This is the funny point up
-				/*screen.DrawText(NewSmallFont,
+				screen.DrawText(NewSmallFont,
 					font.CR_OLIVE,
-					320,
-					whh,
+					315,
+					wephelpheight-75,
 					"^",
 					DTA_VirtualWidth,640,DTA_VirtualHeight,480
-				);*/
+				);
 				//Actual Numbers Stuff.
 				//compangle=hpl.angle % 360;
 
@@ -650,14 +650,14 @@ class HDStatusBar:DoomStatusBar{
 				DTA_Alpha,0.8
 			);
 
-			wephelpheight+=NewSmallFont.GetHeight();
-			screen.DrawText(NewSmallFont,
-				font.CR_OLIVE,
-				600,
-				wephelpheight,
-				"^",
-				DTA_VirtualWidth,640,DTA_VirtualHeight,480
-			);
+// 			wephelpheight+=NewSmallFont.GetHeight();
+// 			screen.DrawText(NewSmallFont,
+// 				font.CR_OLIVE,
+// 				600,
+// 				wephelpheight,
+// 				"^",
+// 				DTA_VirtualWidth,640,DTA_VirtualHeight,480
+// 			);
 			/*string postxt=string.format("%i,%i,%i",hpl.pos.x,hpl.pos.y,hpl.pos.z);
 			screen.DrawText(NewSmallFont,
 				font.CR_OLIVE,
