@@ -8,6 +8,10 @@ class PainMonster:HDMobBase{
 		+hdmobbase.biped
 		species "BaronOfHell";
 	}
+	override void CheckFootStepSound(){
+		if(bplayingid)HDHumanoid.FootStepSound(self,drysound:"baron/step");
+		else HDHumanoid.FootStepSound(self,drysound:"baron/clawstep");
+	}
 	override void postbeginplay(){
 		super.postbeginplay();
 		bsmallhead=bplayingid;
