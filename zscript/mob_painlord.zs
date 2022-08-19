@@ -97,9 +97,12 @@ class PainLord:PainMonster replaces BaronofHell{
 		TNT1 A 0 A_JumpIfTargetInLOS("see");
 		goto roam;
 	roam:
-		BOSS A 0 A_JumpIfTargetInLOS("missile");
+		BOSS #### 4 A_JumpIfTargetInLOS("missile");
 		BOSS A 0 A_ShoutAlert(0.3,SAF_SILENT);
+		roam2:
+		BOSS A 0 A_JumpIfTargetInLOS("missile");
 		BOSS ABCD 8 A_HDWander(CHF_LOOK);
+		BOSS A 0 A_Jump(16,"roam","roam","see");
 		loop;
 	missile:
 		BOSS ABCD 3 A_TurnToAim(30,32);
