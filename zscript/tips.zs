@@ -10,6 +10,7 @@ extend class hdplayerpawn{
 		else caller.A_Log(message,true);
 	}
 	void usegametip(string arbitrarystring){
+		arbitrarystring.replace("\r","");
 		arbitrarystring.replace("\n\n\n","\n");
 		arbitrarystring.replace("\n\n","\n");
 		specialtipalpha=1001.;
@@ -62,7 +63,7 @@ extend class hdplayerpawn{
 			"You can use \cdnetevent herphack\cu and \cdnetevent derphack\cu to \nhack nearby DERPs and HERPs!\n Use your controller and turn off your deployed robot, if you can, and then wait.",
 			"If the mod feels to difficult, don't be afraid to turn down \cdhd_encumbrance\cu, \cdhd_damagefactor\cu or any of the difficulty options! You can view all of them in \cdHD Options\cu."
 		};
-		int newtip=random(0,specialtips.size()-1);
+		int newtip=random[tiprand](0,specialtips.size()-1);
 //		newtip=specialtips.size()-1;
 		specialtip="\crTIP: \cu"..specialtips[newtip];
 		specialtipalpha=1001.;

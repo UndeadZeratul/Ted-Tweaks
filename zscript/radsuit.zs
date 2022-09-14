@@ -34,14 +34,12 @@ class WornRadsuit:HDDamageHandler{
 	}
 	override void DisplayOverlay(hdstatusbar sb,hdplayerpawn hpl){
 		sb.SetSize(0,320,200);
-		sb.BeginHUD(forcescaled:true);
-		
-		int MaskHeight = int(Screen.GetHeight() * 2.2);
-		int MaskWidth = int(Screen.GetWidth() * MaskHeight * 1.2) / Screen.GetHeight();
-		int MaskOffX = -((MaskWidth - Screen.GetWidth()) >> 1);
+		sb.BeginHUD(forcescaled:true);	
+        int MaskHeight = int(Screen.GetHeight() * 2.2);
+        int MaskWidth = int(Screen.GetWidth() * MaskHeight * 1.2) / Screen.GetHeight();
+        int MaskOffX = -((MaskWidth - Screen.GetWidth()) >> 1);
 		int MaskOffY = -((MaskHeight - Screen.GetHeight()) >> 1);
-
-		Screen.DrawTexture(TexMan.CheckForTexture("DESPMASK"), true, MaskOffX - (int(hpl.wepbob.x * 0.5)), MaskOffY - (int(hpl.wepbob.y * 0.5)), DTA_DestWidth, MaskWidth, DTA_DestHeight, MaskHeight);
+        Screen.DrawTexture(TexMan.CheckForTexture("DESPMASK"), true, MaskOffX - (int(hpl.wepbob.x * 0.5)), MaskOffY - (int(hpl.wepbob.y * 0.5)), DTA_DestWidth, MaskWidth, DTA_DestHeight, MaskHeight);
 		/*sb.fill(
 			color(sb.blurred?(level.time&(1|2|4))<<2:160,10,40,14),
 			0,0,screen.getwidth(),screen.getheight()
@@ -185,7 +183,7 @@ class PortableRadsuit:HDPickup replaces RadSuit{
 		inventory.pickupmessage "Environmental shielding suit.";
 		inventory.pickupsound "weapons/pocket";
 		inventory.icon "SUITB0";
-		hdpickup.bulk 10; //MUCH lighter
+		hdpickup.bulk 20;
 		tag "environment suit";
 		hdpickup.refid HDLD_RADSUIT;
 	}
@@ -254,7 +252,7 @@ class PortableRadsuit:HDPickup replaces RadSuit{
 		}
 	use:
 		TNT1 A 0{
-			let owrs=wornradsuit(findinventory("WornRadsuit"));
+			let owrs=wornradsuit(findinventory("wornradsuit"));
 			if(owrs){
 				if(!HDPlayerPawn.CheckStrip(self,owrs))return;
 			}else{
@@ -286,7 +284,7 @@ class PortableRadsuit:HDPickup replaces RadSuit{
 				A_GiveInventory("WornRadsuit");
 			}else{
 				actor a;int b;
-				inventory wrs=findinventory("WornRadsuit");
+				inventory wrs=findinventory("wornradsuit");
 				[b,a]=A_SpawnItemEx("PortableRadsuit",0,0,height*0.5,0.2,0,2);
 				if(a && wrs){
 					//transfer sticky fire
