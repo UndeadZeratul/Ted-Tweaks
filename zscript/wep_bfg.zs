@@ -106,14 +106,20 @@ class BFG9K:HDCellWeapon replaces BFG9000{
 		)weaponstatus[0]&=~BFGF_STRAPPED;
 	}
 	override void doeffect(){
-		if(hdplayerpawn(owner)){
+		let hdp=hdplayerpawn(owner);
+		if(hdp){
 			//droop downwards
 			if(
-				owner.player&&owner.player.readyweapon==self&&
-				!(hdplayerpawn(owner).gunbraced)&&
-				!(weaponstatus[0]&BFGF_STRAPPED)&&
-				owner.pitch<10
-			)hdplayerpawn(owner).A_MuzzleClimb((frandom(-0.05,0.05),0.1),(0,0),(0,0),(0,0));
+				!hdp.gunbraced
+				&&!!hdp.player
+				&&hdp.player.readyweapon==self
+				&&hdp.strength
+				&&hdp.pitch<10
+				&&!(weaponstatus[0]&BFGF_STRAPPED)
+			)hdp.A_MuzzleClimb((
+				frandom(-0.06,0.06),
+				frandom(0.1,clamp(1-pitch,0.08/hdp.strength,0.12))
+			),(0,0),(0,0),(0,0));
 		}
 		super.doeffect();
 	}

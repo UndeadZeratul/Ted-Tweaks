@@ -568,10 +568,9 @@ extend class HDHandlers{
 		if(www)www.special=0;
 	}
 	void ForwardRoll(hdplayerpawn ppp,int amt){
-		if(ppp.player){
-			int rollamt=clamp(amt,-20,20);
-			ppp.ForwardRoll(rollamt,ppp.FROLL_VOLUNTARY);
-		}
+		if(!ppp.player)return;
+		int rollamt=clamp(amt,-20,20);
+		ppp.ForwardRoll(rollamt,ppp.FROLL_VOLUNTARY);
 	}
 }
 class DelayedTaunter:Thinker{

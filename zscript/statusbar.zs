@@ -261,20 +261,14 @@ class HDStatusBar:DoomStatusBar{
 		SetSize(0,480,300);
 		BeginHUD();
 
-		//KEYS!
-		if(hpl.countinv("BlueCard"))drawimage("BKEYB0",(10,24),DI_TOPLEFT);
-		if(hpl.countinv("YellowCard"))drawimage("YKEYB0",(10,44),DI_TOPLEFT);
-		if(hpl.countinv("RedCard"))drawimage("RKEYB0",(10,64),DI_TOPLEFT);
-		if(hpl.countinv("BlueSkull"))drawimage("BSKUA0",(6,30),DI_TOPLEFT);
-		if(hpl.countinv("YellowSkull"))drawimage("YSKUA0",(6,50),DI_TOPLEFT);
-		if(hpl.countinv("RedSkull"))drawimage("RSKUB0",(6,70),DI_TOPLEFT);
-
 		//frags
 		if(deathmatch||fraglimit>0)drawstring(
 			mHUDFont,FormatNumber(CPlayer.fragcount),
 			(30,24),DI_TOPLEFT|DI_TEXT_ALIGN_LEFT,
 			Font.CR_RED
 		);
+
+		if(hdspectator(hpl))return;
 
 		//mugshot
 		DrawTexture(GetMugShot(5,Mugshot.CUSTOM,getmug(hpl.mugshot)),(6,-14),DI_BOTTOMLEFT,alpha:blurred?0.2:1.);
@@ -304,6 +298,13 @@ class HDStatusBar:DoomStatusBar{
 		//inventory selector
 		DrawInvSel(6,100,10,109,DI_TOPLEFT);
 
+		//KEYS!
+		if(hpl.countinv("BlueCard"))drawimage("BKEYB0",(10,24),DI_TOPLEFT);
+		if(hpl.countinv("YellowCard"))drawimage("YKEYB0",(10,44),DI_TOPLEFT);
+		if(hpl.countinv("RedCard"))drawimage("RKEYB0",(10,64),DI_TOPLEFT);
+		if(hpl.countinv("BlueSkull"))drawimage("BSKUA0",(6,30),DI_TOPLEFT);
+		if(hpl.countinv("YellowSkull"))drawimage("YSKUA0",(6,50),DI_TOPLEFT);
+		if(hpl.countinv("RedSkull"))drawimage("RSKUB0",(6,70),DI_TOPLEFT);
 
 		//guns
 		drawselectedweapon(-80,-60,DI_BOTTOMRIGHT);
@@ -445,7 +446,10 @@ class HDStatusBar:DoomStatusBar{
 	}
 	void DrawCommonStuff(bool usemughud){
 		let cp=HDPlayerPawn(CPlayer.mo);
-		if(!cp)return;
+		if(
+			!cp
+			||hdspectator(cp)
+		)return;
 
 		int mxht=-4-mIndexFont.mFont.GetHeight();
 		int mhht=-4-mHUDFont.mFont.getheight();
