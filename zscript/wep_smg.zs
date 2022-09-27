@@ -431,7 +431,7 @@ class HDSMG:HDWeapon{
 		
 		int suppressor=getloadoutvar(input,"suppressor",1);
 		if(!suppressor)weaponstatus[0]&=~SMGS_SUPPRESSOR;
-		else if(suppressor>0)weaponstatus[0]|=SMGS_SUPPRESSOR
+		else if(suppressor>0)weaponstatus[0]|=SMGS_SUPPRESSOR;
 	}
 }
 enum smgstatus{
