@@ -428,9 +428,10 @@ class HDSMG:HDWeapon{
 		int fireswitch=getloadoutvar(input,"fireswitch",1);
 		if(fireswitch>3)weaponstatus[SMGS_SWITCHTYPE]=0;
 		else if(fireswitch>0)weaponstatus[SMGS_SWITCHTYPE]=clamp(fireswitch,0,3);
-
+		
 		int suppressor=getloadoutvar(input,"suppressor",1);
-		if(suppressor<=1)weaponstatus[SMGS_SUPPRESSOR]=clamp(suppressor,0,1);
+		if(!suppressor)weaponstatus[0]&=~SMGS_SUPPRESSOR;
+		else if(suppressor>0)weaponstatus[0]|=SMGS_SUPPRESSOR
 	}
 }
 enum smgstatus{
