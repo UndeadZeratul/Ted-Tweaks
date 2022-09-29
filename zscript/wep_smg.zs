@@ -233,7 +233,7 @@ class HDSMG:HDWeapon{
 		#### B 0{
 			if(invoker.weaponstatus[SMGS_SUPPRESSOR]==0){
 			let bbb=HDBulletActor.FireBullet(self,"HDB_9",speedfactor:1.6);
-			A_AlertMonsters(256);
+			A_AlertMonsters();
 			A_ZoomRecoil(0.995);
 			A_StartSound("weapons/pistol",CHAN_WEAPON);
 			}
