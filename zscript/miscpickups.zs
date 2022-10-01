@@ -19,19 +19,19 @@ class ClipMagPickup:HDInvRandomSpawner replaces Clip{
 		dropitem "HD9mMag15",256,4;
 		dropitem "HD9mMag30",256,2;
 		dropitem "ArmorBonus",256,2;
-		dropitem "HD9mBoxPickup",256,1;
+		dropitem "HD9mBoxPickup",256,2;
 		dropitem "HD355BoxPickup",256,3;
 	}
 }
 class ClipBoxPickup:HDInvRandomSpawner replaces ClipBox{
 	default{
 		dropitem "ClipBoxPickup1",256,14;
-		dropitem "ClipBoxPickup2",256,4;
-		dropitem "HDAB",256,6;
-		dropitem "BossRifleSpawner",256,1;
-		dropitem "HD9mBoxPickup",256,1;
+		dropitem "ClipBoxPickup2",256,8;
+		dropitem "HDAB",256,10;
+		dropitem "BossRifleSpawner",256,3;
+		dropitem "HD9mBoxPickup",256,3;
 		dropitem "HD7mBoxPickup",256,1;
-		dropitem "HD355BoxPickup",256,3;
+		dropitem "HD355BoxPickup",256,5;
 	}
 }
 class ClipBoxPickup1:IdleDummy{
@@ -84,17 +84,17 @@ class ShellBoxRandom:HDInvRandomSpawner replaces ShellBox{
 class RocketBoxRandom:HDInvRandomSpawner replaces RocketBox{
 	default{
 		dropitem "RocketBigPickup",256,14;
-		dropitem "HDFragGrenadePickup",256,3;
-		dropitem "PortableLadder",256,1;
-		dropitem "HD9mBoxPickup",256,1;
+		dropitem "HDFragGrenadePickup",256,5;
+		dropitem "PortableLadder",256,2;
+		dropitem "HD9mBoxPickup",256,2;
 		dropitem "HD7mBoxPickup",256,1;
-		dropitem "HDIEDPack",256,1;
+		dropitem "HDIEDPack",256,3;
 	}
 }
 class CellRandom:HDInvRandomSpawner replaces Cell{
 	default{
 		dropitem "BFGNecroShard",128,1;
-		dropitem "HD7mMag",256,3;
+		dropitem "HD7mMag",256,2;
 		dropitem "BrontornisRound",256,2;
 		dropitem "HDBattery",256,7;
 	}
@@ -102,16 +102,16 @@ class CellRandom:HDInvRandomSpawner replaces Cell{
 class CellPackReplacer:HDInvRandomSpawner replaces CellPack{
 	default{
 		dropitem "BFGNecroShard",196,1;
-		dropitem "HD7mMag",256,3;
-		dropitem "BrontornisSpawner",256,1;
+		dropitem "HD7mMag",256,2;
+		dropitem "BrontornisSpawner",256,2;
 		dropitem "HDBattery",256,4;
-		dropitem "HDAB",256,1;
+		dropitem "HDAB",256,2;
 		dropitem "PortableLadder",256,1;
 		dropitem "YokaiSpawner",256,1;
-		dropitem "HDFragGrenadePickup",256,1;
-		dropitem "HD9mBoxPickup",256,1;
+		dropitem "HDFragGrenadePickup",256,3;
+		dropitem "HD9mBoxPickup",256,2;
 		dropitem "HD7mBoxPickup",256,1;
-		dropitem "DoorBuster",256,1;
+		dropitem "DoorBuster",256,2;
 	}
 }
 //-------------------------------------------------
