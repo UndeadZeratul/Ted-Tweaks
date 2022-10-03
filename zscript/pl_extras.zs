@@ -554,6 +554,7 @@ extend class HDHandlers{
 		}
 	}
 	void Taunt(hdplayerpawn ppp){
+		if(!ppp.player)return;
 		ppp.A_StartSound(ppp.tauntsound,CHAN_VOICE);
 		ppp.bspawnsoundsource=true;
 		let dtt=new("DelayedTaunter");
