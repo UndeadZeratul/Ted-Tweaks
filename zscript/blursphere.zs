@@ -44,7 +44,16 @@ class HDBlurSphere:HDDamageHandler{
 					&&invoker.intensity<99
 				)||lite>random(200,256)
 			){
-				if(lite>200)A_Log("it hurts",true);
+				if(lite>200)
+				{
+
+				array<string>msgs;msgs.clear();
+					string msg=Wads.ReadLump(Wads.CheckNumForName("blurspheretexts",0));
+            		msg.replace("\r", "");
+            		msg.split(msgs,"\n");
+            		msg=msgs[int(clamp(frandom(0.,1.)*msgs.size(),0,msgs.size()-1))];
+					A_Log(msg, true);
+				}
 				else A_Log("noise",true);
 				if(lite>random(230,300))invoker.amount--;
 				return;
@@ -164,7 +173,15 @@ class HDBlurSphere:HDDamageHandler{
 					attacking
 					&&random(0,amount>>2+1)
 				){
-					if(!random(0,7))owner.A_Log("it hurts",true);
+					if(!random(0,7))
+					{
+					array<string>msgs;msgs.clear();
+					string msg=Wads.ReadLump(Wads.CheckNumForName("blurspheretexts",0));
+            		msg.replace("\r", "");
+            		msg.split(msgs,"\n");
+            		msg=msgs[int(clamp(frandom(0.,1.)*msgs.size(),0,msgs.size()-1))];
+					owner.A_Log(msg, true);
+					};
 					amount--;
 					if(amount<1)return;
 				}
