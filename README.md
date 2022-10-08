@@ -24,4 +24,13 @@ A large collection of various tweaks I enjoy using for 'Hideous Destructor'. Cur
 - IEDs no longer explode on dormant enemies.
 - Flinching on enemy melee damage is decreased.
 - Null-check for radsuits to allow enemies to use them.
-- Fixed pistol hanging bug if you held fire.
+- Adds an unsuppressed variant of the SMG.
+- Allows the revolver to stay cocked even if it is unselected.
+- Makes the Liberator rifle hinder legs.
+- Makes 7mm Ammunition rarer.
+- Buffs 35mm damage.
+- Makes the Boris Field Glyph expel more frag on attack.
+- Adds more "lore accurate" tags for the weaponry via a language lump.
+- Adds Accensus' "GetIcon" backpack changes.
+- Includes a custom startup to show you're using Ted Tweaks.
+- Includes options to 'clean' bonus items by removing DecoPusher from its spawns.
