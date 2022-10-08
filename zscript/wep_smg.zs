@@ -232,7 +232,8 @@ class HDSMG:HDWeapon{
 	flash:
 		#### B 0{
 			if(invoker.weaponstatus[SMGS_SUPPRESSOR]==0){
-			let bbb=HDBulletActor.FireBullet(self,"HDB_9",speedfactor:1.6);
+			// Speedfactor 1.6 was too much, maybe 1.3? - [Ted]
+			let bbb=HDBulletActor.FireBullet(self,"HDB_9",speedfactor:1.3);
 			A_AlertMonsters();
 			A_ZoomRecoil(0.995);
 			A_StartSound("weapons/pistol",CHAN_WEAPON);
@@ -461,7 +462,7 @@ class HDSMGRandom:IdleDummy{
 			lll.vel=vel;
 			for(int i=0;i<5;i++)lll.args[i]=args[i];
 			if(!random(0,2))lll.weaponstatus[0]|=SMGF_REFLEXSIGHT;
-			if(!random(0,2))lll.weaponstatus[0]|=SMGS_SUPPRESSOR;
+			if(!random(0,2))lll.weaponstatus[SMGS_SUPPRESSOR]=random(0,2);
 			if(!random(0,2))lll.weaponstatus[SMGS_SWITCHTYPE]=random(0,3);
 		}stop;
 	}
