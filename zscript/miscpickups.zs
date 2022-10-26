@@ -19,8 +19,9 @@ class ClipMagPickup:HDInvRandomSpawner replaces Clip{
 		dropitem "HD9mMag15",256,4;
 		dropitem "HD9mMag30",256,2;
 		dropitem "ArmorBonus",256,2;
-		dropitem "HD9mBoxPickup",256,2;
-		dropitem "HD355BoxPickup",256,3;
+		dropitem "HD9mBoxPickup",256,3;
+		dropitem "HD355BoxPickup",256,2;
+		dropitem "BrontornisRound",256,2;
 	}
 }
 class ClipBoxPickup:HDInvRandomSpawner replaces ClipBox{
@@ -31,7 +32,8 @@ class ClipBoxPickup:HDInvRandomSpawner replaces ClipBox{
 		dropitem "BossRifleSpawner",256,3;
 		dropitem "HD9mBoxPickup",256,3;
 		dropitem "HD7mBoxPickup",256,1;
-		dropitem "HD355BoxPickup",256,5;
+		dropitem "HD355BoxPickup",256,4;
+		dropitem "BrontornisRound",256,2;
 	}
 }
 class ClipBoxPickup1:IdleDummy{
@@ -89,6 +91,7 @@ class RocketBoxRandom:HDInvRandomSpawner replaces RocketBox{
 		dropitem "HD9mBoxPickup",256,2;
 		dropitem "HD7mBoxPickup",256,1;
 		dropitem "HDIEDPack",256,3;
+		dropitem "BrontornisRound",256,2;
 	}
 }
 class CellRandom:HDInvRandomSpawner replaces Cell{
@@ -103,7 +106,7 @@ class CellPackReplacer:HDInvRandomSpawner replaces CellPack{
 	default{
 		dropitem "BFGNecroShard",196,1;
 		dropitem "HD7mMag",256,2;
-		dropitem "BrontornisSpawner",256,2;
+		dropitem "BrontornisSpawner",256,4;
 		dropitem "HDBattery",256,4;
 		dropitem "HDAB",256,2;
 		dropitem "PortableLadder",256,1;
