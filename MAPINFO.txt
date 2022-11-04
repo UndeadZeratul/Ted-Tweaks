@@ -1,8 +1,0 @@
-GameInfo
-{
-	AddEventHandlers = "KeeperHandler"
-}
-
-adddefaultmap{
-	airsupply=90
-}

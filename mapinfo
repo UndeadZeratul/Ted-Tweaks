@@ -1,0 +1,8 @@
+GameInfo
+{
+	AddEventHandlers = "KeeperHandler", "HDBlueVulcFixHandler"
+}
+
+adddefaultmap{
+	airsupply=90
+}
