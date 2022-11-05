@@ -248,7 +248,7 @@ class HDBlueVulcFixHandler : EventHandler {
 		if (e.Thing) {
 			if (e.Thing.GetClassName() == "vulcanette")
 				vulcs.push(vulcanette(e.Thing));
-			else if (e.Thing.GetClassName() == "BlueSphere" || e.Thing.GetClassName() == "BrownSphere")
+			else if (e.Thing.GetClassName() == "HDSoulSphere" || e.Thing.GetClassName() == "HDMegasphere")
 				balls.push(BlueSphere(e.Thing));
 		}
 	}
