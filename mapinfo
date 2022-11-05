@@ -3,6 +3,17 @@ GameInfo
 	AddEventHandlers = "KeeperHandler", "HDBlueVulcFixHandler"
 }
 
-adddefaultmap{
+adddefaultmap
+{
 	airsupply=90
+}
+
+gameinfo
+{
+	dimcolor = "12272C"
+	dimamount = 0.5
+    MenuFontColor_Title = "SCyan1"
+    MenuFontColor_Selection = "SCyan1"
+	MenuFontColor_Highlight = "SCyan2" 
+	MenuFontColor_Label = "SCyan2" 
 }
