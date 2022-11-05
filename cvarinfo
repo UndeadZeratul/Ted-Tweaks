@@ -8,3 +8,5 @@ server bool hd_nonecroghost = false;
 
 server int bonus_clean_bias = -1;
 server bool bonus_persistent_spawning = false;
+
+server bool hd_vulcfixer = false;
