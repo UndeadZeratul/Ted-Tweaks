@@ -27,8 +27,6 @@ OptionMenu TedTweaks
     Option "Vulc Repairer: ", "hd_vulcfixer", "OnOff"
     SafeCommand "Reset Vulc Repairer Option", "resetcvar hd_vulcfixer"
     StaticText ""
-    StaticText "-----", "Gold"
-    StaticText ""
     StaticText "Controls if Health Bonuses and Armor Bonuses spawn debris or not.", "white"
     Option "Cleaner Bonus Rate: ", "bonus_clean_bias", "CleanBias"
     SafeCommand "Reset Cleaner spawn options", "resetcvar bonus_clean_bias"
