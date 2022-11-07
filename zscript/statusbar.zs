@@ -539,49 +539,6 @@ class HDStatusBar:DoomStatusBar{
 		)
 		drawselectedweapon(58,-6,DI_SCREEN_CENTER_BOTTOM|DI_ITEM_LEFT_BOTTOM);
 
-		//full hud consequences
-		if(hudlevel==2){
-			drawweaponstash();
-			drawammocounters(mxht);
-
-			//encumbrance
-			if(hpl.enc){
-				double pocketenc=hpl.pocketenc;
-				drawstring(
-					pnewsmallfont,formatnumber(int(hpl.enc)),
-					(8,mxht),DI_TEXT_ALIGN_LEFT|DI_SCREEN_LEFT_BOTTOM,
-					hpl.overloaded<0.8?Font.CR_OLIVE:hpl.overloaded>1.6?Font.CR_RED:Font.CR_GOLD,scale:(0.5,0.5)
-				);
-				int encbarheight=mxht+5;
-				fill(
-					color(128,96,96,96),
-					4,encbarheight,1,-1,
-					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
-				);
-				fill(
-					color(128,96,96,96),
-					5,encbarheight,1,-20,
-					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
-				);
-				fill(
-					color(128,96,96,96),
-					3,encbarheight,1,-20,
-					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
-				);
-				encbarheight--;
-				drawrect(
-					4,encbarheight,1,
-					-min(hpl.maxpocketspace,pocketenc)*19/hpl.maxpocketspace,
-					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
-				);
-				bool overenc=hpl.flip&&pocketenc>hpl.maxpocketspace;
-				fill(
-					overenc?color(255,216,194,42):color(128,96,96,96),
-					4,encbarheight-19,1,overenc?3:1,
-					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
-				);
-			}
-
 			int wephelpheight=NewSmallFont.GetHeight()*5;
 
 			//compass
@@ -643,6 +600,49 @@ class HDStatusBar:DoomStatusBar{
 					postxt,
 					DTA_VirtualWidth,640,DTA_VirtualHeight,480
 				);
+
+		//full hud consequences
+		if(hudlevel==2){
+			drawweaponstash();
+			drawammocounters(mxht);
+
+			//encumbrance
+			if(hpl.enc){
+				double pocketenc=hpl.pocketenc;
+				drawstring(
+					pnewsmallfont,formatnumber(int(hpl.enc)),
+					(8,mxht),DI_TEXT_ALIGN_LEFT|DI_SCREEN_LEFT_BOTTOM,
+					hpl.overloaded<0.8?Font.CR_OLIVE:hpl.overloaded>1.6?Font.CR_RED:Font.CR_GOLD,scale:(0.5,0.5)
+				);
+				int encbarheight=mxht+5;
+				fill(
+					color(128,96,96,96),
+					4,encbarheight,1,-1,
+					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
+				);
+				fill(
+					color(128,96,96,96),
+					5,encbarheight,1,-20,
+					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
+				);
+				fill(
+					color(128,96,96,96),
+					3,encbarheight,1,-20,
+					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
+				);
+				encbarheight--;
+				drawrect(
+					4,encbarheight,1,
+					-min(hpl.maxpocketspace,pocketenc)*19/hpl.maxpocketspace,
+					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
+				);
+				bool overenc=hpl.flip&&pocketenc>hpl.maxpocketspace;
+				fill(
+					overenc?color(255,216,194,42):color(128,96,96,96),
+					4,encbarheight-19,1,overenc?3:1,
+					DI_SCREEN_LEFT_BOTTOM|DI_ITEM_LEFT
+				);
+			}
 				
 			string s=hpl.wephelptext;
 			if(s!="")screen.DrawText(NewSmallFont,OptionMenuSettings.mFontColorValue,
