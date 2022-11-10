@@ -34,6 +34,9 @@ TAG_4MMBOSS = "4mm UAC 'Boss' Target Rifle";
 TAG_9MMBOSS = "9mm 'Boss' Pistol-Caliber Carbine";
 // For my fellow LCA enjoyers out there ;) - [Ted]
 TAG_WORSTBOSS = "Legendary Boss Rifle";
+TAG_50OMGCLIP = "13.8x118mm 'Czernobog' clip";
+TAG_DMS = "Dedicated Medical scanner";
+TAG_GARANDCLIP = "Mod-3 Daszynski clip";
 
 // HDBulletLib-Recasted
 // basically just i do not like semi-realistic or meme-y names for rounds so i change them :) - [Ted]
@@ -65,7 +68,11 @@ TAG_OBROZZ = "Obrozz Sawn-Off 'Boss' Bolt-Action Rifle";
 TAG_MINERVA = "'Minerva' 9x22mm Parumpudicum Minigun";
 TAG_LESSLETHALHUNTER = "Bernoulli M1053 Less-Lethal Shotgun";
 TAG_JUANPIS = "9x22mm Parumpudicum 'Juan' Horseshoe Pistol";
-TAG_HACKEDZM = "Modified Volt ZM66 Assault Rifle";
+TAG_JUANAUTO = "9x22mm Parumpudicum 'Juan' Horseshoe Pistol";
+TAG_HACKEDZM = "Volt ZM66 Assault Rifle";
+TAG_HZMSEMI = "Volt ZM66 Assault Rifle (Semi)";
+TAG_HZMREGULAR = "Volt ZM66 assault rifle (no GL)";
+TAG_HZMIRREGULAR = "Volt ZM66 assault rifle (semi with GL)";
 TAG_GOLDSINGLEACTION = "Golden Single-Action 'Theropoda' Revolver";
 TAG_FLAREGUN = "12-Gauge Flare Gun";
 TAG_METALFLAREGUN = "Metallic 12-Gauge Flare Gun";
@@ -74,5 +81,15 @@ TAG_DYNAMITE = "Dynamite";
 TAG_DOOMHUNT = "SPOS-E19 'Hunter' Pump-action Shotgun";
 TAG_COMBATSHOTGUN = "Bernoulli M1924 12-Gauge Combat Shotgun";
 TAG_10PIS = "9.82x33mm Self-Defense Pistol";
+TAG_10PSLECT = "9.82x33mm Self-Defense Pistol (Select Fire)";
 TAG_SIGCOW = "M-211 'Sig-Cow' Pistol-Caliber Carbine";
 TAG_STEN = "Blyskawica Mk.2-S Submachine Gun";
+TAG_C19 = "Volt 2X92 .39 CSD Service Pistol";
+TAG_HPUPPY = "99FX 'Hush Puppy' Stealth Pistol";
+TAG_STUNGUN = "Raysun X-26 Stun Gun";
+TAG_10RELOADER = "9.82x33mm 'Ausfallen' Reloader";
+TAG_10PISMAG = "9.82x33mm pistol magazine";
+TAG_SCWMAG = "M-211 'Sig-Cow' magazine";
+TAG_CM7 = "Volt 2X92 magazine";
+TAG_DYNAMITEBUNDLE = "Bundle of Dynamite";
+TAG_JUANMAG = "9x22mm Parumpudicum horseshoe magazine";
