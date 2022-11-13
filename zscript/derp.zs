@@ -1,14 +1,22 @@
 // ------------------------------------------------------------
 // D.E.R.P. Robot
 // ------------------------------------------------------------
+
+/*
+	NOTE FOR MAPPERS
+	You can set mode using user_cmd.
+	0=random (default), see DerpConst below for the others
+*/
+
 const DERP_CONTROLRANGE=HDCONST_ONEMETRE*150.;
 enum DerpConst{
-	DERP_TID=451816,
-	DERP_MAXTICTURN=15,
 	DERP_TURRET=1,
 	DERP_AMBUSH=2,
 	DERP_PATROL=3,
+
 	DERP_RANGE=320,
+	DERP_TID=451816,
+	DERP_MAXTICTURN=15,
 	DERPS_MODE=1,
 	DERPS_USEOFFS=2,
 	DERPS_AMMO=3,
@@ -21,6 +29,7 @@ enum DERPControllerNums{
 	DRPCS_TIMER=3,
 }
 class DERPBot:HDUPK{
+	int user_cmd;
 	int cmd;
 	int oldcmd;
 	int ammo;
@@ -210,7 +219,8 @@ class DERPBot:HDUPK{
 		ChangeTid(DERP_TID);
 		if(!master||!master.player){
 			ammo=15;
-			cmd=random(1,3);
+			if(user_cmd)cmd=user_cmd;
+			else cmd=random(1,3);
 		}
 		if(cmd==DERP_AMBUSH||cmd==DERP_TURRET)movestamina=1001;
 		oldcmd=cmd;
@@ -955,7 +965,10 @@ class DERPController:HDWeapon{
 			)derps.push(mo);
 		}
 		if(resetindex)weaponstatus[DRPCS_INDEX]=0;
-		if(!derps.size())return null;
+		if(!derps.size()){
+			destroy();
+			return null;
+		}
 		derpbot ddd=derps[0];
 		ddd.oldcmd=ddd.cmd;
 		return ddd;
@@ -1070,7 +1083,10 @@ class DERPController:HDWeapon{
 				A_Log("CONNECTION FAILURE, REBOOT REQUIRED!: D.E.R.P. last position given at ("..int(ddd.pos.x)+random(-100,100)..","..int(ddd.pos.y)+random(-100,100)..")",true);
 				ddd.cmd=ddd.oldcmd;
 				invoker.derps.delete(invoker.weaponstatus[DRPCS_INDEX]);
-				if(!invoker.derps.size())A_SelectWeapon("HDFist");
+				if(!invoker.derps.size()){
+					A_SelectWeapon("HDFist");
+					invoker.destroy();
+				}
 				return;
 			}
 			int cmd=ddd.oldcmd;

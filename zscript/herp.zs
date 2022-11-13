@@ -23,6 +23,40 @@ class HERPLeg:Actor{
 		stop;
 	}
 }
+
+class HERPScanDot:Actor{
+	default{
+		+nointeraction
+		+invisible
+		+bright
+		renderstyle "add";
+		radius 0;height 0;
+	}
+	override void Tick(){
+		let mst=master;
+		if(
+			!mst
+			||mst.health<1
+		){
+			destroy();
+			return;
+		}
+		binvisible=stamina<1;
+		if(
+			!binvisible
+			&&!(level.time&(1|2|4|8|16|32))
+		){
+			hdmobai.frighten(self,128,mst,HDMobAI.FRIGHT_HOSTILEONLY);
+		}
+		if(stamina>0)stamina--;
+	}
+	states{
+	spawn:
+		BLOD A -1;
+		stop;
+	}
+}
+
 class HERPBot:HDUPK{
 	default{
 		//$Category "Monsters/Hideous Destructor"
@@ -117,6 +151,15 @@ class HERPBot:HDUPK{
 	void message(string msg){
 		if(master)master.A_Log("\cd[HERP"..(botid?"(\cj"..botid.."\cd)":"").."]\cj  "..msg,true);
 	}
+	actor scandot;
+	actor GetScanDot(){
+			if(!scandot){
+			let scdt=spawn("HERPScanDot",pos);
+			scdt.master=self;
+			scandot=scdt;
+		}
+		return scandot;
+	}
 	void scanturn(){
 		if(battery<1){
 			message("Operational fault. Please check your manual for proper maintenance. (ERR-4fd92-00B) Power low.");
@@ -157,21 +200,15 @@ class HERPBot:HDUPK{
 				&&hlt.hittype!=Trace_HitNone
 				&&hlt.distance>0
 			){
-				vector3 relpos=hlt.hitlocation-pos;
-				double rtt=0.03*hlt.distance;
-				if(scanright)rtt=-rtt;
-				double saf=1.;
-				for(int i=0;i<7;i++){
-					relpos-=hlt.hitdir;
-					a_spawnparticle(
-						"red",SPF_FULLBRIGHT|SPF_RELVEL,lifetime:(tics<<1),size:3,0,
-						relpos.x,
-						relpos.y,
-						relpos.z,
-						vely:rtt,
-						startalphaf:saf
-					);
-					saf-=0.12;
+					let sc=GetScanDot();
+				if(!!sc){
+					bool interp=true;
+					if(sc.binvisible){
+						interp=false;
+						sc.binvisible=false;
+					}
+					sc.SetOrigin(hlt.hitlocation,interp);
+					sc.stamina=1;
 				}
 			}
 			//if the line hits a valid target, go into shooting state
@@ -211,6 +248,7 @@ class HERPBot:HDUPK{
 	actor A_SpawnPickup(){
 		let hu=HERPUsable(spawn("HERPUsable",pos,ALLOW_REPLACE));
 		if(hu){
+			hu.angle=angle;
 			hu.translation=translation;
 			if(health<1)hu.weaponstatus[0]|=HERPF_BROKEN;
 			hu.weaponstatus[HERP_MAG1]=ammo[0];
@@ -549,9 +587,8 @@ class HERPUsable:HDWeapon{
 		invoker.barrellength=25;
 		invoker.barrelwidth=3;
 		invoker.barreldepth=3;
-		invoker.bobrangex=8.2;
-		invoker.bobrangey=4.6;
-		invoker.bobspeed=2.8;
+		invoker.bobrangex=4;
+		invoker.bobrangey=4;
 	}
 	states{
 	select:
@@ -626,6 +663,13 @@ class HERPUsable:HDWeapon{
 		HERG A 2{
 			if(invoker.weaponstatus[HERP_BATTERY]<1){
 				setweaponstate("directfail");
+				return;
+			}
+			if(
+				invoker.weaponstatus[0]&HERPF_BROKEN
+				&&random(0,7)
+			){
+				A_SetTics(random(1,10));
 				return;
 			}
 			int currammo=invoker.weaponstatus[1];

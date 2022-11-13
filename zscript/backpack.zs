@@ -6,7 +6,6 @@ enum HDItemTypes
 {
 	IType_Invalid,
 	IType_Weapon,
-	IType_Armour,
 	IType_Mag,
 	IType_Pickup
 }
@@ -102,7 +101,6 @@ class ItemStorage play
 		if (item)
 		{
 			let wpn = HDWeapon(item);
-			let arm = HDArmour(item);
 			let mag = HDMagAmmo(item);
 			let pkp = HDPickup(item);
 			if(
@@ -126,7 +124,6 @@ class ItemStorage play
 				&&wpn.bFITSINBACKPACK
 				&&!wpn.bCHEATNOTWEAPON
 			)return IType_Weapon;
-			if(arm)return IType_Armour;
 			if(mag)return IType_Mag;
 			if(pkp)return IType_Pickup;
 		}
@@ -134,7 +131,6 @@ class ItemStorage play
 		{
 			let dls=GetDefaultByType((class<Inventory>)(cls));
 			let wpn = cls is 'HDWeapon' ? GetDefaultByType((class<HDWeapon>)(cls)) : null;
-			let arm = cls is 'HDArmour' ? GetDefaultByType((class<HDArmour>)(cls)) : null;
 			let mag = cls is 'HDMagAmmo' ? GetDefaultByType((class<HDMagAmmo>)(cls)) : null;
 			let pkp = cls is 'HDPickup' ? GetDefaultByType((class<HDPickup>)(cls)) : null;
 			if(
@@ -152,7 +148,6 @@ class ItemStorage play
 				&&!wpn.bCHEATNOTWEAPON
 				&&wpn.bFITSINBACKPACK
 			)return IType_Weapon;
-			if(arm)return IType_Armour;
 			if(mag)return IType_Mag;
 			if(pkp)return IType_Pickup;
 		}
@@ -191,10 +186,6 @@ class ItemStorage play
 			if (wpn)
 			{
 				Icon = wpn.GetPickupSprite();
-			}
-			else if (arm)
-			{
-				Icon = arm.mega ? "ARMCA0" : "ARMSA0";
 			}
 			else if (mag)
 			{
@@ -352,39 +343,6 @@ class ItemStorage play
 				if (wpn.Amount == 0)
 				{
 					wpn.Destroy();
-				}
-				break;
-			case IType_Armour:
-				int ArmCount = arm.Mags.Size();
-				for (int i = 0; i < min(amt, ArmCount); ++i)
-				{
-					double ArmBulk = arm.CheckMega() ? ENC_BATTLEARMOUR : ENC_GARRISONARMOUR;
-					if (!(flags & BF_IGNORECAP) && TotalBulk + ArmBulk >= MaxBulk)
-					{
-						if (inserter)
-						{
-							inserter.A_Log(GetFailMessage(), true);
-						}
-						break;
-					}
-					si.RefId = arm.RefId;
-					if (index < 0)
-					{
-						index = si.Amounts.Size();
-					}
-					if (si.Amounts.Size() > 0)
-					{
-						si.Icons.Insert(index, Icon);
-					}
-					si.Bulks.Insert(index, ArmBulk);
-					si.Amounts.Insert(index, arm.TakeMag(false));
-					TotalBulk += ArmBulk;
-					RetVal++;
-					if (arm.Amount == 0)
-					{
-						arm.Destroy();
-						break;
-					}
 				}
 				break;
 			case IType_Mag:
@@ -739,7 +697,7 @@ class ItemStorage play
 		RemoveNullOrEmpty(owner);
 	}
 }
-class HDBackpack : HDWeapon{
+class HDBackpack:HDWeapon{
 	override void BeginPlay(){
 		Super.BeginPlay();
 		Storage = new('ItemStorage');
@@ -964,7 +922,6 @@ class HDBackpack : HDWeapon{
 					amt = 1;
 					Storage.AddAmount(Picked, amt, flags: 0);
 					break;
-				case IType_Armour:
 				case IType_Mag:
 					let mag = GetDefaultByType((class<HDMagAmmo>)(Picked));
 					amt = int(min(random(1, random(1, 20)), mag.MaxAmount, MaxCapacity / (max(1.0, mag.RoundBulk) * max(1.0, mag.MagBulk) * 5)));
