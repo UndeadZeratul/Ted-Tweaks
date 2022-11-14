@@ -38,6 +38,73 @@ TAG_50OMGCLIP = "13.8x118mm 'Czernobog' clip";
 TAG_DMS = "Dedicated Medical scanner";
 TAG_GARANDCLIP = "Mod-3 Daszynski clip";
 
+// Menu Titles
+TITLE_NSBMENU = "------ Mk. II 'Boss' Bolt-action Infantry Rifle Options ------";
+TITLE_BOGRIFLEMENU = "------ 'Priapus' Anti-Material Rifle Options ------";
+TITLE_BOSSMERGMENU = "------ 'Momus' Bolt-Action Shotgun Options ------";
+TITLE_GARANDMENU = "------ Mod-3 Daszynski Carbine Options ------";
+
+// Scopeless Boss
+MENU_NSBSPAWNTEXT = "Control the spawn rate of the Mk. II 'Boss' Rifle on Mk. IV 'Boss' Rifles";
+MENU_NSBSPAWN = "Mk. II 'Boss' Spawn Rate: ";
+MENU_RESETNSBSPAWN = "Reset Boss spawn options";
+
+// .50 OMG Boss
+MENU_BOGTHUNDERBUSTERTEXT = "Control the spawn rate of the 'Priapus' AMR on 'Thunder Buster' Beam Projectors";
+MENU_BOGSLAYERTEXT = "Control the spawn rate of the 'Priapus' AMR on SL41 'Slayer' shotguns";
+MENU_BOGVULCTEXT = "Control the spawn rate of the 'Priapus' AMR on Mk. III 'Vulcanette's";
+MENU_BOGSPAWNRATE = "'Priapus' AMR Spawn Rate: ";
+
+// Bossmerg
+MENU_BASHUNTER = "Control the spawn rate of the 'Momus' Bolt-Action Shotgun on the SPOS-E28 'Hunter'";
+MENU_BASSPAWNRATE = "'Momus' Spawn Rate: ";
+
+// M1 Garand
+MENU_GARANDLIBERATOR = "Control the spawn rate of the Mod-3 Daszynski Carbine on ZM7 Liberator Rifles";
+MENU_GARANDSPAWNRATE = "Mod-3 Daszynski Carbine Spawn Rate: ";
+MENU_GARANDAMMO = "Control what ammunition the Mod-3 Daszynski Carbine loads";
+MENU_GARANDAMMOTYPE = "Mod-3 Daszynski Carbine Ammo Type: ";
+MENU_GARANDAMMORESET = "Reset Ammo Type options";
+MENU_GARANDRELOADERSPEED = "Control how fast the Mod-3 Daszynski Carbine's reloader is";
+MENU_GARANDSPEED = "Mod-3 Daszynski Carbine Reloader Speed: ";
+MENU_RESETGARANDSPEED = "Reset Reloader speed options";
+MENU_GARANDRELOADERCAPACITYTEXT = "Control how much ammo the Mod-3 Daszynski Carbine's reloader can hold at a time.";
+MENU_GARANDRELOADERCAPACITY = "Mod-3 Daszynski Carbine Reloader Capacity: ";
+MENU_RESETGARANDRELOADERCAPACITY = "Reset Reloader Capacity";
+
+// Various Resets
+MENU_RESETTB = "Reset 'Thunder Buster' Beam Projectors spawn options";
+MENU_RESETSLAYER = "Reset SL41 'Slayer' spawn options";
+MENU_RESETVULC = "Reset Mk. III 'Vulcanette' spawn options";
+MENU_RESETHUNTER = "Reset SPOS-E28 'Hunter' spawn options";
+MENU_RESETLIB = "Reset ZM7 Liberator Rifle spawn options";
+
+// Persistency
+MENU_REPLACEAFTERMAPLOAD = "Control whether replacements happen after a mapload.";
+MENU_PERSISTENCY = "Persistent Spawns: ";
+MENU_RESETPERSISTENCY = "Reset persistence options";
+
+// Deepest Lore
+NSB_LORE1 = "An old Boss rifle that didn't originally have a scope mount.";
+NSB_LORE2 = "These rifles are thought to be mostly used in the Polish Independence war back in 1X28.";
+NSB_LORE3 = "Some speculate that they were still being created for Civilian hunting use up until the space age.";
+NSB_LORE4 = "All we can say for certain is that it's still as effective as the regular Mk. IV Boss, for better or for worse.";
+
+BOG_LORE1 = "A Mk. IV 'Boss' replica rechambered for the 13.8x118mm 'Czernobog' cartridge.";
+BOG_LORE2 = "These rifles are usually impractical, though incredibly fun to shoot.";
+BOG_LORE3 = "If you do manage to hit your target with this it'll most certainly take some hefty damage,";
+BOG_LORE4 = "though getting the munitions to feed this beast is another ordeal.";
+
+BAS_LORE1 = "What appears to be a Mk. IV Boss replica rechambered to fit 12-Gauge shells.";
+BAS_LORE2 = "Not much is known where these came from or why they were created in the first place,";
+BAS_LORE3 = "Though they most certainly do exist, for better or for worse.";
+BAS_LORE4 = "If you get one, make sure it's the custom chamber version. These'll gunk up very fast...";
+
+GARAND_LORE1 = "An old Mod-3 Daszynski Carbine from the early 1X40 days. Some have been recently rechambered to 7.76mm also.";
+GARAND_LORE2 = "It mostly serves now as an inbetween of the Mk. IV Boss Rifle and  the ZM7 Liberator.";
+GARAND_LORE3 = "The original cartridge it was chambered for of .32-18 'Gdansk' hits a hefty punch,";
+GARAND_LORE4 = "though its rarity and incompatibility with other 7.76mm guns makes the 7.76mm version a bit more economical.";
+
 // HDBulletLib-Recasted
 // basically just i do not like semi-realistic or meme-y names for rounds so i change them :) - [Ted]
 TAG_069BORE = ".454 'Raging Hornet' Shell";
