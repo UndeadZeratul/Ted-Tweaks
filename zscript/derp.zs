@@ -15,7 +15,6 @@ enum DerpConst{
 	DERP_PATROL=3,
 
 	DERP_RANGE=320,
-	DERP_TID=451816,
 	DERP_MAXTICTURN=15,
 	DERPS_MODE=1,
 	DERPS_USEOFFS=2,
@@ -216,7 +215,6 @@ class DERPBot:HDUPK{
 		originalgoalpoint=pos.xy;
 		goalpoint=originalgoalpoint;
 		goalangle=999;
-		ChangeTid(DERP_TID);
 		if(!master||!master.player){
 			ammo=15;
 			if(user_cmd)cmd=user_cmd;
@@ -832,11 +830,11 @@ extend class HDHandlers{
 			dpu.destroy();
 			return;
 		}
-		actoriterator it=level.createactoriterator(DERP_TID,"DERPBot");
+		ThinkerIterator it=ThinkerIterator.Create("DERPBot");
 		actor bot=null;
 		int derps=0;
 		bool badcommand=true;
-		while(bot=it.Next()){
+		while(bot=DERPBot(it.Next())){
 			let derp=DERPBot(bot);
 			if(
 				!!derp

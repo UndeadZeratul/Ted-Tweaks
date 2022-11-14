@@ -2,9 +2,6 @@
 // H.E.R.P. Robot
 // ------------------------------------------------------------
 const HERP_CONTROLRANGE=DERP_CONTROLRANGE*1.6;
-enum HERPConst{
-	HERP_TID=851816,
-}
 class HERPLeg:Actor{
 	default{
 		+flatsprite +nointeraction +noblockmap
@@ -851,7 +848,6 @@ class HERPUsable:HDWeapon{
 			|SXF_TRANSFERPOINTERS|SXF_SETMASTER
 		);
 		hhh.A_StartSound("misc/w_pkup",5);
-		hhh.changetid(HERP_TID);
 		hhh.vel+=vel;hhh.angle=angle;
 		let hhhh=HERPBot(hhh);
 		hhhh.startangle=angle;
@@ -1110,9 +1106,9 @@ extend class HDHandlers{
 		bool anybots=false;
 		int affected=0;
 		bool badcommand=true;
-		actoriterator it=level.createactoriterator(HERP_TID,"HERPBot");
+		ThinkerIterator it=ThinkerIterator.Create("HERPBot");
 		actor bot=null;
-		while(bot=it.Next()){
+		while(bot=HERPBot(it.Next())){
 			anybots=true;
 			let herp=HERPBot(bot);
 			if(
