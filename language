@@ -6,6 +6,28 @@ STARTUP3=" Please read the manual.";
 STARTUP4="       Have fun!";
 STARTUP5="        \cq~ \cr* \cq~";
 
+// Persistence
+MENU_REPLACEAFTERMAPLOAD = "Control whether replacements happen after a mapload.";
+MENU_PERSISTENCY = "Persistent Spawns: ";
+MENU_RESETPERSISTENCY = "Reset persistence options";
+
+// General Menu Stuff, shared with other mods.
+MENU_SPAWNOPTIONS = "Spawn Options";
+MENU_RESETOPTIONS = "Reset Options";
+MENU_RESETALLOPTIONS = "Reset all Options";
+MENU_LORETAG = "--- Lore ---";
+MENU_NOTICE = "Notice: ";
+MENU_SUPPRESS1 = "Setting 'spawn rate' to Replace All will suppress";
+MENU_SUPPRESS2 = "spawns of that given type.";
+MENU_SFIRECONVRATE = "Selectfire Conversion Rate: ";
+MENU_WEPSPAWNRATE = "Weapon Spawn Rate: ";
+MENU_WEPDROPRATE = "Weapon Drop Rate: ";
+MENU_MAGSPAWNRATE = "Mag Spawn Rate: ";
+MENU_RESETCONV = "Reset conv. options";
+MENU_RESETDROP = "Reset drop. options";
+MENU_RESETWEP = "Reset wep. options";
+MENU_RESETMAG = "Reset mag options";
+
 TAG_FIST = "Unarmed";
 TAG_CHAINSAW="'Lumberjack' Chainsaw";
 TAG_PISTOL="99FX Pistol";
@@ -135,7 +157,7 @@ TAG_OBROZZ = "Obrozz Sawn-Off 'Boss' Bolt-Action Rifle";
 TAG_MINERVA = "'Minerva' 9x22mm Parumpudicum Minigun";
 TAG_LESSLETHALHUNTER = "Bernoulli M1053 Less-Lethal Shotgun";
 TAG_JUANPIS = "9x22mm Parumpudicum 'Juan' Horseshoe Pistol";
-TAG_JUANAUTO = "9x22mm Parumpudicum 'Juan' Horseshoe Pistol";
+TAG_JUANAUTO = "9x22mm Parumpudicum 'Juan' Horseshoe Pistol (select-fire)";
 TAG_HACKEDZM = "Volt ZM66 Assault Rifle";
 TAG_HZMSEMI = "Volt ZM66 Assault Rifle (Semi)";
 TAG_HZMREGULAR = "Volt ZM66 assault rifle (no GL)";
@@ -160,3 +182,245 @@ TAG_SCWMAG = "M-211 'Sig-Cow' magazine";
 TAG_CM7 = "Volt 2X92 magazine";
 TAG_DYNAMITEBUNDLE = "Bundle of Dynamite";
 TAG_JUANMAG = "9x22mm Parumpudicum horseshoe magazine";
+
+// Weapon Pickups
+PICKUP_10MMPISTOL = "You got the 9.82x33mm Self-Defense Pistol! It really packs a punch!";
+PICKUP_SIGCOW = "You got the M-211 'Sig-Cow' Pistol-Caliber Carbine!";
+PICKUP_COLT1911 = "You got the Volt 2X92 .39 CSD Service Pistol! Semper Fi!";
+PICKUP_COMBATSHOTGUN = "You got the Bernoulli M1924 12-Gauge Combat Shotgun!";
+PICKUP_DOOMEDHUNTER1 = "You got the SPOS-E19 'Hunter' Pump-action Shotgun!";
+PICKUP_DOOMEDHUNTER2 = "You got the SPOS-E19 'Hunter' Pump-action Shotgun! There's some funky tool marks near the fire selector...";
+PICKUP_DOOMEDHUNTER3 = "You got the SPOS-E19 'Hunter' Pump-action Shotgun! Where is the fire selector on this thing!?";
+PICKUP_DOOMEDHUNTER4 = "You got the SPOS-E19 'Hunter' Pump-action Shotgun! What force of nature created this cursed thing?";
+PICKUP_DYNAMITE = "Picked up a bundle of dynamite.";
+PICKUP_EXPLOSIVEHUNTER1 = "You got the SPOS-E44 'Gatherer' Pump-Action Shotgun! Yeah, eat this!";
+PICKUP_EXPLOSIVEHUNTER2 = "You got the SPOS-E44 'Gatherer' Pump-Action Shotgun! Where is the fire selector on this thing!?";
+PICKUP_EXPLOSIVEHUNTER3 = "You got the SPOS-E44 'Gatherer' Pump-Action Shotgun! There's some weird tool marks near the fire selector...";
+PICKUP_PLASTICFLAREGUN = "You got a 12-Gauge Flare Gun! It's like christmas morning...";
+PICKUP_METALFLAREGUN = "You got a Metallic 12-Gauge Flare Gun! Feels pretty hefty...";
+PICKUP_GOLDENSINGLEACTION = "You got the Golden Single-Action 'Theropoda' Revolver! Makes my fingers feel tingly...";
+PICKUP_HACKEDZM66SEMI = "Picked up a semi-automatic Volt ZM66 Assault Rifle, though something feels a bit off...";
+PICKUP_HACKEDZM66NORMAL = "You got the Volt ZM66 Assault Rifle! Something feels a bit off about it...";
+PICKUP_HUSHPUPPY = "You got the 99FX 'Hush Puppy' Stealth Pistol! Shhh...";
+PICKUP_JUANPISTOL = "You got the 9x22mm Parumpudicum 'Juan' Horseshoe Pistol! It truly kicks like a mule!";
+PICKUP_LESSLETHALHUNTER1 = "You got the Bernoulli M1053 Less-Lethal Shotgun!";
+PICKUP_LESSLETHALHUNTER2 = "You got the Bernoulli M1053 Less-Lethal Shotgun! Where is the fire selector on this thing!?";
+PICKUP_LESSLETHALHUNTER3 = "You got the Bernoulli M1053 Less-Lethal Shotgun! There's some weird tool marks near the fire selector...";
+PICKUP_MINERVA = "You got the 'Minerva' 9x22mm Parumpudicum Minigun!";
+PICKUP_MINERVADAMAGE0 = " She's beautiful!";
+PICKUP_MINERVADAMAGE100 = " She looks alright.";
+PICKUP_MINERVADAMAGE200 = " She ain't looking so hot.";
+PICKUP_MINERVADAMAGE500 = " She's barely hanging on...";
+PICKUP_OBROZZ = "You got the Obrozz Sawn-Off 'Boss' rifle! Pretty light!";
+PICKUP_PLASMABUSTER = "You got the DM-93a Experimental Beam Projector! Sparkly!";
+PICKUP_SINGLEACTIONREVOLVER = "You got the Single-Action 'Theropoda' Revolver! Feels pretty sturdy.";
+PICKUP_DETECTIVESPECIAL = "You got the Detective Special! Feels pretty small, ey?";
+PICKUP_STENMK2 = "You got the Blyskawica Mk.2-S Submachine Gun! It's warm to the touch!";
+PICKUP_STUNGUN = "You got the Raysun X-26 Stun Gun! Zap, zap!";
+
+// Item Pickups
+PICKUP_10MAG25 = "Picked up a Sig-Cow magazine.";
+PICKUP_10MAG8 = "Picked up a 9.82x33mm Self-Defense Pistol magazine.";
+PICKUP_10MRELOADER = "Picked up a 9.82x33mm 'Ausfallen' reloading device!";
+PICKUP_JUANMAG = "Picked up a horseshoe-shaped pistol magazine..?";
+
+// Obituaries
+OB_STUNGUN = "%o got fried by %k's X-26 Stun Gun.";
+OB_SNUBNOSE = "%o found out %k was not just happy to see them";
+OB_RSA = "%o met his death by %k's big iron.";
+OB_DM93 = "%o was vaporized by %k's plasma rifle.";
+OB_OBROZZ = "%o sure showed %k who was the 'brozz!";
+OB_MINERVA = "%o got turned into swiss cheese by %k's Minnie-gun.";
+OB_LLSHOTGUN = "%o got bagged by %k.";
+OB_JUAN = "%o \c-got trampled over by %k's \c-juan.\c-.";
+OB_HACKEDZM = "%o was hacked to bits by %k.";
+OB_PUP = "%o got put down by %k's Hush Puppy.";
+OB_GOLDENGUN = "%o was Scaramangled by %k's golden gun.";
+OB_FLAREGUN = "%o was set ablaze by %k.";
+OB_METALFLAREGUN = "%o is S.O.L. thanks to %k's S.0.S.";
+OB_EXPLSHOTGUN = "%o was shot to high heavens by %k's shotgun.";
+OB_DOOMSHOTGUN = "%o met their Doom by %k's shotgun.";
+OB_COMBATSHOTGUN = "%o got sent home early by %k's shotgun.";
+OB_10MMPISTOL = "%o was dealt a fatal blow by %k's Self-Defense Pistol.";
+OB_COLT1911 = "%o got a taste of %k's Volt .39.";
+
+// EVERYTHING below this is Menu stuff. Feast upon the horror. - [Ted]
+
+// Flare Guns
+MENU_FGUNTITLE = "------ 12-Gauge Flare Gun Options ------";
+MENU_FGUNPLASTSPAWNTEXT = "Control the natural spawn rate of Plastic 12-Gauge Flare Guns.";
+MENU_PFGUNDROPENEMY = "Control the chance that Plastic Flare Guns drop from enemies.";
+MENU_PFGUNPERSISTENCY = "Control whether Plastic Flare Gun spawns happen after a mapload.";
+MENU_MFGUNPERSISTENCY = "Control whether Metal 12-Gauge Flare Gun spawns happen after a mapload.";
+MENU_MFGNCONVERCONTROL = "Control the natural spawn rate of Metal Flare Guns.";
+MENU_MFGUNDROP = "Control the chance that Metal Flare Guns drop from enemies.";
+MENU_METALCONVRATE = "Metal Conversion Rate: ";
+
+MENU_FGUNLORE1 = "A common survival tool, useful for lighting up dark areas, or the occasional zombie or two.";
+MENU_FGUNLORE2 = "It can also fire buckshot shells, but at a price.";
+MENU_FGUNLORE3 = "Metallic versions exist to aide with this issue, though are much heavier.";
+
+// Hush Puppy
+MENU_PUPTITLE = "------ 99FX 'Hush Puppy' Stealth Pistol Options ------";
+MENU_HPUPPYHANDGUNTEXT = "Control the spawn rate of the 99FX 'Hush Puppy' Stealth Pistol on handguns.";
+
+MENU_HPUPLORE1 = "A modified version of the 99FX pistol with a suppressor attachment.";
+MENU_HPUPLORE2 = "Has a slide lock installed to stop another round from being chambered";
+MENU_HPUPLORE3 = "automatically, which reduces gunshot volume greatly. The downside is";
+MENU_HPUPLORE4 = "the user has to chamber rounds manually after each and every shot.";
+
+// Stun Gun
+MENU_STUNGUNTITLE = "------ Raysun X-26 Stun Gun Options ------";
+MENU_STGCHAINTEXT = "Control the spawn rate of the X-26 Stun Gun on 'Lumberjack' Chainsaws.";
+
+MENU_STUNLORE1 = "A common device used for personal protection by civilians and";
+MENU_STUNLORE2 = "law enforcement agencies. Delivers a million volts into the victim's";
+MENU_STUNLORE3 = "body, causing momentary seizures and loss of muscle control.";
+MENU_STUNLORE4 = "Prolonged contact may cause burns and accidental fires.";
+
+// Juan Options
+MENU_JUANTITLE = "------ 9x22mm Parumpudicum 'Juan' Horseshoe Pistol Options ------";
+MENU_JUANTEXT1 = "Control the spawn rate of 'Juan' pistols.";
+MENU_JUANTEXT2 = "Control chance 'Juan' pistols drop from enemies.";
+MENU_JUANTEXT3 = "Control the rarity of selectfire 'Juan' pistols.";
+MENU_JUANTEXT4 = "Control the spawn rate of 'Juan' magazines.";
+
+MENU_JUANLORE1 = "A variant of the standard-issue pistol, albeit with a non-standard 'horseshoe' magazine.";
+MENU_JUANLORE2 = "As the name suggests, it uses a unique 'horseshoe' magazine";
+MENU_JUANLORE3 = "that holds 30 9x22mm Parumpudicum rounds, similarly to the MP-46.";
+MENU_JUANLORE4 = "However, its small size makes it incredibly difficult to control in full-auto,";
+MENU_JUANLORE5 = "instead leaving users to use a 'galloping' shooting pattern to stay on target.";
+
+// Doomed Hunter
+MENU_DHUNTITLE = "------ SPOS-E19 'Hunter' Pump-action Shotgun Options ------";
+MENU_DHUNTTEXT1 = "Control the spawn rate of the SPOS-E19 'Hunter' Pump-action Shotgun on Shotguns";
+
+MENU_DHUNTLORE1 = "An older modelled and decrepit Hunter that's lost it's ease of pumping over the years.";
+MENU_DHUNTLORE2 = "These older Hunters came with Duckbill Chokes to control their spread to a 'V' shape.";
+
+// DM-93
+MENU_PBUSTITLE = "------ DM-93a Experimental Beam Projector Options ------";
+MENU_PBUSTTEXT1 = "Control the spawn rate of the DM-93a Beam Projector on Cell Packs";
+
+MENU_PBUSTLORE1 = "A revised version of the 'Thunder Buster' particle beam projector.";
+MENU_PBUSTLORE2 = "After receiving a disturbing number of incident reports involving self-detonations caused by mismanagement,";
+MENU_PBUSTLORE3 = "The UAC tasked a junior researcher to find a solution to this problem and thus invented the DM-93.";
+MENU_PBUSTLORE4 = "He tweaked the Ion Emitter so the plasma particles are contained in an electromagnetic field";
+MENU_PBUSTLORE5 = " which holds the blast together until impact with a target.";
+MENU_PBUSTLORE6 = "This plasma has a smaller blast radius, so direct contact is preferred to cause maximum damage to your target.";
+MENU_PBUSTLORE7 = "Automatic Fire emits an accurate stream of these projectiles, while the newly added Burst mode";
+MENU_PBUSTLORE8 = "shoots out a spread of many shots in rapid succession.";
+
+// Obrozz
+MENU_OBROZZTITLE = "------ Obrozz Sawn-Off 'Boss' Bolt-Action Rifle Options ------";
+MENU_OBROZZTEXT = "Control the spawn rate of the Obrozz Rifle on Shotguns and Ammo Boxes";
+
+MENU_OBROZZLORE1 = "A Boss rifle that has been reduced down to the bare essentials.";
+MENU_OBROZZLORE2 = "Its decreased size makes it easier to conceal, allowing for easy";
+MENU_OBROZZLORE3 = "use of two by keeping a backup Obrozz handy. However, the";
+MENU_OBROZZLORE4 = "lack of any proper sighting system makes accurate shooting difficult."
+
+// Bernoulli M1924 12-Gauge Combat Shotgun
+MENU_CSHOTTITLE = "------ Bernoulli M1924 12-Gauge Combat Shotgun Options ------";
+MENU_CSHOTTEXT = "Control the spawn rate of the Bernoulli M1924 12-Gauge Combat Shotgun on Shotguns";
+
+MENU_CSHOTLORE1 = "A compact shotgun often seen in the hands of space marines throughout the galaxy.";
+MENU_CSHOTLORE2 = "Despite having no side saddles or a butt stock to attach them to, in the right hands it's still as deadly as any other shotgun.";
+MENU_CSHOTLORE3 = "Toss one in your pack the next time you leave HQ, it may become very handy.";
+
+// Sigcow
+MENU_SIGCOWTITLE = "------ M-211 'Sigcow' Pistol-Caliber Carbine Options ------";
+MENU_SIGCOWTEXT1 = "Control the spawn rate of the Sigcow on Clip Boxes";
+
+MENU_SIGCOWLORE1 = "A pistol-caliber carbine chambered in 9.82x33mm 'Ausfallen'";
+MENU_SIGCOWLORE2 = "and the trusted weapon of the UAC's Light Drop Infantry division.";
+MENU_SIGCOWLORE3 = "Includes a bayonet attachment for ease of use in close-quarters combat.";
+
+// 10 Piss
+MENU_10PTITLE = "------ 9.82x33mm Self-Defense Pistol Options ------";
+MENU_10PTEXT1 = "Control the spawn rate of the 9.82x33mm Self-Defense Pistol on Handguns";
+MENU_10PTEXT2 = "Control the spawn rate of the 9.82x33mm Self-Defense Pistol's magazines on Clip Magazines.";
+
+MENU_10PLORE1 = "A handgun released in late 1X82, adopted by the PIA following the aftermath of a tragic shooting incident.";
+MENU_10PLORE2 = "This pistol offers better penetration and a much higher muzzle velocity";
+MENU_10PLORE3 = "than either 9x22mm Parumpudicum or .355 firearms, but is much more difficult to control.";
+
+// Colt 1911
+MENU_COLTTITLE = "------ Volt 2X92 .39 CSD Service Pistol Options ------";
+MENU_COLTTEXT1 = "Control the spawn rate of the Volt 2X92 on Handguns";
+MENU_COLTTEXT2 = "Control the spawn rate of Volt 2X92 bundles on Ammoboxes";
+MENU_COLTTEXT3 = "Control the spawn rate of the Volt 2X92's magazines on Clip Magazines.";
+
+MENU_C19LORE1 = "The Volt 2X92 is chambered in .39 CSD, delivering a";
+MENU_C19LORE2 = "powerful blow that can bring down most humanoids";
+MENU_C19LORE3 = "in a couple of well-placed shots.";
+
+// sten
+MENU_STENTITLE = "------ Blyskawica Mk.2-S Submachine Gun Options ------";
+MENU_STENTEXT1 = "Control the spawn rate of the Blyskawica on MP-46 spawns";
+MENU_STENTEXT2 = "Control the spawn rate of the Blyskawica on Ammoboxes";
+
+MENU_STENLORE1 = "A sub-machine gun designed by the Polish during the Polish Independence War,";
+MENU_STENLORE2 = "known for being problematic due to jamming and overheating.";
+MENU_STENLORE3 = "This version has been modified with a suppressor barrel,";
+MENU_STENLORE4 = "silencing gunfire to the level of a handclap.";
+
+// snose :)
+MENU_SNOSETITLE = "------ Detective Special Snubnose Revolver Options ------";
+MENU_SNOSETEXT1 = "Control the spawn rate of the Snubnose Revolver on handguns";
+
+MENU_SNOSELORE1 = "A sidearm once popular with police and private investigators of the past.";
+MENU_SNOSELORE2 = "This revolver's smaller stature fits much better in your pocket,";
+MENU_SNOSELORE3 = "Though the smaller barrel cuts down your accuracy and firepower.";
+
+// Minerva
+MENU_MINERVATITLE = "------ 'Minerva' 9x22mm Parumpudicum Minigun Options ------";
+MENU_MINERVATEXT1 = "Control the spawn rate of the Minerva on Mk. III Vulcanettes";
+MENU_MINERVATEXT2 = "Control the spawn rate of the Minerva on MP-46s";
+
+MENU_MINERVALORE1 = "A support weapon chambered in 9x22mm Parumpudicum,";
+MENU_MINERVALORE2 = "And later modified to use UAC standard MP-46 magazines.";
+MENU_MINERVALORE3 = "It can hold a maximum of 150+5 rounds at a time.";
+MENU_MINERVALORE4 = "Just remember to keep your empty mags.";
+
+// LLH
+MENU_TITLELLH = "------ Bernoulli M1053 Less-Lethal Shotgun Options ------";
+MENU_LLHTEXT1 = "Control the spawn rate of the Less-Lethal Hunter on Shotguns";
+
+MENU_LLHLORE1 = "A polymer-based shotgun designed for riot control and crowd dispersion.";
+MENU_LLHLORE2 = "Chambered only for the use of less-lethal shells, which contain a load of rubberized buckshot pellets.";
+MENU_LLHLORE3 = "Useful for situations where maintaining a low fatality count is crucial.";
+
+// Hecked zm66
+MENU_HZMTITLE = "------ Hacked ZM66 Assault Rifle Options ------";
+MENU_HZMTEXT1 = "Control the spawn rate of the Hacked ZM66 Assault Rifle on ZM66 Assault Rifles";
+
+MENU_HZMLORE1 = "A 'jailbroken' model of the Volt ZM66 Assault Rifle,";
+MENU_HZMLORE2 = "this weapon has been stripped of most of it's less desireable features.";
+MENU_HZMLORE3 = "This is mostly relating to it's magazine DRM system,";
+MENU_HZMLORE4 = "though at the cost of a reduced firerate and non-functional ammo counter.";
+MENU_HZMLORE5 = "Mainly of these models come with a 4 round 'Quad Burst' firemode.";
+
+// Explosive Hunter
+MENU_EHUNTERTITLE = "------ SPOS-E44 'Gatherer' Pump-Action Shotgun Options ------";
+MENU_EHUNTERTEXT1 = "Control the spawn rate of the SPOS-E44 on Hunters";
+
+MENU_EHUNTERLORE1 = "The antithesis of the Bernoulli M1053, this modified hunter fires slugs loaded with miniature HE grenades.";
+MENU_EHUNTERLORE2 = "These slugs cause immense injuries and burns on impact.";
+MENU_EHUNTERLORE3 = "Use of this weapon in close-quarters is ill-advised if you care about your limbs.";
+
+// Single Action
+MENU_SINGACTTITLE = "------ Single-Action 'Theropoda' Revolver Options ------";
+MENU_SINGACTTEXT1 = "Control the spawn rate of the 'Theropoda' Revolver on handguns.";
+
+MENU_SINGACTLORE1 = "An ancient firearm better suited for a gunslinger than a space marine.";
+MENU_SINGACTLORE2 = "Chambered in .42 CSD, this revolver will definitely punch a hole into whatever it hits.";
+MENU_SINGACTLORE3 = "With how old these rounds are, they have a good chance to richochet off walls to perform trickshots.";
+
+// Single Action but pis- gold
+MENU_GREVVYTITLE = "------ Gold Single-Action 'Theropoda' Revolver Options ------";
+MENU_GREVVYTEXT1 = "Control the spawn rate of the Golden Single-Action on handguns";
+
+MENU_GREVVYLORE1 = "A special golden version of the Single-Action 'Theropoda' Revolver.";
+MENU_GREVVYLORE2 = "Not much is known about it due to their immense rarity.";
+MENU_GREVVYLORE3 = "...Though those who have found one talk highly about its power.";
