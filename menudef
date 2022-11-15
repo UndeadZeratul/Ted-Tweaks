@@ -34,6 +34,13 @@ OptionMenu TedTweaks
     StaticText "Control weather cleaner happens after a mapload.", "white"
     Option "Persistent Spawns: ", "bonus_persistent_spawning", "OnOff"
     SafeCommand "Reset Persistence Options", "resetcvar bonus_persistent_spawning"
+    StaticText ""
+    StaticText " Spicy Air Options ", "Red"
+    StaticText ""
+    Option "Spicy Air", "spicy_enabled", "OnOff"
+	StaticText "This allows you to disable the mod mid-game without having to take it off the load order.", "White"
+	StaticText " "
+	Slider "Breathing volume", "spicy_breathingvolume", 0.0, 1.0, 0.05, 2
 }
 
 AddOptionMenu "OptionsMenu"

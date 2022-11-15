@@ -10,3 +10,6 @@ server int bonus_clean_bias = -1;
 server bool bonus_persistent_spawning = false;
 
 server bool hd_vulcfixer = false;
+
+server bool spicy_enabled = false;
+user float spicy_breathingvolume = 0.5;

@@ -1,4 +1,6 @@
-version "4.0"
+version "4.9.0"
+
+#include "zscript/additions/spicy_air.zsc"
 
 class KeeperHandler : EventHandler
 {
