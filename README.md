@@ -1,6 +1,12 @@
 # Ted Tweaks
 
-A large collection of various tweaks I enjoy using for 'Hideous Destructor'. Current feature set:
+A large collection of changes and 'tweaks' I've wanted to do to Hideous Destructor.
+
+## Note: This always targets the latest unstable build of Hideous Destructor from <https://codeberg.org/mc776/HideousDestructor>! It will likely not work with any other version
+
+## If you want to use any of the LANGUAGE lump changes, you'll need to load it after any mods you want to use too
+
+Changes:
 
 - Made *ERP repair require holding a button instead of spamming it.
 - Removed Light Amplification Goggles forced FOV.
@@ -23,7 +29,6 @@ A large collection of various tweaks I enjoy using for 'Hideous Destructor'. Cur
 - Light Amplification Goggles no longer flicker.
 - IEDs no longer explode on dormant enemies.
 - Flinching on enemy melee damage is decreased.
-- Null-check for radsuits to allow enemies to use them.
 - Adds an unsuppressed variant of the SMG.
 - Allows the revolver to stay cocked even if it is unselected.
 - Makes the Liberator rifle hinder legs.
@@ -31,6 +36,9 @@ A large collection of various tweaks I enjoy using for 'Hideous Destructor'. Cur
 - Buffs 35mm damage.
 - Makes the Boris Field Glyph expel more frag on attack.
 - Adds more "lore accurate" tags for the weaponry via a language lump.
+- Includes changed names for Radtech Weapons Pack, Hexadoken's Legacy Continued and HDBulletlib-Recasted.
 - Adds Accensus' "GetIcon" backpack changes.
 - Includes a custom startup to show you're using Ted Tweaks.
 - Includes options to 'clean' bonus items by removing DecoPusher from its spawns.
+- Includes a fork of Accensi's 'spicy air' mod to keep it up to date with the latest builds of Hideous Destructor.
+- Adds more changes for rifle and SMG zombiemen to throw grenades.
