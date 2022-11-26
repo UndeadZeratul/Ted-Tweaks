@@ -8,11 +8,15 @@
 	0=random (default), see DerpConst below for the others
 */
 
-const DERP_CONTROLRANGE=HDCONST_ONEMETRE*150.;
+const DERP_CONTROLRANGE=HDCONST_ONEMETRE*250.;
 enum DerpConst{
-	DERP_TURRET=1,
-	DERP_AMBUSH=2,
-	DERP_PATROL=3,
+	DERP_IDLE=1,
+	DERP_WATCH=2,
+	DERP_TURRET=3,
+	DERP_PATROL=4,
+
+	DERP_HEEL=DERP_PATROL+1,
+	DERP_GO=DERP_HEEL+1,
 
 	DERP_RANGE=320,
 	DERP_MAXTICTURN=15,
@@ -95,7 +99,7 @@ class DERPBot:HDUPK{
 	}
 	void A_DerpLook(int flags=0,statelabel seestate="see"){
 		A_ClearTarget();
-		if(cmd==DERP_AMBUSH)return;
+		if(cmd==DERP_IDLE)return;
 		A_LookEx(flags|LOF_NOSOUNDCHECK,label:seestate);
 		if(
 			deathmatch&&bfriendly
@@ -107,7 +111,7 @@ class DERPBot:HDUPK{
 					&&players[i].mo
 					&&players[i].mo!=master
 					&&(!teamplay||players[i].getteam()!=master.player.getteam())
-					&&distance3d(players[i].mo)<DERP_RANGE
+					&&distance3dsquared(players[i].mo)<(DERP_RANGE*DERP_RANGE)
 				){
 					A_SetFriendly(false);
 					target=players[i].mo;
@@ -132,8 +136,8 @@ class DERPBot:HDUPK{
 	}
 	void A_DerpCrawl(bool attack=true){
 		bool moved=true;
-		//ambush(1) does nothing, not even make noise
-		if(attack&&cmd!=DERP_AMBUSH){
+		//wait(1) does nothing, not even make noise
+		if(attack&&cmd!=DERP_IDLE){
 			if(target&&target.health>0)A_Chase(
 				"missile","missile",CHF_DONTMOVE|CHF_DONTTURN|CHF_NODIRECTIONTURN
 			);
@@ -210,6 +214,29 @@ class DERPBot:HDUPK{
 			return;
 		}
 	}
+
+	override int damagemobj(
+		actor inflictor,actor source,int damage,
+		name mod,int flags,double angle
+	){
+		if(
+			!!source
+			&&source.health>0
+			&&source.bismonster
+			&&source.bcanusewalls
+			&&(
+				source.instatesequence(source.curstate,source.resolvestate("melee"))
+				||source.instatesequence(source.curstate,source.resolvestate("meleekick"))
+			)
+		){
+			target=source;
+			setz(target.pos.z+target.height*0.7);
+			setstatelabel("give");
+			return -1;
+		}
+		return super.damagemobj(inflictor,source,damage,mod,flags,angle);
+	}
+
 	override void postbeginplay(){
 		super.postbeginplay();
 		originalgoalpoint=pos.xy;
@@ -220,7 +247,9 @@ class DERPBot:HDUPK{
 			if(user_cmd)cmd=user_cmd;
 			else cmd=random(1,3);
 		}
-		if(cmd==DERP_AMBUSH||cmd==DERP_TURRET)movestamina=1001;
+		if(
+			cmd<DERP_PATROL
+		)movestamina=1001;
 		oldcmd=cmd;
 	}
 	states{
@@ -257,9 +286,9 @@ class DERPBot:HDUPK{
 		DERP A 0{
 			stuckline=null;bnogravity=false;
 			oldcmd=cmd;
-			if(cmd!=DERP_AMBUSH){
+			if(cmd!=DERP_IDLE){
 				A_StartSound("weapons/rifleclick2",CHAN_AUTO);
-				cmd=DERP_AMBUSH;
+				cmd=DERP_IDLE;
 			}
 			let ddd=DERPUsable(spawn("DERPUsable",pos));
 			if(ddd){
@@ -311,7 +340,7 @@ class DERPBot:HDUPK{
 	ready:
 		DERP A 0 A_StartSound("derp/crawl",CHAN_BODY,volume:0.6);
 		DERP AAA 1 A_FaceTarget(20,20,0,0,FAF_TOP,-4);
-		DERP A 0 A_JumpIf(cmd==DERP_AMBUSH,"spawn");
+		DERP A 0 A_JumpIf(cmd==DERP_IDLE,"spawn");
 		DERP A 0 A_JumpIfTargetInLOS(1,1);
 		loop;
 	aim:
@@ -339,7 +368,7 @@ class DERPBot:HDUPK{
 		DERP A 0 A_JumpIf(
 			!target
 			||target.health<1
-			||cmd==DERP_AMBUSH
+			||cmd==DERP_IDLE
 		,"see");
 		DERP A 0 A_JumpIfTargetInLOS("fire",2,JLOSF_DEADNOJUMP,DERP_RANGE,0);
 		DERP A 0 A_JumpIfTargetInLOS("aim",360,JLOSF_DEADNOJUMP,DERP_RANGE,0);
@@ -427,8 +456,9 @@ class DERPUsable:HDWeapon{
 		int mno=hdw.weaponstatus[DERPS_MODE];
 		string mode;
 		if(hdw.weaponstatus[0]&DERPF_BROKEN)mode="\cm<broken>";
+		else if(mno==DERP_IDLE)mode="\ccWAIT";
+		else if(mno==DERP_WATCH)mode="\ceLINE";
 		else if(mno==DERP_TURRET)mode="\caTURRET";
-		else if(mno==DERP_AMBUSH)mode="\ccAMBUSH";
 		else if(mno==DERP_PATROL)mode="\cgPATROL";
 		sb.drawstring(
 			sb.psmallfont,mode,(0,34)+bob,
@@ -592,8 +622,8 @@ class DERPUsable:HDWeapon{
 			else if(justpressed(BT_ALTATTACK)){
 				int mode=invoker.weaponstatus[DERPS_MODE];
 				if(pressinguse())mode--;else mode++;
-				if(mode<1)mode=3;
-				else if(mode>3)mode=1;
+				if(mode<1)mode=DERP_PATROL;
+				else if(mode>DERP_PATROL)mode=1;
 				invoker.weaponstatus[DERPS_MODE]=mode;
 				return;
 			}
@@ -843,35 +873,34 @@ extend class HDHandlers{
 				&&(!tag||tag==derp.botid)
 			){
 				bool goalset=false;
-				if(cmd==6){
-					badcommand=false;
-					if(derp.cmd==DERP_AMBUSH)cmd=DERP_TURRET;
-					else cmd=DERP_AMBUSH;
-				}
-				if(cmd&&cmd<4){
+				if(cmd&&cmd<=DERP_PATROL){
 					badcommand=false;
 					derp.cmd=cmd;
 					derp.oldcmd=cmd;
 					string mode;
-					if(cmd==1){
+					if(cmd==DERP_IDLE){
+						mode="cWAIT";
+						derp.movestamina=1001;
+					}
+					else if(cmd==DERP_WATCH){
+						mode="eLINE";
+						derp.movestamina=1001;
+					}
+					else if(cmd==DERP_TURRET){
 						mode="aTURRET";
 						derp.movestamina=1001;
 					}
-					else if(cmd==2){
-						mode="cAMBUSH";
-						derp.movestamina=1001;
-					}
-					else if(cmd==3){
+					else if(cmd==DERP_PATROL){
 						mode="gPATROL";
 						derp.movestamina=0;
 					}
 					ppp.A_Log(string.format("\cd[DERP]  \c%s  \cjmode",mode),true);
-				}else if(cmd==4){
+				}else if(cmd==DERP_HEEL){
 					badcommand=false;
 					goalset=true;
 					derp.goalpoint=ppp.pos.xy;
 					ppp.A_Log("\cd[DERP]  \cugoal set to  \cyYOUR POSITION",true);
-				}else if(cmd==5){
+				}else if(cmd==DERP_GO){
 					badcommand=false;
 					flinetracedata derpgoal;
 					ppp.linetrace(
@@ -923,12 +952,12 @@ extend class HDHandlers{
 		if(badcommand){
 			let dpu=DERPUsable(ppp.findinventory("DERPUsable"));
 			ppp.A_Print(string.format("\cd[DERP]\cj List of available commands:
-\n             derpt    \cjturret mode  (1)
-\n             derpa    \cjambush mode  (2)
-\n             derpp    \cjpatrol mode  (3)
-\n             derpcome \cjcome to user (4)
-\n             derpgo   \cjgo to point  (5)
-\n             derpat   \cjtoggle 1/2   (6)
+\n             derpt    \cjidle mode  (1)
+\n             derpa    \cjwatch mode  (2)
+\n             derpp    \cjwatch360 mode  (3)
+\n             derpcome \cjpatrol mode (4)
+\n             derpcome \cjcome to user (5)
+\n             derpgo   \cjgo to point  (6)
 \n             derpmv*   \cjadvance in direction (n/s/ne/sw/etc.)  (5)
 \n             derptag  \cjset tag #   (-x)
 \n \cu(all of these can be shortened\n\cuwith \"d\" instead of \"derp\")
@@ -1091,17 +1120,18 @@ class DERPController:HDWeapon{
 			bool moved=false;
 			if(justpressed(BT_UNLOAD)){
 				cmd=2;
-				A_Log("Ambush mode.",true);
+				A_Log("Idle mode.",true);
 			}else if(justpressed(BT_RELOAD)){
 				cmd++;
-				if(cmd>3)cmd=1;
-				if(cmd==DERP_AMBUSH)A_Log("Ambush mode.",true);
-				else if(cmd==DERP_TURRET)A_Log("Turret mode.",true);
+				if(cmd>4)cmd=1;
+				if(cmd==DERP_IDLE)A_Log("Idle mode.",true);
+				else if(cmd==DERP_WATCH)A_Log("Watch mode.",true);
+				else if(cmd==DERP_TURRET)A_Log("Watch360 mode.",true);
 				else if(cmd==DERP_PATROL)A_Log("Patrol mode.",true);
 			}
 			ddd.oldcmd=cmd;
 			if(bt&BT_FIREMODE){
-				ddd.cmd=DERP_AMBUSH;
+				ddd.cmd=DERP_IDLE;
 				if(!invoker.weaponstatus[DRPCS_TIMER]){
 					if(
 						justpressed(BT_ATTACK)
@@ -1191,7 +1221,7 @@ class DERPController:HDWeapon{
 						opponent.A_Log("CONNECTION FAILURE, REBOOT REQUIRED!: D.E.R.P. last position given at ("..int(mo.pos.x)+random(-100,100)..","..int(mo.pos.y)+random(-100,100)..")",true);
 					}
 					owner.A_Log("D.E.R.P. connected at ("..int(mo.pos.x)+random(-100,100)..","..int(mo.pos.y)+random(-100,100)..").",true);
-					mo.cmd=DERP_AMBUSH;
+					mo.cmd=DERP_IDLE;
 					if(owner.player)mo.bfriendly=true;else mo.bfriendly=owner.bfriendly;
 					mo.A_StartSound("derp/hacked",69420);
 					updatederps();
