@@ -229,6 +229,7 @@ class HERPBot:HDUPK{
 			}
 		}
 		//if nothing, keep moving (add angle depending on scanright)
+		A_StartSound("herp/crawl",CHAN_BODY,volume:0.2);
 		A_SetAngle(angle+(scanright?-3:3),SPF_INTERPOLATE);
 		//if anglechange is too far, start moving the other way
 		double chg=deltaangle(angle,startangle);
@@ -306,7 +307,13 @@ class HERPBot:HDUPK{
 		HERP A 12 A_StartSound("weapons/vulcanup",CHAN_BODY,CHANF_OVERLAP);
 		HERP AAA 1 herpbeep("herp/beepready");
 	aim:
-		HERP A 2 A_FaceTarget(2.,2.,0,0,FAF_TOP,-4);
+		HERP A 1 A_StartSound("herp/crawl",CHAN_BODY,volume:0.4);
+		HERP A 1 A_FaceTarget(3.,3.,0,0,FAF_TOP,-4);
+		HERP A 0 A_JumpIf(
+			!!target
+			&&absangle(angle,angleto(target))<1.
+		,"shoot");
+		loop;
 	shoot:
 		HERP B 2 bright light("SHOT"){
 			int currammoraw=ammo[0];
