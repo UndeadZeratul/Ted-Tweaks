@@ -137,6 +137,27 @@ class HERPBot:HDUPK{
 		HERPLeg(lll).relpos=lll.pos-pos;
 		lll.pitch=-60;
 	}
+	override int damagemobj(
+		actor inflictor,actor source,int damage,
+		name mod,int flags,double angle
+	){
+		if(
+			!!source
+			&&source.health>0
+			&&source.bismonster
+			&&source.bcanusewalls
+			&&(
+				source.instatesequence(source.curstate,source.resolvestate("melee"))
+				||source.instatesequence(source.curstate,source.resolvestate("meleekick"))
+			)
+		){
+			target=source;
+			setz(target.pos.z+target.height*0.7);
+			setstatelabel("give");
+			return -1;
+		}
+		return super.damagemobj(inflictor,source,damage,mod,flags,angle);
+	}
 	void herpbeep(string snd="herp/beep",double vol=1.){
 		A_StartSound(snd,CHAN_VOICE);
 		if(
@@ -229,14 +250,20 @@ class HERPBot:HDUPK{
 			}
 		}
 		//if nothing, keep moving (add angle depending on scanright)
-		A_StartSound("herp/crawl",CHAN_BODY,volume:0.2);
-		A_SetAngle(angle+(scanright?-3:3),SPF_INTERPOLATE);
+		if(!bdontfacetalker){
+			A_StartSound("herp/crawl",CHAN_BODY,volume:0.2);
+			A_SetAngle(angle+(scanright?-3:3),SPF_INTERPOLATE);
+		}else if(angle!=startangle){
+			A_SetAngle(angle+clamp(deltaangle(angle,startangle),-4,4),SPF_INTERPOLATE);
+			A_StartSound("herp/crawl",CHAN_BODY,volume:0.4);
+		}
 		//if anglechange is too far, start moving the other way
 		double chg=deltaangle(angle,startangle);
 		if(abs(chg)>35){
+			bool changed=scanright;
 			if(chg<0)scanright=true;
 			else scanright=false;
-			setstatelabel("postbeep");
+			if(scanright!=changed)setstatelabel("postbeep");
 		}
 		//drift back into home pitch
 		if(pitch!=startpitch){
@@ -401,20 +428,10 @@ class HERPBot:HDUPK{
 	nopower:
 		HERP A -1;
 	off:
-		HERP A 10{
-			if(health>0){
-				double turn=clamp(deltaangle(angle,startangle),-24,24);
-				if(turn){
-					A_StartSound("herp/crawl",CHAN_BODY,volume:0.6);
-					A_SetAngle(angle+turn,SPF_INTERPOLATE);
-					A_SetTics(5);
-				}
-			}
-		}
+		HERP A 10;
 		HERP A 0{
 			if(
 				!bmissilemore
-				||absangle(angle,startangle)>12
 				||(
 					ammo[0]%100<1
 					&&ammo[1]%100<1
@@ -834,7 +851,8 @@ class HERPUsable:HDWeapon{
 				invoker.weaponstatus[HERP_BOTID]-inputamt,0,63
 			);
 		}else if(justpressed(BT_ALTATTACK)){
-			invoker.weaponstatus[0]^=HERPF_STARTOFF;
+			if(pressinguse())invoker.weaponstatus[0]^=HERPF_STATIC;
+			else invoker.weaponstatus[0]^=HERPF_STARTOFF;
 			A_StartSound("weapons/fmswitch",8,CHANF_OVERLAP);
 		}else A_WeaponReady(WRF_NOFIRE|WRF_ALLOWRELOAD|WRF_ALLOWUSER1|WRF_ALLOWUSER3|WRF_ALLOWUSER4);
 	}
@@ -863,7 +881,8 @@ class HERPUsable:HDWeapon{
 		hhhh.ammo[2]=invoker.weaponstatus[3];
 		hhhh.battery=invoker.weaponstatus[4];
 		hhhh.botid=invoker.weaponstatus[HERP_BOTID];
-		hhhh.bmissilemore=invoker.weaponstatus[0]&HERPF_STARTOFF?false:true;
+		hhhh.bmissilemore=!invoker.weaponstatus[0]&HERPF_STARTOFF?
+		hhhh.bdontfacetalker=invoker.weaponstatus[0]&HERPF_STATIC;
 		Message("Deployed.");
 		A_GiveInventory("HERPController");
 		HERPController(findinventory("HERPController")).UpdateHerps(false);
@@ -880,7 +899,7 @@ class HERPUsable:HDWeapon{
 		sb.drawwepnum(hdw.weaponstatus[1]%100,50,posy:-10);
 		bool herpon=!(hdw.weaponstatus[0]&HERPF_STARTOFF);
 		sb.drawstring(
-			sb.pnewsmallfont,herpon?"ON":"OFF",(-30,-30),
+			sb.pnewsmallfont,herpon?((hdw.weaponstatus[0]&HERPF_STATIC)?"STATIC":"ON"):"OFF",(-30,-30),
 			sb.DI_TEXT_ALIGN_RIGHT|sb.DI_TRANSLATABLE|sb.DI_SCREEN_CENTER_BOTTOM,
 			herpon?Font.CR_GREEN:Font.CR_DARKRED
 		);
@@ -1081,6 +1100,7 @@ enum HERPNum{
 	HERPF_STARTOFF=1,
 	HERPF_UNLOADONLY=2,
 	HERPF_BROKEN=4,
+	HERPF_STATIC=8,
 }
 extend class HDHandlers{
 	void HackHERP(hdplayerpawn ppp,int cmd,int tag,int cmd2){
@@ -1160,6 +1180,11 @@ extend class HDHandlers{
 						herp.setstatelabel("off");
 						ppp.A_Log(string.format("\cd[HERP] \cj HERP at [\cj%i\cu,\cj%i\cu]\cj base angle now facing %s",herp.pos.x,herp.pos.y,hdmath.cardinaldirection(anet)),true);
 					}
+				}
+				else if(botcmd==4){
+					affected++;
+					badcommand=false;
+					herp.bdontfacetalker=!herp.bdontfacetalker;
 				}
 				else if(botcmd==123){
 					badcommand=false;
@@ -1265,16 +1290,20 @@ class HERPController:HDWeapon{
 		)return WEPHELP_DROP.."  Next H.E.R.P.";
 		bool connected=(herpcam.bmissileevenmore);
 		bool turnedon=(herpcam.bmissilemore);
+		bool staystill=(herpcam.bdontfacetalker);
 		if(connected)return
 		WEPHELP_FIREMODE.."  Hold to pilot and:\n"
 		.."  "..WEPHELP_FIRESHOOT
 		..WEPHELP_ALTRELOAD.."  Set home angle\n"
 		..WEPHELP_ALTFIRE.."  Turn "..(turnedon?"Off":"On").."\n"
+		..WEPHELP_ZOOM.."  "..(staystill?"Enable":"Disable").." Horizontal Scan\n"
 		..WEPHELP_RELOAD.."  Disconnect manual mode\n"
 		..WEPHELP_DROP.."  Next H.E.R.P."
 		;
 		return
 		WEPHELP_RELOAD.."  Connect manual mode\n"
+		..WEPHELP_ALTFIRE.."  Turn "..(turnedon?"Off":"On").."\n"
+		..WEPHELP_ZOOM.."  "..(staystill?"Enable":"Disable").." Horizontal Scan\n"
 		..WEPHELP_DROP.."  Next H.E.R.P."
 		;
 	}
@@ -1311,6 +1340,10 @@ class HERPController:HDWeapon{
 		sb.drawnum(cmd,
 			24+bob.x,32+bob.y,sb.DI_SCREEN_CENTER,cmd>10?Font.CR_OLIVE:Font.CR_BROWN,0.4
 		);
+		if(!herpcam.bdontfacetalker)sb.drawstring(
+			sb.psmallfont,"<>",
+			(bob.x-24,64+bob.y),sb.DI_SCREEN_CENTER|sb.DI_TEXT_ALIGN_CENTER,Font.CR_DARKGRAY,alpha:0.4
+		);
 		string hpst1="\cxAUTO",hpst2="press \cdreload\cu for manual";
 		if(nobat){
 			hpst1="\cuOFF";
@@ -1321,12 +1354,12 @@ class HERPController:HDWeapon{
 		}
 		sb.drawstring(
 			sb.psmallfont,hpst1,
-			(bob.x,10+bob.y),sb.DI_SCREEN_CENTER|sb.DI_TEXT_ALIGN_CENTER,alpha:0.7
+			(bob.x,-29,21+bob.y),sb.DI_SCREEN_CENTER|sb.DI_TEXT_ALIGN_LEFT,alpha:0.3,scal(0.4,0.8)
 		);
 		if(hpl.hd_helptext.getbool()){
 			sb.drawstring(
 				sb.psmallfont,hpst2,
-				(bob.x,18+bob.y),sb.DI_SCREEN_CENTER|sb.DI_TEXT_ALIGN_CENTER,Font.CR_DARKGRAY,alpha:0.6
+				(0,80),sb.DI_SCREEN_CENTER|sb.DI_TEXT_ALIGN_CENTER,Font.CR_DARKGRAY,alpha:0.6
 			);
 		}
 	}
@@ -1356,7 +1389,12 @@ class HERPController:HDWeapon{
 				||ddd.distance3d(self)>frandom(0.9,1.1)*HERP_CONTROLRANGE
 			)return;
 			if(justpressed(BT_ALTATTACK)){
-				ddd.bmissilemore=ddd.bmissilemore?false:true;
+				ddd.bmissilemore=!ddd.bmissilemore;
+				ddd.herpbeep();
+			}
+
+			if(justpressed(BT_ZOOM)){
+				ddd.bdontfacetalker=!ddd.bdontfacetalker;
 				ddd.herpbeep();
 			}
 			if(
