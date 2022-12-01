@@ -881,7 +881,7 @@ class HERPUsable:HDWeapon{
 		hhhh.ammo[2]=invoker.weaponstatus[3];
 		hhhh.battery=invoker.weaponstatus[4];
 		hhhh.botid=invoker.weaponstatus[HERP_BOTID];
-		hhhh.bmissilemore=!invoker.weaponstatus[0]&HERPF_STARTOFF?
+		hhhh.bmissilemore=(!invoker.weaponstatus[0]&HERPF_STARTOFF);
 		hhhh.bdontfacetalker=invoker.weaponstatus[0]&HERPF_STATIC;
 		Message("Deployed.");
 		A_GiveInventory("HERPController");
@@ -1354,7 +1354,7 @@ class HERPController:HDWeapon{
 		}
 		sb.drawstring(
 			sb.psmallfont,hpst1,
-			(bob.x,-29,21+bob.y),sb.DI_SCREEN_CENTER|sb.DI_TEXT_ALIGN_LEFT,alpha:0.3,scal(0.4,0.8)
+			(bob.x-29,21+bob.y),sb.DI_SCREEN_CENTER|sb.DI_TEXT_ALIGN_LEFT,alpha:0.3,scale:(0.4,0.8)
 		);
 		if(hpl.hd_helptext.getbool()){
 			sb.drawstring(
