@@ -272,7 +272,6 @@ class ZombieStormtrooper:HDHumanoid{
 		#### E 8;
 		#### E 0 A_Jump(128,"see");
 		#### E 4 A_Vocalize(random(0,2)?seesound:painsound);
-		#### E 1 A_JumpIf(!random(0,4),"frag");
 		---- A 0 setstatelabel("see");
 
 	ohforfuckssake:
@@ -300,7 +299,6 @@ class ZombieStormtrooper:HDHumanoid{
 
 	see:
 		#### A 0{if(firemode>=0)firemode=random(0,2);}
-		#### A 0 A_JumpIf(!random(0,4) && firemode==-2,"frag");
 	see2:
 		#### A 0 A_JumpIf(!jammed&&mag<1,"reload");
 		#### ABCD 4 A_HDChase();
@@ -429,6 +427,3 @@ class DeadZombieStormtrooper:ZombieStormtrooper replaces DeadZombieMan{
 class DeadZombieAutoStormtrooper:DeadZombieStormtrooper{default{accuracy 1;}}
 class DeadZombieSemiStormtrooper:DeadZombieStormtrooper{default{accuracy 2;}}
 class DeadZombieSMGStormtrooper:DeadZombieStormtrooper{default{accuracy 3;}}
-
-
-
