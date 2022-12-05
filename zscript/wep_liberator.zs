@@ -498,7 +498,7 @@ class LiberatorRifle:AutoReloadingThingy{
 				brsss.bseesdaggers=lefty;
 			}else{
 				int bss=invoker.weaponstatus[LIBS_BRASS];
-				if(bss<random(1,7)){
+					if(brscc=="HDSpent7mm"&&bss<random(1,7)){
 					invoker.weaponstatus[LIBS_BRASS]++;
 					A_StartSound("misc/casing",8,CHANF_OVERLAP);
 				}else{
