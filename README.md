@@ -5,10 +5,10 @@ This always targets the latest unstable build of Hideous Destructor from <https:
 
 Renamed Items:
 
-- Hideous Destructor
-- Hexadoken's Legacy Continued
-- HDBulletLib-Recasted
-- Radtech Weapons Pack
+- [Hideous Destructor](https://codeberg.org/mc776/HideousDestructor)
+- [Hexadoken's Legacy Continued](https://github.com/Gay-Snake-Squad/HexaDoken-Legacy-Continued)
+- [HDBulletLib-Recasted](https://github.com/Gay-Snake-Squad/HDBulletLib-Recasted)
+- [Radtech Weapons Pack](https://github.com/swampyrad/RadTechWeaponsPack)
 
 Changes:
 
