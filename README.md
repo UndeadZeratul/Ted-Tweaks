@@ -1,10 +1,14 @@
 # Ted Tweaks
 
 A large collection of changes and 'tweaks' I've wanted to do to Hideous Destructor.
+This always targets the latest unstable build of Hideous Destructor from <https://codeberg.org/mc776/HideousDestructor>! It will likely not work with any other version.If you want to use any of the LANGUAGE lump changes, you'll need to load it after any mods you want to use too
 
-## Note: This always targets the latest unstable build of Hideous Destructor from <https://codeberg.org/mc776/HideousDestructor>! It will likely not work with any other version
+Renamed Items:
 
-## If you want to use any of the LANGUAGE lump changes, you'll need to load it after any mods you want to use too
+- Hideous Destructor
+- Hexadoken's Legacy Continued
+- HDBulletLib-Recasted
+- Radtech Weapons Pack
 
 Changes:
 
@@ -42,3 +46,13 @@ Changes:
 - Includes options to 'clean' bonus items by removing DecoPusher from its spawns.
 - Includes a fork of Accensi's 'spicy air' mod to keep it up to date with the latest builds of Hideous Destructor.
 - Adds more changes for rifle and SMG zombiemen to throw grenades.
+
+## Future Plans
+
+- Change zerk replacements to be less random and potentially punishing for secrets with only berzerk in it.
+- Change zerk replacements to be a random spawner instead of whatever it currently.
+- Overhaul the liberator to make it closer to the ZM-66 and Vulcanette for weapon durability. It is an old rifle after all.
+- Tweak most of the random spawners to be more random.
+- Add CVAR options for most if not all of my changes.
+- Document what I do better.
+- Setup proper bug reports.
