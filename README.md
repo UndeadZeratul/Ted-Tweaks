@@ -46,6 +46,7 @@ Changes:
 - Includes options to 'clean' bonus items by removing DecoPusher from its spawns.
 - Includes a fork of Accensi's 'spicy air' mod to keep it up to date with the latest builds of Hideous Destructor.
 - Adds more changes for rifle and SMG zombiemen to throw grenades.
+- Adds a HUD element to how much shield the player has left.
 
 ## Future Plans
 
