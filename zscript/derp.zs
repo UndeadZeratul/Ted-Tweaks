@@ -245,7 +245,7 @@ class DERPBot:HDUPK{
 		if(!master||!master.player){
 			ammo=15;
 			if(user_cmd)cmd=user_cmd;
-			else cmd=random(1,3);
+			else cmd=random(1,4);
 		}
 		if(
 			cmd<DERP_PATROL

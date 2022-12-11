@@ -1,6 +1,11 @@
 // ------------------------------------------------------------
 // H.E.R.P. Robot
 // ------------------------------------------------------------
+
+/*
+	+DONTFACETALKER disables horizontal scan.
+*/
+
 const HERP_CONTROLRANGE=DERP_CONTROLRANGE*1.6;
 class HERPLeg:Actor{
 	default{
