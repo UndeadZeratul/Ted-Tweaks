@@ -241,7 +241,7 @@ class HDSMG:HDWeapon{
 			else{
 			let bbb=HDBulletActor.FireBullet(self,"HDB_9",speedfactor:1.1);
 			if(frandom(16,ceilingz-floorz)<bbb.speed*0.1)
-			A_AlertMonsters(200);
+			A_AlertMonsters(120);
 			A_ZoomRecoil(0.995);
 			A_StartSound("weapons/smg",CHAN_WEAPON,volume:0.7);
 			}
