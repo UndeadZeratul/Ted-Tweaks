@@ -236,7 +236,7 @@ class HDSMG:HDWeapon{
 			let bbb=HDBulletActor.FireBullet(self,"HDB_9",speedfactor:1.3);
 			A_AlertMonsters();
 			A_ZoomRecoil(0.995);
-			A_StartSound("weapons/pistol",CHAN_WEAPON);
+			A_StartSound("weapons/unsuppressedsmg",CHAN_WEAPON);
 			}
 			else{
 			let bbb=HDBulletActor.FireBullet(self,"HDB_9",speedfactor:1.1);
