@@ -1,3 +1,4 @@
+// I'm gonna likely clean this up soon once I remember what I've actually changed and make cvars for stuff that can be cvars. This all should be LANGUAGE'd also. - [Ted]
 OptionMenu TedTweaks
 {
     Title "------ Ted Tweaks ------"
@@ -8,6 +9,7 @@ OptionMenu TedTweaks
     StaticText "The higher the percent, the more you keep.", "White"
     StaticText "This is intended for Power of Friendship multiplayer!", "White"
     StaticText ""
+    Option " Kept Wounds Amount: ", "keeper_percent_tissuedamage", "KeeperPercent"
     Option " Kept Burns Amount: ", "keeper_percent_burns", "KeeperPercent"
     Option " Kept Bloodloss Amount: ", "keeper_percent_blood", "KeeperPercent"
     Option " Kept Blues Amount: ", "keeper_percent_blues", "KeeperPercent"
