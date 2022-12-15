@@ -410,6 +410,7 @@ class HDSMG:HDWeapon{
 	override void initializewepstats(bool idfa){
 		weaponstatus[SMGS_MAG]=30;
 		weaponstatus[SMGS_CHAMBER]=2;
+		weaponstatus[SMGS_SUPPRESSOR]=1;
 	}
 	override void loadoutconfigure(string input){
 		int firemode=getloadoutvar(input,"firemode",1);
@@ -462,7 +463,7 @@ class HDSMGRandom:IdleDummy{
 			lll.vel=vel;
 			for(int i=0;i<5;i++)lll.args[i]=args[i];
 			if(!random(0,2))lll.weaponstatus[0]|=SMGF_REFLEXSIGHT;
-			if(!random(0,2))lll.weaponstatus[SMGS_SUPPRESSOR]=random(0,2);
+			if(!random(0,1))lll.weaponstatus[SMGS_SUPPRESSOR]=random(0,1);
 			if(!random(0,2))lll.weaponstatus[SMGS_SWITCHTYPE]=random(0,3);
 		}stop;
 	}
