@@ -1,4 +1,4 @@
-version "4.9.0"
+version "4.10.0"
 
 // I was originally going to do it that the old way that spicy air worked can be enabled, it's too big of a PITA to get working properly though so I'm just gonna scrap it. Only like 2 people would use it anyways. - [Ted]
 #include "zscript/additions/spicy_air.zsc"
