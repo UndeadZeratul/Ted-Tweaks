@@ -9,7 +9,7 @@ class KeeperHandler : EventHandler
 			let restorer = StatRestorer(plr.GiveInventoryType('StatRestorer'));
 			if (restorer)
 			{
-				restorer.Wounds = int(plr.oldwoundcount * clamp(keeper_percent_wounds, 0, 1.0));
+				restorer.Wounds = int(plr.oldwoundcount * clamp(keeper_percent_tissuedamage, 0, 1.0));
 				restorer.Blues = int(plr.CountInv('HealingMagic') * clamp(keeper_percent_blues, 0, 1.0));
 				restorer.Burns = int(plr.burncount * clamp(keeper_percent_burns, 0, 1.0));
 				restorer.Aggro = int(plr.aggravateddamage * clamp(keeper_percent_aggro, 0, 1.0));
