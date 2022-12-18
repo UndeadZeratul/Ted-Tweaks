@@ -133,6 +133,7 @@ TAG_069BORE = ".454 'Raging Hornet' Shell";
 TAG_420FREI = ".462 'Bucking Bronco' round";
 TAG_500SWL = ".577 Strzyga";
 TAG_500SWH = ".577 Strzygon";
+TAG_500SW = ".577 S&S";
 TAG_EXPLSHL = "12-Gauge HE-Slug Shell";
 TAG_FLARESHELL = "12-Gauge recreational Flare Shell";
 TAG_G45LC = "Golden .42 CSD round";
