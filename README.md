@@ -48,6 +48,7 @@ Changes:
 - Includes a fork of Accensi's 'spicy air' mod to keep it up to date with the latest builds of Hideous Destructor.
 - Adds more changes for rifle and SMG zombiemen to throw grenades.
 - Adds a HUD element to how much shield the player has left.
+- Remove the ledge check for player movement to reduce random slowdowns and make parkour easier.
 
 ## Future Plans
 
