@@ -1,7 +1,7 @@
 [enu default]
 
 STARTUP1="        \cq~ \cr* \cq~";
-STARTUP2=" \cyHideous Destructor \cx4.10.0b \cypre \c[Cyan]Ted's Tweaks\c-";
+STARTUP2=" \cyHideous Destructor \cx4.10.0b \cypre \c[Cyan]Ted\'s Tweaks\c-";
 STARTUP3=" Please read the manual.";
 STARTUP4="       Have fun!";
 STARTUP5="        \cq~ \cr* \cq~";
@@ -29,108 +29,25 @@ MENU_RESETWEP = "Reset wep. options";
 MENU_RESETMAG = "Reset mag options";
 
 TAG_FIST = "Unarmed";
-TAG_CHAINSAW="'Lumberjack' Chainsaw";
-TAG_PISTOL="99FX Pistol";
+TAG_CHAINSAW="\'Lumberjack\' Chainsaw";
+TAG_PISTOL="Mouletta 99FX Pistol";
 TAG_REVOLVER="Deinonychus Revolver";
 TAG_SMG="MP-46 SMG";
-TAG_HUNTER="SPOS-E28 'Hunter' Pump-action Shotgun";
-TAG_SLAYER="SL41 'Slayer' Double-barreled Shotgun";
+TAG_HUNTER="SPOS-E28 \'Hunter\' Pump-action Shotgun";
+TAG_SLAYER="SL41 \'Slayer\' Double-barreled Shotgun";
 TAG_ZM66="Volt ZM66 Assault Rifle";
-TAG_VULC="Mk. III 'Vulcanette' Rotary Support Weapon";
-TAG_GL="'Blooper' Grenade Launcher";
+TAG_VULC="Mk. III \'Vulcanette\' Rotary Support Weapon";
+TAG_GL="\'Blooper\' Grenade Launcher";
 TAG_RL="Urban Artillery Rocket Launcher";
-TAG_THUNDER="'Thunder Buster' Pulsed Particle Beam Projector";
-TAG_LIB="ZM7 'Liberator' Battle Rifle";
-TAG_BRONTO="'Brontornis' Mk.VII Ultralight Cannon";
-TAG_BOSS="Mk. IV 'Boss' Bolt-action Rifle";
+TAG_THUNDER="\'Thunder Buster\' Pulsed Particle Beam Projector";
+TAG_LIB="ZM7 \'Liberator\' Battle Rifle";
+TAG_BRONTO="\'Brontornis\' Mk.VII Ultralight Cannon";
+TAG_BOSS="Mk. IV \'Boss\' Bolt-action Rifle";
 TAG_GREFRAG="Fragmentation Grenade";
 
-// Hexadoken Legacy Continued stuff
-TAG_NSB = "Mk. II 'Boss' Bolt-action Infantry Rifle";
-TAG_OMGBOSS = "'Priapus' Anti-Material Rifle";
-TAG_BOSSMERG = "'Momus' Bolt-Action Shotgun";
-TAG_GARAND = "Mod-3 Daszynski Carbine";
-TAG_ShitbostDummy = "Mk. IV 'Boss' Rifle Variant";
-TAG_HEXAPERSONAL = "5x12mm Bumblebee 'Boss' Target Rifle";
-TAG_4MMBOSS = "4mm UAC 'Boss' Target Rifle";
-TAG_9MMBOSS = "9mm 'Boss' Pistol-Caliber Carbine";
-// For my fellow LCA enjoyers out there ;) - [Ted]
-TAG_WORSTBOSS = "Legendary Boss Rifle";
-TAG_50OMGCLIP = "13.8x118mm 'Czernobog' clip";
-TAG_DMS = "Dedicated Medical scanner";
-TAG_GARANDCLIP = "Mod-3 Daszynski clip";
-
-// Menu Titles
-TITLE_NSBMENU = "------ Mk. II 'Boss' Bolt-action Infantry Rifle Options ------";
-TITLE_BOGRIFLEMENU = "------ 'Priapus' Anti-Material Rifle Options ------";
-TITLE_BOSSMERGMENU = "------ 'Momus' Bolt-Action Shotgun Options ------";
-TITLE_GARANDMENU = "------ Mod-3 Daszynski Carbine Options ------";
-
-// Scopeless Boss
-MENU_NSBSPAWNTEXT = "Control the spawn rate of the Mk. II 'Boss' Rifle on Mk. IV 'Boss' Rifles";
-MENU_NSBSPAWN = "Mk. II 'Boss' Spawn Rate: ";
-MENU_RESETNSBSPAWN = "Reset Boss spawn options";
-
-// .50 OMG Boss
-MENU_BOGTHUNDERBUSTERTEXT = "Control the spawn rate of the 'Priapus' AMR on 'Thunder Buster' Beam Projectors";
-MENU_BOGSLAYERTEXT = "Control the spawn rate of the 'Priapus' AMR on SL41 'Slayer' shotguns";
-MENU_BOGVULCTEXT = "Control the spawn rate of the 'Priapus' AMR on Mk. III 'Vulcanette's";
-MENU_BOGSPAWNRATE = "'Priapus' AMR Spawn Rate: ";
-
-// Bossmerg
-MENU_BASHUNTER = "Control the spawn rate of the 'Momus' Bolt-Action Shotgun on the SPOS-E28 'Hunter'";
-MENU_BASSPAWNRATE = "'Momus' Spawn Rate: ";
-
-// M1 Garand
-MENU_GARANDLIBERATOR = "Control the spawn rate of the Mod-3 Daszynski Carbine on ZM7 Liberator Rifles";
-MENU_GARANDSPAWNRATE = "Mod-3 Daszynski Carbine Spawn Rate: ";
-MENU_GARANDAMMO = "Control what ammunition the Mod-3 Daszynski Carbine loads";
-MENU_GARANDAMMOTYPE = "Mod-3 Daszynski Carbine Ammo Type: ";
-MENU_GARANDAMMORESET = "Reset Ammo Type options";
-MENU_GARANDRELOADERSPEED = "Control how fast the Mod-3 Daszynski Carbine's reloader is";
-MENU_GARANDSPEED = "Mod-3 Daszynski Carbine Reloader Speed: ";
-MENU_RESETGARANDSPEED = "Reset Reloader speed options";
-MENU_GARANDRELOADERCAPACITYTEXT = "Control how much ammo the Mod-3 Daszynski Carbine's reloader can hold at a time.";
-MENU_GARANDRELOADERCAPACITY = "Mod-3 Daszynski Carbine Reloader Capacity: ";
-MENU_RESETGARANDRELOADERCAPACITY = "Reset Reloader Capacity";
-
-// Various Resets
-MENU_RESETTB = "Reset 'Thunder Buster' Beam Projectors spawn options";
-MENU_RESETSLAYER = "Reset SL41 'Slayer' spawn options";
-MENU_RESETVULC = "Reset Mk. III 'Vulcanette' spawn options";
-MENU_RESETHUNTER = "Reset SPOS-E28 'Hunter' spawn options";
-MENU_RESETLIB = "Reset ZM7 Liberator Rifle spawn options";
-
-// Persistency
-MENU_REPLACEAFTERMAPLOAD = "Control whether replacements happen after a mapload.";
-MENU_PERSISTENCY = "Persistent Spawns: ";
-MENU_RESETPERSISTENCY = "Reset persistence options";
-
-// Deepest Lore
-NSB_LORE1 = "An old Boss rifle that didn't originally have a scope mount.";
-NSB_LORE2 = "These rifles are thought to be mostly used in the Polish Independence war back in 1X28.";
-NSB_LORE3 = "Some speculate that they were still being created for Civilian hunting use up until the space age.";
-NSB_LORE4 = "All we can say for certain is that it's still as effective as the regular Mk. IV Boss, for better or for worse.";
-
-BOG_LORE1 = "A Mk. IV 'Boss' replica rechambered for the 13.8x118mm 'Czernobog' cartridge.";
-BOG_LORE2 = "These rifles are usually impractical, though incredibly fun to shoot.";
-BOG_LORE3 = "If you do manage to hit your target with this it'll most certainly take some hefty damage,";
-BOG_LORE4 = "though getting the munitions to feed this beast is another ordeal.";
-
-BAS_LORE1 = "What appears to be a Mk. IV Boss replica rechambered to fit 12-Gauge shells.";
-BAS_LORE2 = "Not much is known where these came from or why they were created in the first place,";
-BAS_LORE3 = "Though they most certainly do exist, for better or for worse.";
-BAS_LORE4 = "If you get one, make sure it's the custom chamber version. These'll gunk up very fast...";
-
-GARAND_LORE1 = "An old Mod-3 Daszynski Carbine from the early 1X40 days. Some have been recently rechambered to 7.76mm also.";
-GARAND_LORE2 = "It mostly serves now as an inbetween of the Mk. IV Boss Rifle and  the ZM7 Liberator.";
-GARAND_LORE3 = "The original cartridge it was chambered for of .32-18 'Gdansk' hits a hefty punch,";
-GARAND_LORE4 = "though its rarity and incompatibility with other 7.76mm guns makes the 7.76mm version a bit more economical.";
-
 // HDBulletLib-Recasted
-// basically just i do not like semi-realistic or meme-y names for rounds so i change them :) - [Ted]
-TAG_069BORE = ".454 'Raging Hornet' Shell";
-TAG_420FREI = ".462 'Bucking Bronco' round";
+TAG_069BORE = ".454 \'Raging Hornet\' Shell";
+TAG_420FREI = ".462 \'Bucking Bronco\' round";
 TAG_500SWL = ".577 Strzyga";
 TAG_500SWH = ".577 Strzygon";
 TAG_500SW = ".577 S&S";
@@ -139,111 +56,421 @@ TAG_FLARESHELL = "12-Gauge recreational Flare Shell";
 TAG_G45LC = "Golden .42 CSD round";
 TAG_45LC = ".42 CSD Round";
 TAG_50AE = ".65 Excelsius round";
-TAG_50OMG = "13.8x118mm 'Czernobog' round";
+TAG_50OMG = "13.8x118mm \'Czernobog\' round";
 TAG_MUSKETBALL = ".56 Caliber Minnet Ball";
-TAG_LLSHELL = "14-Gauge 'Less-Lethal' Beanbag Shell";
+TAG_LLSHELL = "14-Gauge \'Less-Lethal\' Beanbag Shell";
 TAG_12SLUG = "12-Gauge Shotgun slug";
 TAG_45ACP = ".39 SDC round";
-TAG_3006 = ".32-18 'Gdansk' round";
+TAG_3006 = ".32-18 \'Gdansk\' round";
 TAG_20MMGREN = "20x42mm rifle grenade";
-TAG_10MMAUTO = "9.82x33mm 'Ausfallen' round";
-TAG_10MMCASING = "9.82x33mm 'Ausfallen' casing";
+TAG_10MMAUTO = "9.82x33mm \'Ausfallen\' round";
+TAG_10MMCASING = "9.82x33mm \'Ausfallen\' casing";
 TAG_4GS = "4-gauge Saboted Shotgun slug";
+TAG_4GB = "4-Gauge \'00\' Buckshot"
+
+// Peppergrinder
+
+// --------------------
+// Tags
+// --------------------
+
+PEPPER_TAG_HLAR = "MP-77 Heavy SMG";
+
+PEPPER_TAG_AUROCHS = "Aurochs .462 \'Bucking Bronco\' Revolver";
+
+PEPPER_TAG_AUTO5 = "Polewnik-12 Repeating Slug Gun";
+
+PEPPER_TAG_BASTARD = "Wejherowo \'Bastardized\' A-426c Carbine";
+
+PEPPER_TAG_BOXCANNON = "Gherardo & Constante BC-9c Machine Pistol";
+PEPPER_TAG_9MCLIP = "9x33mm Parumpudicum stripper clip";
+
+PEPPER_TAG_BPX = "Mouletta 933TS Pistol Caliber Carbine";
+
+PEPPER_TAG_DMR = "Gherardo & Constante PG-667 Designated Marksman Rifle";
+
+PEPPER_TAG_FULGUR = "Volt FLMG-72 \'Fulgur\' Laser Machinegun";
+
+PEPPER_TAG_GREELY = "SPOS-E17 'Thunderclap' short-barreled shotgun";
+
+PEPPER_TAG_GUILLOTINE = "Mouletta 19X0-CX Competition Pistol";
+PEPPER_TAG_NDM = "9.13x25mm Nail Driver Maximum round";
+PEPPER_TAG_NDM_MAG = "9.13x25mm NDM magazine";
+
+PEPPER_TAG_HELZING = "\'Kolbe\' .355 Magnum Handgun";
+PEPPER_TAG_355MAG = ".355 \'Kolbe\' magazine";
+
+PEPPER_TAG_ILIB = "ZM-7 \'Liberator\' battle rifle prototype";
+
+PEPPER_TAG_LISA = "PPDR-MK1 \'Kokken\' Pulse-Plasma Projector Rifle";
+
+PEPPER_TAG_LOTUS = "MTT-776-S \'Lotus\' Revolving Rifle";
+
+PEPPER_TAG_MAULER = "Boris Fragmentation Dispersion Device";
+
+PEPPER_TAG_THEBOX = "Boris Frag-Fueled Conversion Bench";
+
+PEPPER_TAG_ODDBALL = "\'Oddball\' Energy PDW";
+
+PEPPER_TAG_OTIS = "Gherardo & Constante Strix-Katastrefontas .577 S&S revolver";
+
+PEPPER_TAG_FAKE_P90 = "GRAS-933ag Personal Defense Weapon";
+PEPPER_TAG_REAL_P90 = "\'Red Crown\' modified GRAS-933ag";
+PEPPER_TAG_BIG9MMAG = "GRAS-933ag PDW Magazine";
+PEPPER_TAG_BIGNDMMAG = "\'Red Crown\' modified PDW Mag";
+
+PEPPER_TAG_PLASMAPISTOL = "GRAS-53ag Plasmatic Self-Defense Pistol";
+
+PEPPER_TAG_RUBYMASER = "Rubicon AEF-322c Microwave Laser";
+
+PEPPER_TAG_SAWEDSLAYER = "Sawed-off SL-41 \'Slayer\' shotgun";
+
+PEPPER_TAG_SCOPEDREVOLVER = "Scoped Deinonychus Revolver";
+
+PEPPER_TAG_SCOPEDSLAYER = "Scoped SL-41 \'Slayer\' double-barreled shotgun";
+
+// Gherardo and Constante
+PEPPER_TAG_TROG = "Gherardo & Constante A-426c Assault Carbine";
+PEPPER_TAG_TROGMAG = "G&C A-426c 30-round magazine";
+
+PEPPER_TAG_VERA = "M764 SAW \"Vera\"";
+
+PEPPER_TAG_WISEAU = "WIS-14 Pulse-Plasma Projector";
+
+PEPPER_TAG_YEYUZE = "Urban Artillery M51 Pump-Action Grenade Launcher";
+
+PEPPER_TAG_ZM94 = "Volt ZM-94 13.8x118mm \'Czernobog\' Anti-Material Rifle";
+PEPPER_TAG_ZM94_MAG = "Volt ZM-94 magazine";
+
+PEPPER_TAG_ZORCHER = "'Panopticon' Teleportation Device";
+
+PEPPER_TAG_SOLNOPIS = "Elite Soldier Kit (w/o pistol)";
+
+// --------------------
+// Pickup Messages
+// --------------------
+
+PEPPER_PICKUP_HLAR = "You got the MP-77 Heavy-SMG!";
+
+PEPPER_PICKUP_AUROCHS = "You got the Aurochs .462 'Bucking Bronco' Revolver!";
+
+PEPPER_PICKUP_AUTO5 = "You got the Polewnik-12 Repeating Slug Gun!";
+
+PEPPER_PICKUP_BASTARD = "You found the Wejherowo \'Bastardized\' A-426c Carbine! What a crude thing...";
+
+PEPPER_PICKUP_BOXCANNON_NORMAL = "You got the Gherardo & Constante BC-9c Machine Pistol!";
+PEPPER_PICKUP_EL_CAPITAN = "You discovered an El Capitan. Watch out for wolves.";
+PEPPER_PICKUP_BOXCANNON_THEWORKS = " With the works.";
+PEPPER_PICKUP_BOXCANNON_LEON = " Leon's Choice!";
+PEPPER_PICKUP_BOXCANNON_FULLRIFLE = " Full Assault-Carbine Configuration.";
+PEPPER_PICKUP_BOXCANNON_CHICAGO = " Chicago Setup.";
+PEPPER_PICKUP_BOXCANNON_STOCK = " Complete with a Sturmsoldat stock.";
+PEPPER_PICKUP_BOXCANNON_MAG = " With double the magazine.";
+PEPPER_PICKUP_BOXCANNON_BARREL = " With a carbine-style barrel.";
+PEPPER_PICKUP_9MCLIP = "Picked up a 9x33mm Parumpudicum stripper clip.";
+
+PEPPER_PICKUP_BPX = "You got the Mouletta 933TS Pistol Caliber Carbine!";
+
+PEPPER_PICKUP_DMR = "You got the Gherardo & Constante PG-667 Designated Marksman Rifle!";
+
+PEPPER_PICKUP_FULGUR = "You got the Volt FLMG-72 \'Fulgur\' Laser Machinegun!";
+
+PEPPER_PICKUP_GREELY = "You got the SPOS-E17 'Thunderclap' short-barreled shotgun!";
+
+PEPPER_PICKUP_GUILLOTINE = "You picked up a Mouletta 19X0-CX Competition Pistol!";
+PEPPER_PICKUP_NDM = "Picked up a 9.13x25mm Nail Driver Maximum round.";
+PEPPER_PICKUP_NDM_MAG = "Picked up a 9.13x25mm NDM pistol magazine.";
+
+PEPPER_PICKUP_HELZING = "You got the \'Kolbe\' Magnum Handgun!";
+PEPPER_PICKUP_355MAG = "Picked up a .355 \'Kolbe\' magazine.";
+
+PEPPER_PICKUP_ILIB = "You got the ZM-7 \'Liberator\' battle rifle! Seems like this one's a prototype...";
+
+PEPPER_PICKUP_LISA_NORMAL = "You got the PPDR-MK1 \'Kokken\' Pulse-Plasma Projector Rifle!";
+PEPPER_PICKUP_LISA_TROOPER = " Assault Trooper Model!";
+PEPPER_PICKUP_LISA_DA = " With a Double-Action Trigger!";
+PEPPER_PICKUP_LISA_SCOPE = " With a Marksman's Scope!";
+
+PEPPER_PICKUP_LOTUS_NORMAL = "You got the MTT-776-S \'Lotus\' Revolving Rifle!";
+PEPPER_PICKUP_SWEET_PETUNIA = "You retrieved Sweet Petunia. Hold her steady now.";
+PEPPER_PICKUP_LOTUS_SCOPE_SUPPRESSOR = " With Silencer & Scope.";
+PEPPER_PICKUP_LOTUS_SCOPE_BARREL = " With Extended Barrel & Scope.";
+PEPPER_PICKUP_LOTUS_SCOPE = " With BhE Mid-Range Scope.";
+PEPPER_PICKUP_LOTUS_SUPPRESSOR = " With Tsuchinoko Dual-Purpose Silencer.";
+PEPPER_PICKUP_LOTUS_BARREL = " With Distance Combat Barrel Extension.";
+
+PEPPER_PICKUP_MAULER = "You got the Boris Fragmentation Dispersion Device!";
+
+PEPPER_PICKUP_THEBOX = "You got the Boris Frag-Fueled Conversion Bench!";
+
+PEPPER_PICKUP_ODDBALL = "You found the \'Oddball\' energy PDW!";
+
+PEPPER_PICKUP_OTIS = "You got the Gherardo & Constante \'Strix\' .577 S&S revolver!";
+
+PEPPER_PICKUP_FAKE_P90 = "Picked up a GRAS-933ag Personal Defense Weapon!":
+PEPPER_PICKUP_REAL_P90 = "Picked up a \'Red Crown\' modified GRAS-933ag.";
+PEPPER_PICKUP_BIG9MMAG = "Picked up a plastic GRAS-933ag PDW Magazine.";
+PEPPER_PICKUP_BIGNDMMAG = "Picked up a \'Red Crown\' modified PDW Magazine.";
+
+PEPPER_PICKUP_PLASMAPISTOL = "You got the GRAS-53ag Plasmatic Self-Defense Pistol!";
+
+PEPPER_PICKUP_RUBYMASER_NORMAL = "You got the Rubicon AEF-322c Microwave Laser!";
+PEPPER_PICKUP_RUBYMASER_HEAVY = " Oh jeez, it's heavy...";
+PEPPER_PICKUP_RUBYMASER_EJECT = " Eject Model!";
+
+PEPPER_PICKUP_SAWEDSHOTGUN = "You got a Sawed-off SL-41 \'Slayer\' shotgun!";
+
+PEPPER_PICKUP_SCOPEDREVOLVER = "You got the Deinonychus Revolver! This one appears to have a scope, too.";
+
+PEPPER_PICKUP_SCOPEDSLAYER = "You got a Scoped SL-41 \'Slayer\' double-barreled shotgun!";
+
+PEPPER_PICKUP_TROG = "Picked up a Gherardo & Constante A-426c Assault Carbine! It's got a nice heft to it.";
+PEPPER_PICKUP_TROGMAG = "Picked up a G&C A-426c 30-round magazine.";
+
+PEPPER_PICKUP_VERA_NORMAL = "Picked up the M764 Squad Automatic Weapon!";
+PEPPER_PICKUP_VERA_NEW = " Looks brand new.";
+PEPPER_PICKUP_VERA_BROKEN = ". Eugh, pushing on being completely broken...";
+PEPPER_PICKUP_VERA_BEATEN = ". Looks pretty bad, everything's all worn and smashed up...";
+PEPPER_PICKUP_VERA_WORN = ". Functional, though could use a tune-up.";
+
+PEPPER_PICKUP_WISEAU_NORMAL = "You got the WIS-14 Pulse-Plasma Projector!";
+PEPPER_PICKUP_WISEAU_DOUBLE = " Double-Double Model!";
+PEPPER_PICKUP_WISEAU_CAPACITOR = " Extra Capacitor Model!";
+PEPPER_PICKUP_WISEAU_DOUBLEACTION = " With Double-Action Trigger!";
+
+PEPPER_PICKUP_YEYUZE = "You got the Urban Artillery M51 Pump-Action Grenade Launcher!";
+
+PEPPER_PICKUP_ZM94_NEW = "You got the Volt ZM-94 13.8x118mm \'Czernobog\' Anti-Material Rifle!";
+PEPPER_PICKUP_ZM94_PRISTINE = " It\'s in pristine shape.";
+PEPPER_PICKUP_ZM94_WORN = ". It\'s getting a bit worn.";
+PEPPER_PICKUP_ZM94_BEATEN = ". It\'s been through a lot.";
+PEPPER_PICKUP_ZM94_BROKEN = ". It might be good for a shot or two.";
+PEPPER_PICKUP_ZM94_MAG = "Picked up a 5-round 13.8x118mm \'Czernobog\' magazine.";
+
+PEPPER_PICKUP_ZORCHER = "You got the 'Panopticon' Teleportation Device!";
+
+// --------------------
+// Obituaries
+// --------------------
+
+PEPPER_OBITUARY_HLAR = "%o was soaked by %k\'s pea stream.";
+
+PEPPER_OBITUARY_AUROCHS = "%o got capped by %k\'s six-pea shooter.";
+
+PEPPER_OBITUARY_BASTARD = "%o was assaulted by %k.";
+
+PEPPER_OBITUARY_BOXCANNON = "%o got blitzed by %k\'s Box Cannon.";
+
+PEPPER_OBITUARY_FULGUR = "%o was hammered by %k\'s particle beam.";
+
+PEPPER_OBITUARY_GREELY = "%o was carnevil\'d by %k";
+
+PEPPER_OBITUARY_GUILLOTINE = "%o got capped by %k\'s pea shooter.";
+
+PEPPER_OBITUARY_HELZING = "%o got capped by %k\'s Helzing.";
+
+PEPPER_OBITUARY_LISA = "%o got blasted by %k\'s PPDR-MK1 \'Kokken\' Pulse-Plasma Projector Rifle.";
+
+PEPPER_OBITUARY_LOTUS = "%o got flicked by %k.";
+
+PEPPER_OBITUARY_MAULER = "%o just got glassed and no one leaves here till we find out %k did it!";
+PEPPER_OBITUARY_MAULER_ID = "%o was smacked by %k\'s big green gob.";
+
+PEPPER_OBITUARY_ODDBALL = "%o was assaulted by %k.";
+
+PEPPER_OBITUARY_FAKE_P90 = "%o was broken by %k.";
+PEPPER_OBITUARY_REAL_P90 = "%o was sacrificed to %k.";
+
+PEPPER_OBITUARY_PLASMAPISTOL = "%o got burned by %k\'s hot, melting plasma.";
+
+PEPPER_OBITUARY_RUBYMASER = "%o was boiled by %k\'s maser beam.";
+
+PEPPER_OBITUARY_VERA = "%o met the budda-budda-budda on the street, and %k killed %h.";
+
+PEPPER_OBITUARY_WISEAU = "%o got hunted by %k\'s Plasma Magnum.";
+
+PEPPER_OBITUARY_ZM94 = "%o was forcefully penetrated by %k.";
+
+PEPPER_OBITUARY_ZORCHER = "%o got killed by %k with a weapon that does no damage whatsoever.";
+
+
+// Hexadoken Legacy Continued stuff
+TAG_NSB = "Mk. II \'Boss\' Bolt-action Infantry Rifle";
+TAG_OMGBOSS = "\'Priapus\' Anti-Material Rifle";
+TAG_BOSSMERG = "\'Momus\' Bolt-Action Shotgun";
+TAG_GARAND = "Mod-3 Daszynski Carbine";
+TAG_ShitbostDummy = "Mk. IV \'Boss\' Rifle Variant";
+TAG_HEXAPERSONAL = "5x12mm Bumblebee \'Boss\' Target Rifle";
+TAG_4MMBOSS = "4mm UAC \'Boss\' Target Rifle";
+TAG_9MMBOSS = "9mm \'Boss\' Pistol-Caliber Carbine";
+// For my fellow LCA enjoyers out there ;) - [Ted]
+TAG_WORSTBOSS = "Legendary Boss Rifle";
+TAG_50OMGCLIP = "13.8x118mm \'Czernobog\' clip";
+TAG_DMS = "Dedicated Medical scanner";
+TAG_GARANDCLIP = "Mod-3 Daszynski clip";
+
+// Menu Titles
+TITLE_NSBMENU = "------ Mk. II \'Boss\' Bolt-action Infantry Rifle Options ------";
+TITLE_BOGRIFLEMENU = "------ \'Priapus\' Anti-Material Rifle Options ------";
+TITLE_BOSSMERGMENU = "------ \'Momus\' Bolt-Action Shotgun Options ------";
+TITLE_GARANDMENU = "------ Mod-3 Daszynski Carbine Options ------";
+
+// Scopeless Boss
+MENU_NSBSPAWNTEXT = "Control the spawn rate of the Mk. II \'Boss\' Rifle on Mk. IV \'Boss\' Rifles";
+MENU_NSBSPAWN = "Mk. II \'Boss\' Spawn Rate: ";
+MENU_RESETNSBSPAWN = "Reset Boss spawn options";
+
+// .50 OMG Boss
+MENU_BOGTHUNDERBUSTERTEXT = "Control the spawn rate of the \'Priapus\' AMR on \'Thunder Buster\' Beam Projectors";
+MENU_BOGSLAYERTEXT = "Control the spawn rate of the \'Priapus\' AMR on SL41 \'Slayer\' shotguns";
+MENU_BOGVULCTEXT = "Control the spawn rate of the \'Priapus\' AMR on Mk. III \'Vulcanette\'s";
+MENU_BOGSPAWNRATE = "\'Priapus\' AMR Spawn Rate: ";
+
+// Bossmerg
+MENU_BASHUNTER = "Control the spawn rate of the \'Momus\' Bolt-Action Shotgun on the SPOS-E28 \'Hunter\'";
+MENU_BASSPAWNRATE = "\'Momus\' Spawn Rate: ";
+
+// M1 Garand
+MENU_GARANDLIBERATOR = "Control the spawn rate of the Mod-3 Daszynski Carbine on ZM7 Liberator Rifles";
+MENU_GARANDSPAWNRATE = "Mod-3 Daszynski Carbine Spawn Rate: ";
+MENU_GARANDAMMO = "Control what ammunition the Mod-3 Daszynski Carbine loads";
+MENU_GARANDAMMOTYPE = "Mod-3 Daszynski Carbine Ammo Type: ";
+MENU_GARANDAMMORESET = "Reset Ammo Type options";
+MENU_GARANDRELOADERSPEED = "Control how fast the Mod-3 Daszynski Carbine\'s reloader is";
+MENU_GARANDSPEED = "Mod-3 Daszynski Carbine Reloader Speed: ";
+MENU_RESETGARANDSPEED = "Reset Reloader speed options";
+MENU_GARANDRELOADERCAPACITYTEXT = "Control how much ammo the Mod-3 Daszynski Carbine\'s reloader can hold at a time.";
+MENU_GARANDRELOADERCAPACITY = "Mod-3 Daszynski Carbine Reloader Capacity: ";
+MENU_RESETGARANDRELOADERCAPACITY = "Reset Reloader Capacity";
+
+// Various Resets
+MENU_RESETTB = "Reset \'Thunder Buster\' Beam Projectors spawn options";
+MENU_RESETSLAYER = "Reset SL41 \'Slayer\' spawn options";
+MENU_RESETVULC = "Reset Mk. III \'Vulcanette\' spawn options";
+MENU_RESETHUNTER = "Reset SPOS-E28 \'Hunter\' spawn options";
+MENU_RESETLIB = "Reset ZM7 Liberator Rifle spawn options";
+
+// Persistency
+MENU_REPLACEAFTERMAPLOAD = "Control whether replacements happen after a mapload.";
+MENU_PERSISTENCY = "Persistent Spawns: ";
+MENU_RESETPERSISTENCY = "Reset persistence options";
+
+// Deepest Lore
+NSB_LORE1 = "An old Boss rifle that didn\'t originally have a scope mount.";
+NSB_LORE2 = "These rifles are thought to be mostly used in the Polish Independence war back in 1X28.";
+NSB_LORE3 = "Some speculate that they were still being created for Civilian hunting use up until the space age.";
+NSB_LORE4 = "All we can say for certain is that it\'s still as effective as the regular Mk. IV Boss, for better or for worse.";
+
+BOG_LORE1 = "A Mk. IV \'Boss\' replica rechambered for the 13.8x118mm \'Czernobog\' cartridge.";
+BOG_LORE2 = "These rifles are usually impractical, though incredibly fun to shoot.";
+BOG_LORE3 = "If you do manage to hit your target with this it\'ll most certainly take some hefty damage,";
+BOG_LORE4 = "though getting the munitions to feed this beast is another ordeal.";
+
+BAS_LORE1 = "What appears to be a Mk. IV Boss replica rechambered to fit 12-Gauge shells.";
+BAS_LORE2 = "Not much is known where these came from or why they were created in the first place,";
+BAS_LORE3 = "Though they most certainly do exist, for better or for worse.";
+BAS_LORE4 = "If you get one, make sure it\'s the custom chamber version. These\'ll gunk up very fast...";
+
+GARAND_LORE1 = "An old Mod-3 Daszynski Carbine from the early 1X40 days. Some have been recently rechambered to 7.76mm also.";
+GARAND_LORE2 = "It mostly serves now as an inbetween of the Mk. IV Boss Rifle and  the ZM7 Liberator.";
+GARAND_LORE3 = "The original cartridge it was chambered for of .32-18 \'Gdansk\' hits a hefty punch,";
+GARAND_LORE4 = "though its rarity and incompatibility with other 7.76mm guns makes the 7.76mm version a bit more economical.";
+
 
 // Radtech Weapons Pack
 TAG_SNUBNOSE = "Detective Special";
-TAG_SINGLEACTREV = "Single-Action 'Theropoda' Revolver";
+TAG_SINGLEACTREV = "Single-Action \'Theropoda\' Revolver";
 TAG_DM93PLASMA = "DM-93a Experimental Beam Projector";
-TAG_OBROZZ = "Obrozz Sawn-Off 'Boss' Bolt-Action Rifle";
-TAG_MINERVA = "'Minerva' 9x22mm Parumpudicum Minigun";
+TAG_OBROZZ = "Obrozz Sawn-Off \'Boss\' Bolt-Action Rifle";
+TAG_MINERVA = "\'Minerva\' 9x33mm Parumpudicum Minigun";
 TAG_LESSLETHALHUNTER = "Bernoulli M1053 Less-Lethal Shotgun";
-TAG_JUANPIS = "9x22mm Parumpudicum 'Juan' Horseshoe Pistol";
-TAG_JUANAUTO = "9x22mm Parumpudicum 'Juan' Horseshoe Pistol (select-fire)";
+TAG_JUANPIS = "9x33mm Parumpudicum \'Juan\' Horseshoe Pistol";
+TAG_JUANAUTO = "9x33mm Parumpudicum \'Juan\' Horseshoe Pistol (select-fire)";
 TAG_HACKEDZM = "Volt ZM66 Assault Rifle";
 TAG_HZMSEMI = "Volt ZM66 Assault Rifle (Semi)";
 TAG_HZMREGULAR = "Volt ZM66 assault rifle (no GL)";
 TAG_HZMIRREGULAR = "Volt ZM66 assault rifle (semi with GL)";
-TAG_GOLDSINGLEACTION = "Golden Single-Action 'Theropoda' Revolver";
+TAG_GOLDSINGLEACTION = "Golden Single-Action \'Theropoda\' Revolver";
 TAG_FLAREGUN = "12-Gauge Flare Gun";
 TAG_METALFLAREGUN = "Metallic 12-Gauge Flare Gun";
-TAG_EXPLOSIVESHOTGUN = "SPOS-E44 'Gatherer' Pump-Action Shotgun";
+TAG_EXPLOSIVESHOTGUN = "SPOS-E44 \'Gatherer\' Pump-Action Shotgun";
 TAG_DYNAMITE = "Dynamite";
-TAG_DOOMHUNT = "SPOS-E19 'Hunter' Pump-action Shotgun";
+TAG_DOOMHUNT = "SPOS-E19 \'Hunter\' Pump-action Shotgun";
 TAG_COMBATSHOTGUN = "Bernoulli M1924 12-Gauge Combat Shotgun";
 TAG_10PIS = "9.82x33mm Self-Defense Pistol";
 TAG_10PSLECT = "9.82x33mm Self-Defense Pistol (Select Fire)";
-TAG_SIGCOW = "M-211 'Sig-Cow' Pistol-Caliber Carbine";
+TAG_SIGCOW = "M-211 \'Sig-Cow\' Pistol-Caliber Carbine";
 TAG_STEN = "Blyskawica Mk.2-S Submachine Gun";
 TAG_C19 = "Volt 2X92 .39 CSD Service Pistol";
-TAG_HPUPPY = "99FX 'Hush Puppy' Stealth Pistol";
+TAG_HPUPPY = "99FX \'Hush Puppy\' Stealth Pistol";
 TAG_STUNGUN = "Raysun X-26 Stun Gun";
-TAG_10RELOADER = "9.82x33mm 'Ausfallen' Reloader";
+TAG_10RELOADER = "9.82x33mm \'Ausfallen\' Reloader";
 TAG_10PISMAG = "9.82x33mm pistol magazine";
-TAG_SCWMAG = "M-211 'Sig-Cow' magazine";
+TAG_SCWMAG = "M-211 \'Sig-Cow\' magazine";
 TAG_CM7 = "Volt 2X92 magazine";
 TAG_DYNAMITEBUNDLE = "Bundle of Dynamite";
-TAG_JUANMAG = "9x22mm Parumpudicum horseshoe magazine";
+TAG_JUANMAG = "9x33mm Parumpudicum horseshoe magazine";
 
 // Weapon Pickups
 PICKUP_10MMPISTOL = "You got the 9.82x33mm Self-Defense Pistol! It really packs a punch!";
-PICKUP_SIGCOW = "You got the M-211 'Sig-Cow' Pistol-Caliber Carbine!";
+PICKUP_SIGCOW = "You got the M-211 \'Sig-Cow\' Pistol-Caliber Carbine!";
 PICKUP_COLT1911 = "You got the Volt 2X92 .39 CSD Service Pistol! Semper Fi!";
 PICKUP_COMBATSHOTGUN = "You got the Bernoulli M1924 12-Gauge Combat Shotgun!";
-PICKUP_DOOMEDHUNTER1 = "You got the SPOS-E19 'Hunter' Pump-action Shotgun!";
-PICKUP_DOOMEDHUNTER2 = "You got the SPOS-E19 'Hunter' Pump-action Shotgun! There's some funky tool marks near the fire selector...";
-PICKUP_DOOMEDHUNTER3 = "You got the SPOS-E19 'Hunter' Pump-action Shotgun! Where is the fire selector on this thing!?";
-PICKUP_DOOMEDHUNTER4 = "You got the SPOS-E19 'Hunter' Pump-action Shotgun! What force of nature created this cursed thing?";
+PICKUP_DOOMEDHUNTER1 = "You got the SPOS-E19 \'Hunter\' Pump-action Shotgun!";
+PICKUP_DOOMEDHUNTER2 = "You got the SPOS-E19 \'Hunter\' Pump-action Shotgun! There\'s some funky tool marks near the fire selector...";
+PICKUP_DOOMEDHUNTER3 = "You got the SPOS-E19 \'Hunter\' Pump-action Shotgun! Where is the fire selector on this thing!?";
+PICKUP_DOOMEDHUNTER4 = "You got the SPOS-E19 \'Hunter\' Pump-action Shotgun! What force of nature created this cursed thing?";
 PICKUP_DYNAMITE = "Picked up a bundle of dynamite.";
-PICKUP_EXPLOSIVEHUNTER1 = "You got the SPOS-E44 'Gatherer' Pump-Action Shotgun! Yeah, eat this!";
-PICKUP_EXPLOSIVEHUNTER2 = "You got the SPOS-E44 'Gatherer' Pump-Action Shotgun! Where is the fire selector on this thing!?";
-PICKUP_EXPLOSIVEHUNTER3 = "You got the SPOS-E44 'Gatherer' Pump-Action Shotgun! There's some weird tool marks near the fire selector...";
-PICKUP_PLASTICFLAREGUN = "You got a 12-Gauge Flare Gun! It's like christmas morning...";
+PICKUP_EXPLOSIVEHUNTER1 = "You got the SPOS-E44 \'Gatherer\' Pump-Action Shotgun! Yeah, eat this!";
+PICKUP_EXPLOSIVEHUNTER2 = "You got the SPOS-E44 \'Gatherer\' Pump-Action Shotgun! Where is the fire selector on this thing!?";
+PICKUP_EXPLOSIVEHUNTER3 = "You got the SPOS-E44 \'Gatherer\' Pump-Action Shotgun! There\'s some weird tool marks near the fire selector...";
+PICKUP_PLASTICFLAREGUN = "You got a 12-Gauge Flare Gun! It\'s like christmas morning...";
 PICKUP_METALFLAREGUN = "You got a Metallic 12-Gauge Flare Gun! Feels pretty hefty...";
-PICKUP_GOLDENSINGLEACTION = "You got the Golden Single-Action 'Theropoda' Revolver! Makes my fingers feel tingly...";
+PICKUP_GOLDENSINGLEACTION = "You got the Golden Single-Action \'Theropoda\' Revolver! Makes my fingers feel tingly...";
 PICKUP_HACKEDZM66SEMI = "Picked up a semi-automatic Volt ZM66 Assault Rifle, though something feels a bit off...";
 PICKUP_HACKEDZM66NORMAL = "You got the Volt ZM66 Assault Rifle! Something feels a bit off about it...";
-PICKUP_HUSHPUPPY = "You got the 99FX 'Hush Puppy' Stealth Pistol! Shhh...";
-PICKUP_JUANPISTOL = "You got the 9x22mm Parumpudicum 'Juan' Horseshoe Pistol! It truly kicks like a mule!";
+PICKUP_HUSHPUPPY = "You got the 99FX \'Hush Puppy\' Stealth Pistol! Shhh...";
+PICKUP_JUANPISTOL = "You got the 9x33mm Parumpudicum \'Juan\' Horseshoe Pistol! It truly kicks like a mule!";
 PICKUP_LESSLETHALHUNTER1 = "You got the Bernoulli M1053 Less-Lethal Shotgun!";
 PICKUP_LESSLETHALHUNTER2 = "You got the Bernoulli M1053 Less-Lethal Shotgun! Where is the fire selector on this thing!?";
-PICKUP_LESSLETHALHUNTER3 = "You got the Bernoulli M1053 Less-Lethal Shotgun! There's some weird tool marks near the fire selector...";
-PICKUP_MINERVA = "You got the 'Minerva' 9x22mm Parumpudicum Minigun!";
-PICKUP_MINERVADAMAGE0 = " She's beautiful!";
+PICKUP_LESSLETHALHUNTER3 = "You got the Bernoulli M1053 Less-Lethal Shotgun! There\'s some weird tool marks near the fire selector...";
+PICKUP_MINERVA = "You got the \'Minerva\' 9x33mm Parumpudicum Minigun!";
+PICKUP_MINERVADAMAGE0 = " She\'s beautiful!";
 PICKUP_MINERVADAMAGE100 = " She looks alright.";
-PICKUP_MINERVADAMAGE200 = " She ain't looking so hot.";
-PICKUP_MINERVADAMAGE500 = " She's barely hanging on...";
-PICKUP_OBROZZ = "You got the Obrozz Sawn-Off 'Boss' rifle! Pretty light!";
+PICKUP_MINERVADAMAGE200 = " She ain\'t looking so hot.";
+PICKUP_MINERVADAMAGE500 = " She\'s barely hanging on...";
+PICKUP_OBROZZ = "You got the Obrozz Sawn-Off \'Boss\' rifle! Pretty light!";
 PICKUP_PLASMABUSTER = "You got the DM-93a Experimental Beam Projector! Sparkly!";
-PICKUP_SINGLEACTIONREVOLVER = "You got the Single-Action 'Theropoda' Revolver! Feels pretty sturdy.";
+PICKUP_SINGLEACTIONREVOLVER = "You got the Single-Action \'Theropoda\' Revolver! Feels pretty sturdy.";
 PICKUP_DETECTIVESPECIAL = "You got the Detective Special! Feels pretty small, ey?";
-PICKUP_STENMK2 = "You got the Blyskawica Mk.2-S Submachine Gun! It's warm to the touch!";
+PICKUP_STENMK2 = "You got the Blyskawica Mk.2-S Submachine Gun! It\'s warm to the touch!";
 PICKUP_STUNGUN = "You got the Raysun X-26 Stun Gun! Zap, zap!";
 
 // Item Pickups
 PICKUP_10MAG25 = "Picked up a Sig-Cow magazine.";
 PICKUP_10MAG8 = "Picked up a 9.82x33mm Self-Defense Pistol magazine.";
-PICKUP_10MRELOADER = "Picked up a 9.82x33mm 'Ausfallen' reloading device!";
+PICKUP_10MRELOADER = "Picked up a 9.82x33mm \'Ausfallen\' reloading device!";
 PICKUP_JUANMAG = "Picked up a horseshoe-shaped pistol magazine..?";
 
 // Obituaries
-OB_STUNGUN = "%o got fried by %k's X-26 Stun Gun.";
+OB_STUNGUN = "%o got fried by %k\'s X-26 Stun Gun.";
 OB_SNUBNOSE = "%o found out %k was not just happy to see them";
-OB_RSA = "%o met his death by %k's big iron.";
-OB_DM93 = "%o was vaporized by %k's plasma rifle.";
-OB_OBROZZ = "%o sure showed %k who was the 'brozz!";
-OB_MINERVA = "%o got turned into swiss cheese by %k's Minnie-gun.";
+OB_RSA = "%o met his death by %k\'s big iron.";
+OB_DM93 = "%o was vaporized by %k\'s plasma rifle.";
+OB_OBROZZ = "%o sure showed %k who was the \'brozz!";
+OB_MINERVA = "%o got turned into swiss cheese by %k\'s Minnie-gun.";
 OB_LLSHOTGUN = "%o got bagged by %k.";
-OB_JUAN = "%o \c-got trampled over by %k's \c-juan.\c-.";
+OB_JUAN = "%o \c-got trampled over by %k\'s \c-juan.\c-.";
 OB_HACKEDZM = "%o was hacked to bits by %k.";
-OB_PUP = "%o got put down by %k's Hush Puppy.";
-OB_GOLDENGUN = "%o was Scaramangled by %k's golden gun.";
+OB_PUP = "%o got put down by %k\'s Hush Puppy.";
+OB_GOLDENGUN = "%o was Scaramangled by %k\'s golden gun.";
 OB_FLAREGUN = "%o was set ablaze by %k.";
-OB_METALFLAREGUN = "%o is S.O.L. thanks to %k's S.0.S.";
-OB_EXPLSHOTGUN = "%o was shot to high heavens by %k's shotgun.";
-OB_DOOMSHOTGUN = "%o met their Doom by %k's shotgun.";
-OB_COMBATSHOTGUN = "%o got sent home early by %k's shotgun.";
-OB_10MMPISTOL = "%o was dealt a fatal blow by %k's Self-Defense Pistol.";
-OB_COLT1911 = "%o got a taste of %k's Volt .39.";
+OB_METALFLAREGUN = "%o is S.O.L. thanks to %k\'s S.0.S.";
+OB_EXPLSHOTGUN = "%o was shot to high heavens by %k\'s shotgun.";
+OB_DOOMSHOTGUN = "%o met their Doom by %k\'s shotgun.";
+OB_COMBATSHOTGUN = "%o got sent home early by %k\'s shotgun.";
+OB_10MMPISTOL = "%o was dealt a fatal blow by %k\'s Self-Defense Pistol.";
+OB_COLT1911 = "%o got a taste of %k\'s Volt .39.";
 
 // EVERYTHING below this is Menu stuff. Feast upon the horror. - [Ted]
 
@@ -262,8 +489,8 @@ MENU_FGUNLORE2 = "It can also fire buckshot shells, but at a price.";
 MENU_FGUNLORE3 = "Metallic versions exist to aide with this issue, though are much heavier.";
 
 // Hush Puppy
-MENU_PUPTITLE = "------ 99FX 'Hush Puppy' Stealth Pistol Options ------";
-MENU_HPUPPYHANDGUNTEXT = "Control the spawn rate of the 99FX 'Hush Puppy' Stealth Pistol on handguns.";
+MENU_PUPTITLE = "------ 99FX \'Hush Puppy\' Stealth Pistol Options ------";
+MENU_HPUPPYHANDGUNTEXT = "Control the spawn rate of the 99FX \'Hush Puppy\' Stealth Pistol on handguns.";
 
 MENU_HPUPLORE1 = "A modified version of the 99FX pistol with a suppressor attachment.";
 MENU_HPUPLORE2 = "Has a slide lock installed to stop another round from being chambered";
@@ -272,38 +499,38 @@ MENU_HPUPLORE4 = "the user has to chamber rounds manually after each and every s
 
 // Stun Gun
 MENU_STUNGUNTITLE = "------ Raysun X-26 Stun Gun Options ------";
-MENU_STGCHAINTEXT = "Control the spawn rate of the X-26 Stun Gun on 'Lumberjack' Chainsaws.";
+MENU_STGCHAINTEXT = "Control the spawn rate of the X-26 Stun Gun on \'Lumberjack\' Chainsaws.";
 
 MENU_STUNLORE1 = "A common device used for personal protection by civilians and";
-MENU_STUNLORE2 = "law enforcement agencies. Delivers a million volts into the victim's";
+MENU_STUNLORE2 = "law enforcement agencies. Delivers a million volts into the victim\'s";
 MENU_STUNLORE3 = "body, causing momentary seizures and loss of muscle control.";
 MENU_STUNLORE4 = "Prolonged contact may cause burns and accidental fires.";
 
 // Juan Options
-MENU_JUANTITLE = "------ 9x22mm Parumpudicum 'Juan' Horseshoe Pistol Options ------";
-MENU_JUANTEXT1 = "Control the spawn rate of 'Juan' pistols.";
-MENU_JUANTEXT2 = "Control chance 'Juan' pistols drop from enemies.";
-MENU_JUANTEXT3 = "Control the rarity of selectfire 'Juan' pistols.";
-MENU_JUANTEXT4 = "Control the spawn rate of 'Juan' magazines.";
+MENU_JUANTITLE = "------ 9x33mm Parumpudicum \'Juan\' Horseshoe Pistol Options ------";
+MENU_JUANTEXT1 = "Control the spawn rate of \'Juan\' pistols.";
+MENU_JUANTEXT2 = "Control chance \'Juan\' pistols drop from enemies.";
+MENU_JUANTEXT3 = "Control the rarity of selectfire \'Juan\' pistols.";
+MENU_JUANTEXT4 = "Control the spawn rate of \'Juan\' magazines.";
 
-MENU_JUANLORE1 = "A variant of the standard-issue pistol, albeit with a non-standard 'horseshoe' magazine.";
-MENU_JUANLORE2 = "As the name suggests, it uses a unique 'horseshoe' magazine";
-MENU_JUANLORE3 = "that holds 30 9x22mm Parumpudicum rounds, similarly to the MP-46.";
+MENU_JUANLORE1 = "A variant of the standard-issue pistol, albeit with a non-standard \'horseshoe\' magazine.";
+MENU_JUANLORE2 = "As the name suggests, it uses a unique \'horseshoe\' magazine";
+MENU_JUANLORE3 = "that holds 30 9x33mm Parumpudicum rounds, similarly to the MP-46.";
 MENU_JUANLORE4 = "However, its small size makes it incredibly difficult to control in full-auto,";
-MENU_JUANLORE5 = "instead leaving users to use a 'galloping' shooting pattern to stay on target.";
+MENU_JUANLORE5 = "instead leaving users to use a \'galloping\' shooting pattern to stay on target.";
 
 // Doomed Hunter
-MENU_DHUNTITLE = "------ SPOS-E19 'Hunter' Pump-action Shotgun Options ------";
-MENU_DHUNTTEXT1 = "Control the spawn rate of the SPOS-E19 'Hunter' Pump-action Shotgun on Shotguns";
+MENU_DHUNTITLE = "------ SPOS-E19 \'Hunter\' Pump-action Shotgun Options ------";
+MENU_DHUNTTEXT1 = "Control the spawn rate of the SPOS-E19 \'Hunter\' Pump-action Shotgun on Shotguns";
 
-MENU_DHUNTLORE1 = "An older modelled and decrepit Hunter that's lost it's ease of pumping over the years.";
-MENU_DHUNTLORE2 = "These older Hunters came with Duckbill Chokes to control their spread to a 'V' shape.";
+MENU_DHUNTLORE1 = "An older modelled and decrepit Hunter that\'s lost it\'s ease of pumping over the years.";
+MENU_DHUNTLORE2 = "These older Hunters came with Duckbill Chokes to control their spread to a \'V\' shape.";
 
 // DM-93
 MENU_PBUSTITLE = "------ DM-93a Experimental Beam Projector Options ------";
 MENU_PBUSTTEXT1 = "Control the spawn rate of the DM-93a Beam Projector on Cell Packs";
 
-MENU_PBUSTLORE1 = "A revised version of the 'Thunder Buster' particle beam projector.";
+MENU_PBUSTLORE1 = "A revised version of the \'Thunder Buster\' particle beam projector.";
 MENU_PBUSTLORE2 = "After receiving a disturbing number of incident reports involving self-detonations caused by mismanagement,";
 MENU_PBUSTLORE3 = "The UAC tasked a junior researcher to find a solution to this problem and thus invented the DM-93.";
 MENU_PBUSTLORE4 = "He tweaked the Ion Emitter so the plasma particles are contained in an electromagnetic field";
@@ -313,7 +540,7 @@ MENU_PBUSTLORE7 = "Automatic Fire emits an accurate stream of these projectiles,
 MENU_PBUSTLORE8 = "shoots out a spread of many shots in rapid succession.";
 
 // Obrozz
-MENU_OBROZZTITLE = "------ Obrozz Sawn-Off 'Boss' Bolt-Action Rifle Options ------";
+MENU_OBROZZTITLE = "------ Obrozz Sawn-Off \'Boss\' Bolt-Action Rifle Options ------";
 MENU_OBROZZTEXT = "Control the spawn rate of the Obrozz Rifle on Shotguns and Ammo Boxes";
 
 MENU_OBROZZLORE1 = "A Boss rifle that has been reduced down to the bare essentials.";
@@ -326,31 +553,31 @@ MENU_CSHOTTITLE = "------ Bernoulli M1924 12-Gauge Combat Shotgun Options ------
 MENU_CSHOTTEXT = "Control the spawn rate of the Bernoulli M1924 12-Gauge Combat Shotgun on Shotguns";
 
 MENU_CSHOTLORE1 = "A compact shotgun often seen in the hands of space marines throughout the galaxy.";
-MENU_CSHOTLORE2 = "Despite having no side saddles or a butt stock to attach them to, in the right hands it's still as deadly as any other shotgun.";
+MENU_CSHOTLORE2 = "Despite having no side saddles or a butt stock to attach them to, in the right hands it\'s still as deadly as any other shotgun.";
 MENU_CSHOTLORE3 = "Toss one in your pack the next time you leave HQ, it may become very handy.";
 
 // Sigcow
-MENU_SIGCOWTITLE = "------ M-211 'Sigcow' Pistol-Caliber Carbine Options ------";
+MENU_SIGCOWTITLE = "------ M-211 \'Sigcow\' Pistol-Caliber Carbine Options ------";
 MENU_SIGCOWTEXT1 = "Control the spawn rate of the Sigcow on Clip Boxes";
 
-MENU_SIGCOWLORE1 = "A pistol-caliber carbine chambered in 9.82x33mm 'Ausfallen'";
-MENU_SIGCOWLORE2 = "and the trusted weapon of the UAC's Light Drop Infantry division.";
+MENU_SIGCOWLORE1 = "A pistol-caliber carbine chambered in 9.82x33mm \'Ausfallen\'";
+MENU_SIGCOWLORE2 = "and the trusted weapon of the UAC\'s Light Drop Infantry division.";
 MENU_SIGCOWLORE3 = "Includes a bayonet attachment for ease of use in close-quarters combat.";
 
 // 10 Piss
 MENU_10PTITLE = "------ 9.82x33mm Self-Defense Pistol Options ------";
 MENU_10PTEXT1 = "Control the spawn rate of the 9.82x33mm Self-Defense Pistol on Handguns";
-MENU_10PTEXT2 = "Control the spawn rate of the 9.82x33mm Self-Defense Pistol's magazines on Clip Magazines.";
+MENU_10PTEXT2 = "Control the spawn rate of the 9.82x33mm Self-Defense Pistol\'s magazines on Clip Magazines.";
 
 MENU_10PLORE1 = "A handgun released in late 1X82, adopted by the PIA following the aftermath of a tragic shooting incident.";
 MENU_10PLORE2 = "This pistol offers better penetration and a much higher muzzle velocity";
-MENU_10PLORE3 = "than either 9x22mm Parumpudicum or .355 firearms, but is much more difficult to control.";
+MENU_10PLORE3 = "than either 9x33mm Parumpudicum or .355 firearms, but is much more difficult to control.";
 
 // Colt 1911
 MENU_COLTTITLE = "------ Volt 2X92 .39 CSD Service Pistol Options ------";
 MENU_COLTTEXT1 = "Control the spawn rate of the Volt 2X92 on Handguns";
 MENU_COLTTEXT2 = "Control the spawn rate of Volt 2X92 bundles on Ammoboxes";
-MENU_COLTTEXT3 = "Control the spawn rate of the Volt 2X92's magazines on Clip Magazines.";
+MENU_COLTTEXT3 = "Control the spawn rate of the Volt 2X92\'s magazines on Clip Magazines.";
 
 MENU_C19LORE1 = "The Volt 2X92 is chambered in .39 CSD, delivering a";
 MENU_C19LORE2 = "powerful blow that can bring down most humanoids";
@@ -371,15 +598,15 @@ MENU_SNOSETITLE = "------ Detective Special Snubnose Revolver Options ------";
 MENU_SNOSETEXT1 = "Control the spawn rate of the Snubnose Revolver on handguns";
 
 MENU_SNOSELORE1 = "A sidearm once popular with police and private investigators of the past.";
-MENU_SNOSELORE2 = "This revolver's smaller stature fits much better in your pocket,";
+MENU_SNOSELORE2 = "This revolver\'s smaller stature fits much better in your pocket,";
 MENU_SNOSELORE3 = "Though the smaller barrel cuts down your accuracy and firepower.";
 
 // Minerva
-MENU_MINERVATITLE = "------ 'Minerva' 9x22mm Parumpudicum Minigun Options ------";
+MENU_MINERVATITLE = "------ \'Minerva\' 9x33mm Parumpudicum Minigun Options ------";
 MENU_MINERVATEXT1 = "Control the spawn rate of the Minerva on Mk. III Vulcanettes";
 MENU_MINERVATEXT2 = "Control the spawn rate of the Minerva on MP-46s";
 
-MENU_MINERVALORE1 = "A support weapon chambered in 9x22mm Parumpudicum,";
+MENU_MINERVALORE1 = "A support weapon chambered in 9x33mm Parumpudicum,";
 MENU_MINERVALORE2 = "And later modified to use UAC standard MP-46 magazines.";
 MENU_MINERVALORE3 = "It can hold a maximum of 150+5 rounds at a time.";
 MENU_MINERVALORE4 = "Just remember to keep your empty mags.";
@@ -396,14 +623,14 @@ MENU_LLHLORE3 = "Useful for situations where maintaining a low fatality count is
 MENU_HZMTITLE = "------ Hacked ZM66 Assault Rifle Options ------";
 MENU_HZMTEXT1 = "Control the spawn rate of the Hacked ZM66 Assault Rifle on ZM66 Assault Rifles";
 
-MENU_HZMLORE1 = "A 'jailbroken' model of the Volt ZM66 Assault Rifle,";
-MENU_HZMLORE2 = "this weapon has been stripped of most of it's less desireable features.";
-MENU_HZMLORE3 = "This is mostly relating to it's magazine DRM system,";
+MENU_HZMLORE1 = "A \'jailbroken\' model of the Volt ZM66 Assault Rifle,";
+MENU_HZMLORE2 = "this weapon has been stripped of most of it\'s less desireable features.";
+MENU_HZMLORE3 = "This is mostly relating to it\'s magazine DRM system,";
 MENU_HZMLORE4 = "though at the cost of a reduced firerate and non-functional ammo counter.";
-MENU_HZMLORE5 = "Mainly of these models come with a 4 round 'Quad Burst' firemode.";
+MENU_HZMLORE5 = "Mainly of these models come with a 4 round \'Quad Burst\' firemode.";
 
 // Explosive Hunter
-MENU_EHUNTERTITLE = "------ SPOS-E44 'Gatherer' Pump-Action Shotgun Options ------";
+MENU_EHUNTERTITLE = "------ SPOS-E44 \'Gatherer\' Pump-Action Shotgun Options ------";
 MENU_EHUNTERTEXT1 = "Control the spawn rate of the SPOS-E44 on Hunters";
 
 MENU_EHUNTERLORE1 = "The antithesis of the Bernoulli M1053, this modified hunter fires slugs loaded with miniature HE grenades.";
@@ -411,17 +638,17 @@ MENU_EHUNTERLORE2 = "These slugs cause immense injuries and burns on impact.";
 MENU_EHUNTERLORE3 = "Use of this weapon in close-quarters is ill-advised if you care about your limbs.";
 
 // Single Action
-MENU_SINGACTTITLE = "------ Single-Action 'Theropoda' Revolver Options ------";
-MENU_SINGACTTEXT1 = "Control the spawn rate of the 'Theropoda' Revolver on handguns.";
+MENU_SINGACTTITLE = "------ Single-Action \'Theropoda\' Revolver Options ------";
+MENU_SINGACTTEXT1 = "Control the spawn rate of the \'Theropoda\' Revolver on handguns.";
 
 MENU_SINGACTLORE1 = "An ancient firearm better suited for a gunslinger than a space marine.";
 MENU_SINGACTLORE2 = "Chambered in .42 CSD, this revolver will definitely punch a hole into whatever it hits.";
 MENU_SINGACTLORE3 = "With how old these rounds are, they have a good chance to richochet off walls to perform trickshots.";
 
 // Single Action but pis- gold
-MENU_GREVVYTITLE = "------ Gold Single-Action 'Theropoda' Revolver Options ------";
+MENU_GREVVYTITLE = "------ Gold Single-Action \'Theropoda\' Revolver Options ------";
 MENU_GREVVYTEXT1 = "Control the spawn rate of the Golden Single-Action on handguns";
 
-MENU_GREVVYLORE1 = "A special golden version of the Single-Action 'Theropoda' Revolver.";
+MENU_GREVVYLORE1 = "A special golden version of the Single-Action \'Theropoda\' Revolver.";
 MENU_GREVVYLORE2 = "Not much is known about it due to their immense rarity.";
 MENU_GREVVYLORE3 = "...Though those who have found one talk highly about its power.";

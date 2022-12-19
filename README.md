@@ -1,7 +1,7 @@
 # Ted Tweaks
 
 A large collection of changes and 'tweaks' I've wanted to do to Hideous Destructor.
-This always targets the latest unstable build of Hideous Destructor from <https://codeberg.org/mc776/HideousDestructor>! It will likely not work with any other version.If you want to use any of the LANGUAGE lump changes, you'll need to load it after any mods you want to use too
+This always targets the latest unstable build of Hideous Destructor from <https://codeberg.org/mc776/HideousDestructor>! It will likely not work with any other version If you wish to use any of the LANGUAGE lump changes, you'll need to load it after any mods this supports.
 
 Renamed Items:
 
@@ -9,6 +9,7 @@ Renamed Items:
 - [Hexadoken's Legacy Continued](https://github.com/Gay-Snake-Squad/HexaDoken-Legacy-Continued)
 - [HDBulletLib-Recasted](https://github.com/Gay-Snake-Squad/HDBulletLib-Recasted)
 - [Radtech Weapons Pack](https://github.com/swampyrad/RadTechWeaponsPack)
+- [Peppergrinder](https://gitlab.com/hdiscord-saltmines/hd-peppergrinder)
 
 Changes:
 
