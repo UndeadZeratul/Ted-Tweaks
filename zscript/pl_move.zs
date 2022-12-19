@@ -208,11 +208,11 @@ extend class HDPlayerPawn{
 				else bobfactor*=0.7;
 			}
 
-			if(!player.onground && !bNoGravity && !waterlevel){
+/*			if(!player.onground && !bNoGravity && !waterlevel){
 				// [RH] allow very limited movement if not on ground.
 				movefactor*=level.aircontrol;
 				bobfactor*=level.aircontrol;
-			}
+			}*/
 
 			//"override double,double TweakSpeeds()"...
 			double basespeed=speed*12.;
