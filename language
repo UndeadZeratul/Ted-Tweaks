@@ -66,7 +66,7 @@ TAG_20MMGREN = "20x42mm rifle grenade";
 TAG_10MMAUTO = "9.82x33mm \'Ausfallen\' round";
 TAG_10MMCASING = "9.82x33mm \'Ausfallen\' casing";
 TAG_4GS = "4-gauge Saboted Shotgun slug";
-TAG_4GB = "4-Gauge \'00\' Buckshot"
+TAG_4GB = "4-Gauge \'00\' Buckshot";
 
 // Peppergrinder
 
