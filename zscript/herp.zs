@@ -148,6 +148,10 @@ class HERPBot:HDUPK{
 	){
 		if(
 			!!source
+			&&(
+				!inflictor
+				||source==inflictor
+			)
 			&&source.health>0
 			&&source.bismonster
 			&&source.bcanusewalls
