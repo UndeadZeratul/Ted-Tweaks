@@ -239,12 +239,6 @@ class HDFist:HDWeaponGrabber replaces Fist{
 			strength*=1.2;
 		}
 	}
-	action void A_DontFreedoomFrameB(){
-		if(
-			Wads.CheckNumForName("freedoom",0)!=-1
-			&&player.findPSprite(PSP_WEAPON).sprite==getspriteindex("PUNGA0")
-		)player.findPSprite(PSP_WEAPON).frame++;
-	}
 	action void A_CheckFistSprite(statelabel st,int layer=PSP_WEAPON){
 		if(!player)return;
 		bool usegender=false;
@@ -424,13 +418,13 @@ class HDFist:HDWeaponGrabber replaces Fist{
 		TNT1 A 0 A_CheckFistSprite("startfire");
 	startfire:
 	punch:
-		#### B 0 offset(0,32) A_DontFreedoomFrameB();
+		#### B 0 offset(0,32);
 		---- A 1 A_StrengthTics(0,2);
 		#### D 0 A_Recoil(min(0,1.-invoker.strength));
 		#### D 0 HDPunch(12);
 		#### D 6 A_StrengthTics(3,10);
 		#### C 3 A_StrengthTics(1,5);
-		#### B 0 A_DontFreedoomFrameB();
+		#### B 0;
 		---- A 3 A_StrengthTics(0,5);
 		TNT1 A 5;
 		TNT1 A 0 A_JumpIf(pressingaltfire(),"altfire");
