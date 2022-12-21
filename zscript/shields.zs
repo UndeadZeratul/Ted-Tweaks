@@ -59,8 +59,8 @@ class HDMagicShield:HDDamageHandler{
 			return;
 		}
 		
-		sb.DrawImage("BON2D0", (100, -3), gzflags | sb.DI_ITEM_LEFT_BOTTOM, box: (20, -1));
-		sb.drawnum(hpl.countinv("HDMagicShield"),548,-11,sb.DI_ITEM_LEFT_BOTTOM);
+		sb.DrawImage("BON2D0", (100, -4), gzflags | sb.DI_ITEM_RIGHT_BOTTOM, box: (20, -1));
+		sb.drawnum(hpl.countinv("HDMagicShield"), 111, -10, gzflags | sb.DI_ITEM_RIGHT_BOTTOM);
 	}
 	static void Deplete(
 		actor owner,
