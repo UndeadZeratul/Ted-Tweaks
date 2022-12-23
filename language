@@ -1,5 +1,25 @@
 [enu default]
 
+SECRETMESSAGE = "You found a secret stash!";
+
+QUITMSG = "What? \nYou wanna go out in that weather? \nAre you insane?";
+QUITMSG1 = "Make sure not to fall into the CORE on your way out.";
+QUITMSG2 = "Quite Humerus, isn't it?";
+QUITMSG3 = "The Mk. IV Boss is a straight pull 7.7- wait this isn't the right place!";
+QUITMSG4 = "Notice: Setting 'quit now' to Yes will end the game. \nAre you sure you want to do that?";
+QUITMSG5 = " * You ever see that skeletal-looking dude with the 'Cool Dude' shirt running around here? \n * No? \n * That sucks.";
+QUITMSG6 = " * Desperate measures, ey?"
+QUITMSG7 = "You may leave, but your sins will return.";
+QUITMSG8 = "You're leaving the house? \nBuy me a KSC-75 when you're out then.";
+QUITMSG9 = "Have you tried the Sennheiser HE-1 yet? It's great!";
+QUITMSG10 = "Hey, did that barrel just move?";
+QUITMSG11 = "You hear something, like crying sounds?";
+QUITMSG12 = "You got a stimpack? Needin' a dose myself.";
+QUITMSG13 = " * PREPARE FOR THE COOLEST DEATH IMAGINABLE!";
+QUITMSG14 = "Ready for round 2?\n \nAnyone? \n...no?";
+
+GGSAVED = "Savestate made.";
+
 STARTUP1="        \cq~ \cr* \cq~";
 STARTUP2=" \cyHideous Destructor \cx4.10.0b \cypre \c[Cyan]Ted\'s Tweaks\c-";
 STARTUP3=" Please read the manual.";
