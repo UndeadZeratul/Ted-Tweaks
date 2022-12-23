@@ -59,3 +59,7 @@ Changes:
 - Add CVAR options for most if not all of my changes.
 - Document what I do better.
 - Setup proper bug reports.
+
+## Credits
+
+- Bagel: nothing
