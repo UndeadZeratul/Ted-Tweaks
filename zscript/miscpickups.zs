@@ -193,7 +193,7 @@ class HDAmBox:HDUPK{
 		radiusdamagefactor 0.5;
 		hdambox.maxcapacity 200.;
 		obituary "%o paid no attention to Admiral Ackbar.";
-		tag "ammo box";
+		tag "$TAG_AMMOBOX";
 	}
 	bool tapped;
 	bool disarmed;
@@ -475,7 +475,7 @@ class HDAmBoxUnarmed:HDAmBox{
 }
 class HDAmBoxDisarmed:HDAmBoxUnarmed{
 	default{
-		tag "disarmed ammo box";
+		tag "$TAG_AMMOBOXDISARMED";
 	}
 	states{
 	spawn:
@@ -816,7 +816,7 @@ class KeyLoadoutGiver:HDPickup{
 		-hdpickup.fitsinbackpack
 		inventory.maxamount 7;
 		hdpickup.refid HDLD_KEY;
-		tag "keys";
+		tag "$TAG_KEYS";
 	}
 	states{
 	spawn:TNT1 A 0;stop;
@@ -1014,7 +1014,7 @@ class MapLoadoutGiver:HDPickup{
 	default{
 		-hdpickup.fitsinbackpack
 		hdpickup.refid HDLD_MAP;
-		tag "local area map";
+		tag "$TAG_MAPGIVER";
 	}
 	states{
 	spawn:TNT1 A 0;stop;

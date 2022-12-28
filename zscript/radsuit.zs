@@ -9,7 +9,7 @@ class WornRadsuit:HDDamageHandler{
 		HDDamageHandler.priority 1000;
 		HDPickup.wornlayer STRIP_RADSUIT;
 		HDPickup.overlaypriority 150;
-		tag "environment suit";
+		tag "$TAG_RADSUIT";
 	}
 	states{spawn:TNT1 A 0;stop;}
 	override inventory createtossable(int amt){
@@ -180,13 +180,14 @@ class PortableRadsuit:HDPickup replaces RadSuit{
 		//$Title "Environment Suit"
 		//$Sprite "SUITA0"
 
-		inventory.pickupmessage "Environmental shielding suit.";
+//		inventory.pickupmessage "Environmental shielding suit.";
 		inventory.pickupsound "weapons/pocket";
 		inventory.icon "SUITB0";
 		hdpickup.bulk 20;
-		tag "environment suit";
+		tag "$TAG_RADSUIT";
 		hdpickup.refid HDLD_RADSUIT;
 	}
+	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_RADSUIT"); return pickupmessage;}
 	override void DetachFromOwner(){
 		owner.A_TakeInventory("PortableRadsuit");
 		owner.A_TakeInventory("WornRadsuit");

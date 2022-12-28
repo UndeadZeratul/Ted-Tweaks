@@ -20,12 +20,11 @@ class BFG9K:HDCellWeapon replaces BFG9000{
 		hdweapon.refid HDLD_BFG;
 		tag "$TAG_BFG9000";
 	}
-	override string pickupmessage(){
-		return "You got the "..gettag().."! Oh yes.";
-	}
+	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_BFG9000"); return pickupmessage;}
 	override string getobituary(actor victim,actor inflictor,name mod,bool playerattack){
-		if(bplayingid)return "%o was smacked by %k's big green gob.";
-		return "%o just got glassed and no one leaves here till we find out %k did it!";
+		String msg=Stringtable.Localize("OB_BFG9000");
+		if(bplayingid)msg=("OB_BFG9000ID");
+		return msg;
 	}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse,doselect);}

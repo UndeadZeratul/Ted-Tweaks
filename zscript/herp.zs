@@ -71,10 +71,10 @@ class HERPBot:HDUPK{
 		height 9;radius 7;mass 400;health 200;
 		damagefactor "hot",0.7;
 		damagefactor "cold",0.7;
-		obituary "%o went HERP.";
+		obituary "$OB_HERP";
 		hdupk.pickupmessage ""; //just use the spawned one
 		hdupk.pickupsound "";
-		tag "H.E.R.P. robot";
+		tag "$TAG_HERP";
 		scale 0.8;
 	}
 	//it is now canon: the mag and seal checkers are built inextricably into the AI.
@@ -562,14 +562,15 @@ class HERPUsable:HDWeapon{
 		inventory.maxamount 1;
 		inventory.icon "HERPEX";
 		inventory.pickupsound "misc/w_pkup";
-		inventory.pickupmessage "Picked up a Heavy Engagement Rotary Platform robot.";
-		tag "H.E.R.P. robot";
+//		inventory.pickupmessage "Picked up a Heavy Engagement Rotary Platform robot.";
+		tag "$TAG_HERP";
 		hdweapon.refid HDLD_HERPBOT;
 		weapon.selectionorder 1015;
 	}
 	override string pickupmessage(){
-		if(weaponstatus[0]&HERPF_BROKEN)return super.pickupmessage().." It is damaged.";
-		return super.pickupmessage();
+		string msg=Stringtable.Localize("$PICKUP_HERP");
+		if(weaponstatus[0]&HERPF_BROKEN)msg=msg..Stringtable.Localize("$PICKUP_HERP_BROKEN");
+		return msg;
 	}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse,doselect);}

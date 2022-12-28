@@ -30,6 +30,7 @@ class HDSMG:HDWeapon{
 			\cureflexsight - 0-1, no/yes
 			\cudot - 0-5";
 	}
+	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_SMG"); return pickupmessage;}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse,doselect);}
 	override double gunmass(){

@@ -371,8 +371,9 @@ class PortableLadder:HDPickup{
 		height 20;radius 8;
 		hdpickup.bulk 35; //was fucking 70???
 		hdpickup.refid HDLD_LADDER;
-		tag "portable ladder";
+		tag "$TAG_LADDER";
 	}
+	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_LADDER"); return pickupmessage;}
 	states{
 	spawn:
 		LADD D -1;
@@ -395,6 +396,3 @@ class PortableLadder:HDPickup{
 		}fail;
 	}
 }
-
-
-

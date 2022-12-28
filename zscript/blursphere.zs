@@ -11,13 +11,14 @@ class HDBlurSphere:HDDamageHandler{
 		+inventory.invbar
 		HDDamageHandler.priority -420;
 		HDPickup.overlaypriority -420;
-		inventory.pickupmessage "Limited invisibility.";
+//		inventory.pickupmessage "Limited invisibility.";
 		inventory.pickupsound "blursphere/pickup";
 		inventory.icon "PINSA0";
 		hdpickup.bulk ENC_DERP;
 		scale 0.3;
 		speed 10;
 	}
+	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_BLURSPHERE"); return pickupmessage;}
 	int intensity;
 	bool worn;
 	override void ownerdied(){

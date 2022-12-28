@@ -8,11 +8,11 @@ class PortableLiteAmp:HDMagAmmo replaces Infrared{
 		//$Sprite "PVISB0"
 
 		+inventory.invbar
-		inventory.pickupmessage "Light amplification visor.";
+//		inventory.pickupmessage "Light amplification visor.";
 		inventory.icon "PVISA0";
 		scale 0.5;
 		hdpickup.bulk ENC_LITEAMP;
-		tag "light amplification visor";
+		tag "$TAG_LITEAMP";
 		hdpickup.refid HDLD_LITEAMP;
 
 		hdmagammo.maxperunit NITEVIS_MAGMAX;
@@ -30,6 +30,7 @@ class PortableLiteAmp:HDMagAmmo replaces Infrared{
 		worn=false;
 		super.DetachFromOwner();
 	}
+	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_LITEAMP"); return pickupmessage;}
 	double amplitude;
 	double lastcvaramplitude;
 	override bool isused(){return true;}

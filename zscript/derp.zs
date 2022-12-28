@@ -55,8 +55,8 @@ class DERPBot:HDUPK{
 		maxtargetrange DERP_RANGE;
 		hdupk.pickupsound "derp/crawl";
 		hdupk.pickupmessage ""; //let the pickup do this
-		obituary "%o went derp.";
-		tag "D.E.R.P. robot";
+		obituary "$OB_DERP";
+		tag "$TAG_DERP";
 	}
 	override bool cancollidewith(actor other,bool passive){return other.bmissile||HDPickerUpper(other)||DERPBot(other);}
 	bool DerpTargetCheck(bool face=false){
@@ -407,10 +407,10 @@ class DERPUsable:HDWeapon{
 		weapon.selectionorder 1014;
 		scale 0.6;
 		inventory.icon "DERPEX";
-		inventory.pickupmessage "Picked up a Defence, Engagement, Reconnaissance and Patrol robot.";
+//		inventory.pickupmessage "Picked up a Defence, Engagement, Reconnaissance and Patrol robot.";
 		inventory.pickupsound "derp/crawl";
 		translation 0;
-		tag "D.E.R.P. robot";
+		tag "$TAG_DERP";
 		hdweapon.refid HDLD_DERPBOT;
 	}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
@@ -437,8 +437,9 @@ class DERPUsable:HDWeapon{
 		return ENC_DERP+(mgg<0?0:(ENC_9MAG_LOADED+mgg*ENC_9_LOADED));
 	}
 	override string pickupmessage(){
-		if(weaponstatus[0]&DERPF_BROKEN)return super.pickupmessage().." It is damaged.";
-		return super.pickupmessage();
+		string msg=Stringtable.Localize("$PICKUP_DERP");
+		if(weaponstatus[0]&DERPF_BROKEN)msg=msg..Stringtable.Localize("PICKUP_DERP_BROKEN");
+		return msg;
 	}
 	override void detachfromowner(){
 		translation=owner.translation;

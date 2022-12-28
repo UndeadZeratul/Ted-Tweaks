@@ -63,7 +63,121 @@ TAG_THUNDER="\'Thunder Buster\' Pulsed Particle Beam Projector";
 TAG_LIB="ZM7 \'Liberator\' Battle Rifle";
 TAG_BRONTO="\'Brontornis\' Mk.VII Ultralight Cannon";
 TAG_BOSS="Mk. IV \'Boss\' Bolt-action Rifle";
-TAG_GREFRAG="Fragmentation Grenade";
+TAG_GREFRAG="M22 Fragmentation Grenade";
+
+TAG_DERP="Volt \'D.E.R.P.\' robot";
+TAG_HERP="Volt \'H.E.R.P.\' robot";
+
+TAG_PISTOLAMMO="9x33mm Parumpudicum round";
+TAG_SHOTGUNSHELLS="12-gauge Buckshot Shells";
+TAG_426AMMO="Volt 4.26mm UAC Standard round";
+TAG_7MMAMMO="G&C 7.76x54mm round";
+TAG_7MMAMMOR="Recasted G&C 7.76x54mm round";
+TAG_7MCASING="G&C 7.76x54mm casing";
+TAG_BRONTOSHELL="35x120mm \'Brontornis\' shell";
+TAG_ROCKETGRENADE="40x54mm rocket grenade";
+TAG_HEATROCKET="Volt \'H.E.A.T.\' rocket";
+TAG_DUDROCKET="Dud 40x54mm rocket grenade";
+
+TAG_9MMAG15="9x33mm 99FX magazine";
+TAG_4MMAG="Volt 4.26mm UAC Standard magazine";
+TAG_9MMAG30="9x33mm MP-4X magazine";
+TAG_7MMAG="Volt 7.76x54mm magazine";
+TAG_7MCLIP="G&C 7.76x54mm clip";
+TAG_BATTERY="Volt Standard 22v Battery";
+
+TAG_BACKPACK="UAC Standard Infantry Backpack";
+TAG_LITEAMP="U4-Jerris UNVD-1531 Binocular Night Vision Device";
+TAG_RADSUIT="UAC Environmental Protection Suit";
+TAG_AMMOBOX="UAC \'Quik-Drop\' Ammo Box";
+TAG_AMMOBOXDISARMED="Disarmed UAC \'Quik-Drop\' Ammo Box";
+TAG_KEYS="Stolen Facility Keycards";
+TAG_MAPGIVER="Improved Map Intelligence";
+
+TAG_BLOODPACK="UAC Synthetic Bloodpack";
+TAG_DOORBUSTER="UAC Specialist Doorbuster";
+TAG_IEDKIT="Improvised Explosive Device kit";
+TAG_JETPACK="UAC Specialist Jetpack";
+TAG_LADDER="UAC Portable Ladder";
+TAG_RELOADER="G&C 7.76x54mm portable recasting device";
+
+TAG_POTION="Strange Blue Potion";
+
+TAG_STIMPACK="UAC Standard Emergency Stimpack";
+TAG_ZERKPACK="UAC Specialist \'Berserk\' pack";
+TAG_MEDIKIT="UAC Standard Medikit";
+TAG_2NDFLESHAPP="Second Flesh applicator";
+TAG_BANDAGES="Improvised Bandages";
+
+PICKUP_BFG9000="You got the Boris Field Glyph v9.1!";
+PICKUP_BOSSRIFLE="You got the Mk. IV \'Boss\' Bolt-Action Rifle!";
+PICKUP_BRONTO="You got the Mk. VII \'Brontornis\' Ultralight Cannon!";
+PICKUP_RL="You got the Urban Artillery Rocket Launcher!";
+PICKUP_THUNDERBUSTER="You got the \'Thunder Buster\' Pulsed Particle Beam Projector!";
+PICKUP_LIB="You got the ZM7 \'Liberator\' Battle Rifle!";
+PICKUP_VULC="You got the Mk. III \'Vulcanette\' Rotary Support Weapon!";
+PICKUP_VULC_PERFECT=" It's coward killing time!";
+PICKUP_VULC_WORN=" It has seen better days.";
+PICKUP_VULC_DAMAGED=" in dire need of repair.";
+PICKUP_VULC_BROKEN=" that might be salvaged for ammo.";
+PICKUP_ZM66="You got the Volt ZM66 Assault Rifle!";
+PICKUP_SEMIZM66="Picked up a semi-automatic Volt ZM66 Assault Rifle. Hope you don't have carpal tunnel!";
+PICKUP_SLAYER="You got the SL41 \'Slayer\' Double-barreled Shotgun!";
+PICKUP_HUNTER="You got the SPOS-E28 \'Hunter\' Pump-action Shotgun!";
+PICKUP_HUNTER_AUTO=" You notice some tool marks near the fire selector...";
+PICKUP_HUNTER_EXPORT=" Where is the fire selector on this thing!?";
+PICKUP_SMG="You got the MP-46 SMG!";
+PICKUP_REVOLVER="You got the Deinonychus Revolver!";
+PICKUP_PISTOL="You got the Mouletta 99FX Pistol!";
+PICKUP_CHAINSAW="You got the \'Lumberjack\' chainsaw! Go find some meat!";
+PICKUP_GRENADE="Picked up a M22 Fragmentation Grenade.";
+
+PICKUP_DERP="Picked up a Volt Defense, Engagement, Reconnaissance and Patrol robot.";
+PICKUP_DERP_BROKEN=" It appears to be heavily damaged.";
+PICKUP_HERP="Picked up a Volt Heavy Engagement Rotary Platform robot.";
+PICKUP_HERP_BROKEN=" It appears to be heavily damaged.";
+
+PICKUP_PistolAmmo="Picked up a 9x33mm Parumpudicum round.";
+PICKUP_9MBOX="Picked up some 9x33mm ammo.";
+PICKUP_ShotgunShell1="Picked up a 12-Gauge Buckshot shell.";
+PICKUP_ShotgunShell2="Picked up some 12-gauge buckshot shells.";
+PICKUP_ShellBox="Picked up some 12-gauge buckshot shells.";
+PICKUP_426Round1="Picked up a stray Volt 4.26mm UAC Standard round.";
+PICKUP_426Round2="Picked up a stray block of Volt 4.26mm UAC Standard rounds.";
+PICKUP_7MMAMMO="Picked up a G&C 7.76x54mm round.";
+PICKUP_7MMAMMOR="Picked up a recasted G&C 7.76x54mm round.";
+PICKUP_7MMAMMOR="Picked up some 7.76x54mm brass.";
+PICKUP_BRONTOROUND="Picked up a 35x120mm \'Brontornis\' shell.";
+PICKUP_ROCKETGRENADE="Picked up a 40x54mm rocket grenade.";
+PICKUP_DUDROCKET="Picked up a defused 40x54mm rocket grenade.";
+PICKUP_HEATROCKET="Picked up a Volt \'H.E.A.T.\' rocket.";
+
+PICKUP_9MMAG="Picked up a 9x33mm 99FX magazine.";
+PICKUP_4MMAG="Picked up a Volt 4.26mm UAC Standard magazine.";
+PICKUP_9MMAG30="Picked up an MP-4X SMG magazine.";
+PICKUP_7MMAG="Picked up a Volt 7.76x54mm magazine.";
+PICKUP_BATTERY="Picked up a Volt Standard 22v Battery.";
+
+PICKUP_BACKPACK="Picked up a UAC Standard Infantry Backpack to help fill your life with back pain!";
+PICKUP_LITEAMP="Picked up a U4-Jerris UNVD-1531 Binocular Night Vision Device.";
+PICKUP_RADSUIT="Picked up a UAC Environmental Protection Suit.";
+
+PICKUP_BLOODPACK="Picked up a UAC Synthetic Bloodpack.";
+PICKUP_DOORBUSTER="Picked up a UAC Specialist Doorbuster.";
+PICKUP_IED="Picked up an Improvised Explosive Device kit.";
+PICKUP_JETPACK="You got the UAC Specialist Jetpack!";
+PICKUP_LADDER="Picked up a UAC Portable Ladder.";
+PICKUP_RELOADER="You got the G&C 7.76x54mm portable recasting device!";
+
+PICKUP_POTION="Picked up a strange blue potion...";
+PICKUP_BLURSPHERE="You got some sort of... weird cat-like sphere?";
+
+PICKUP_STIMPACK="Picked up a UAC Standard Emergency Stimpack.";
+PICKUP_ZERKPACK="Picked up a UAC Specialist \'Berserk\' pack.";
+PICKUP_MEDIKIT="Picked up a UAC Standard Medikit.";
+
+PICKUP_GARRISONARMOUR="Picked up a standard suit of garrison armour.";
+PICKUP_BATTLEARMOUR="Picked up a suit of battle armour.";
 
 // HDBulletLib-Recasted
 TAG_069BORE = ".454 \'Raging Hornet\' Shell";

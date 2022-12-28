@@ -122,8 +122,9 @@ class AutoReloader:AutoReloadingThingy{
 		inventory.pickupmessage "You got the 7.76 reloading machine!";
 		scale 0.5;
 		hdweapon.refid HDLD_776RL;
-		tag "7.76mm reloading device";
+		tag "$TAG_RELOADER";
 	}
+	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_RELOADER"); return pickupmessage;}
 	override double gunmass(){return 0;}
 	override double weaponbulk(){
 		return 20*amount;
@@ -224,7 +225,7 @@ class LiberatorRifle:AutoReloadingThingy{
 		weapon.bobrangex 0.22;
 		weapon.bobrangey 0.9;
 		scale 0.7;
-		obituary "%o was liberated by %k.";
+		obituary "$OB_LIB";
 		hdweapon.refid HDLD_LIB;
 		tag "$TAG_LIB";
 		inventory.icon "BRFLB0";
@@ -241,6 +242,7 @@ class LiberatorRifle:AutoReloadingThingy{
 			\cuzoom - ??-70, 10x the resulting FOV in degrees
 			\cudot - 0-5";
 	}
+	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_LIB"); return pickupmessage;}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse,doselect);}
 	override void postbeginplay(){
