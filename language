@@ -64,6 +64,7 @@ TAG_LIB="ZM7 \'Liberator\' Battle Rifle";
 TAG_BRONTO="\'Brontornis\' Mk.VII Ultralight Cannon";
 TAG_BOSS="Mk. IV \'Boss\' Bolt-action Rifle";
 TAG_GREFRAG="M22 Fragmentation Grenade";
+TAG_BFG9000="Boris Field Glyph v9.1";
 
 TAG_DERP="Volt \'D.E.R.P.\' robot";
 TAG_HERP="Volt \'H.E.R.P.\' robot";
