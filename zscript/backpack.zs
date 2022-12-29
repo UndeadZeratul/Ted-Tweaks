@@ -947,7 +947,7 @@ class HDBackpack:HDWeapon{
 	override void Consolidate(){Storage.Consolidate(owner);}
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl){
 		int BaseOffset = -80;
-		sb.DrawString(sb.pSmallFont, "\c[DarkBrown][] [] [] \c[Tan]Backpack\c[DarkBrown][] [] []", (0, BaseOffset), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
+		sb.DrawString(sb.pSmallFont, "\c[DarkBrown][] [] [] \c[Tan]Backpack \c[DarkBrown][] [] []", (0, BaseOffset), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
 		sb.DrawString(sb.pSmallFont, "Total Bulk: \cf"..int(Storage.TotalBulk).."\c-", (0, BaseOffset + 10), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
 		int ItemCount = Storage.Items.Size();
 		if(!ItemCount){
@@ -1134,7 +1134,7 @@ class HDBackpack:HDWeapon{
 		Inventory.Icon "BPAKA0";
 //		Inventory.PickupMessage "Picked up a backpack to help fill your life with ammo!";
 		Inventory.PickupSound "weapons/pocket";
-		Tag "Backpack";
+		Tag "$TAG_BACKPACK";
 		HDWeapon.RefId HDLD_BACKPAK;
 		HDBackpack.MaxCapacity HDCONST_BPMAX;
 		HDWeapon.wornlayer STRIP_BACKPACK;
