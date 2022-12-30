@@ -1113,7 +1113,7 @@ class LiberatorNoGL:HDWeaponGiver{
 		//$Category "Weapons/Hideous Destructor"
 		//$Title "Liberator (no GL)"
 		//$Sprite "BRFLA0"
-		tag "Liberator rifle (no GL)";
+		tag "$TAG_LIBNOGL";
 		hdweapongiver.bulk (100.+(ENC_776MAG_LOADED+30.*ENC_776_LOADED));
 		hdweapongiver.weapontogive "LiberatorRifle";
 		hdweapongiver.weprefid HDLD_LIB;
@@ -1127,7 +1127,7 @@ class LiberatorNoBullpup:HDWeaponGiver{
 		//$Category "Weapons/Hideous Destructor"
 		//$Title "Liberator (Classic)"
 		//$Sprite "BRLLB0"
-		tag "Liberator rifle (classic)";
+		tag "$TAG_LIB_CLASSIC";
 		hdweapongiver.bulk (145.+(ENC_776MAG_LOADED+30.*ENC_776_LOADED)+ENC_ROCKETLOADED);
 		hdweapongiver.weapontogive "LiberatorRifle";
 		hdweapongiver.config "nogl0nobp";
@@ -1139,7 +1139,7 @@ class LiberatorNoBullpupNoGL:HDWeaponGiver{
 		//$Category "Weapons/Hideous Destructor"
 		//$Title "Liberator (Classic no GL)"
 		//$Sprite "BRLLA0"
-		tag "Liberator rifle (classic no GL)";
+		tag "$TAG_LIB_CLASSICNOGL";
 		hdweapongiver.bulk (120.+(ENC_776MAG_LOADED+30.*ENC_776_LOADED));
 		hdweapongiver.weapontogive "LiberatorRifle";
 		hdweapongiver.config "noglnobp";

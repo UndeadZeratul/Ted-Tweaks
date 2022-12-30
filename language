@@ -61,6 +61,9 @@ TAG_GL="\'Blooper\' Grenade Launcher";
 TAG_RL="Urban Artillery Rocket Launcher";
 TAG_THUNDER="\'Thunder Buster\' Pulsed Particle Beam Projector";
 TAG_LIB="ZM7 \'Liberator\' Battle Rifle";
+TAG_LIB_NOGL="ZM7 \'Liberator\' Battle Rifle (no GL)";
+TAG_LIB_CLASSIC="ZM7 \'Liberator\' Battle Rifle (classic)";
+TAG_LIB_CLASSICNOGL="ZM7 \'Liberator\' Battle Rifle (classic nogl)";
 TAG_BRONTO="\'Brontornis\' Mk.VII Ultralight Cannon";
 TAG_BOSS="Mk. IV \'Boss\' Bolt-action Rifle";
 TAG_GREFRAG="M22 Fragmentation Grenade";
@@ -103,6 +106,7 @@ TAG_LADDER="UAC Portable Ladder";
 TAG_RELOADER="G&C 7.76x54mm portable recasting device";
 
 TAG_POTION="Strange Blue Potion";
+TAG_TALISMAN="Some form of artifact";
 
 TAG_STIMPACK="UAC Standard Emergency Stimpack";
 TAG_ZERKPACK="UAC Specialist \'Berserk\' pack";
@@ -132,6 +136,7 @@ PICKUP_REVOLVER="You got the Deinonychus Revolver!";
 PICKUP_PISTOL="You got the Mouletta 99FX Pistol!";
 PICKUP_CHAINSAW="You got the \'Lumberjack\' chainsaw! Go find some meat!";
 PICKUP_GRENADE="Picked up a M22 Fragmentation Grenade.";
+PICKUP_BLOOPER="Picked up a \'Blooper\' grenade launcher.";
 
 PICKUP_DERP="Picked up a Volt Defense, Engagement, Reconnaissance and Patrol robot.";
 PICKUP_DERP_BROKEN=" It appears to be heavily damaged.";
@@ -172,6 +177,7 @@ PICKUP_RELOADER="You got the G&C 7.76x54mm portable recasting device!";
 
 PICKUP_POTION="Picked up a strange blue potion...";
 PICKUP_BLURSPHERE="You got some sort of... weird cat-like sphere?";
+PICKUP_TALISMAN="Picked up a strange artifact.";
 
 PICKUP_STIMPACK="Picked up a UAC Standard Emergency Stimpack.";
 PICKUP_ZERKPACK="Picked up a UAC Specialist \'Berserk\' pack.";

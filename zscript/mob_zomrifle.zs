@@ -25,8 +25,8 @@ class ZombieStormtrooper:HDHumanoid{
 		speed 8;
 		dropitem "";attacksound "";decal "BulletScratch";
 		painchance 250;
-		obituary "%o was gunned down by a zombie.";
-		hitobituary "%o was beaten up by a zombie.";
+		obituary "$OB_ZOMBRIFLE";
+		hitobituary "$OB_ZOMBRIFLE_HIT";
 		accuracy 0;
 	}
 	double turnamount;

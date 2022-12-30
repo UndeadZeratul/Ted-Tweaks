@@ -947,11 +947,11 @@ class HDBackpack:HDWeapon{
 	override void Consolidate(){Storage.Consolidate(owner);}
 	override void DrawHUDStuff(HDStatusBar sb, HDWeapon hdw, HDPlayerPawn hpl){
 		int BaseOffset = -80;
-		sb.DrawString(sb.pSmallFont, "\c[DarkBrown][] [] [] \c[Tan]Backpack \c[DarkBrown][] [] []", (0, BaseOffset), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
-		sb.DrawString(sb.pSmallFont, "Total Bulk: \cf"..int(Storage.TotalBulk).."\c-", (0, BaseOffset + 10), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
+		sb.DrawString(sb.pSmallFont, Stringtable.Localize("$BACKPACK_TOP"), (0, BaseOffset), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
+		sb.DrawString(sb.pSmallFont, Stringtable.Localize("$BACKPACK_TOTALBULK")..int(Storage.TotalBulk).."\c-", (0, BaseOffset + 10), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER);
 		int ItemCount = Storage.Items.Size();
 		if(!ItemCount){
-			sb.DrawString(sb.pSmallFont, "No items found.", (0, BaseOffset + 30), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_DARKGRAY);
+			sb.DrawString(sb.pSmallFont, Stringtable.Localize("$BACKPACK_NOITEMS"), (0, BaseOffset + 30), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_DARKGRAY);
 			return;
 		}
 		StorageItem SelItem = Storage.GetSelectedItem();
@@ -976,9 +976,9 @@ class HDBackpack:HDWeapon{
 		}
 		sb.DrawString(sb.pSmallFont, SelItem.NiceName, (0, BaseOffset + 60), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, Font.CR_FIRE);
 		int AmountInBackpack = SelItem.ItemClass is 'HDMagAmmo' ? SelItem.Amounts.Size() : (SelItem.Amounts.Size() > 0 ? SelItem.Amounts[0] : 0);
-		sb.DrawString(sb.pSmallFont, "In backpack:  "..sb.FormatNumber(AmountInBackpack, 1, 6), (0, BaseOffset + 70), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, AmountInBackpack > 0 ? Font.CR_BROWN : Font.CR_DARKBROWN);
+		sb.DrawString(sb.pSmallFont, Stringtable.Localize("$BACKPACK_INBAG")..sb.FormatNumber(AmountInBackpack, 1, 6), (0, BaseOffset + 70), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, AmountInBackpack > 0 ? Font.CR_BROWN : Font.CR_DARKBROWN);
 		int AmountOnPerson = GetAmountOnPerson(hpl.FindInventory(SelItem.ItemClass));
-		sb.DrawString(sb.pSmallFont, "On person:  "..sb.FormatNumber(AmountOnPerson, 1, 6), (0, BaseOffset + 78), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, AmountOnPerson > 0 ?  Font.CR_WHITE : Font.CR_DARKGRAY);
+		sb.DrawString(sb.pSmallFont, Stringtable.Localize("$BACKPACK_ONPERSON")..sb.FormatNumber(AmountOnPerson, 1, 6), (0, BaseOffset + 78), sb.DI_SCREEN_CENTER | sb.DI_TEXT_ALIGN_CENTER, AmountOnPerson > 0 ?  Font.CR_WHITE : Font.CR_DARKGRAY);
 		// [Ace] Don't display the first item. It's already in the preview.
 		if (SelItem.ItemClass is 'HDArmour')
 		{
