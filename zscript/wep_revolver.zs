@@ -167,6 +167,7 @@ class HDRevolver:HDHandgun{
 	action void A_RotateCylinder(bool clockwise=true){
 		invoker.RotateCylinder(clockwise);
 		A_StartSound("weapons/deinocyl",8);
+		A_UpdateCylinders();
 	}
 	void RotateCylinder(bool clockwise=true){
 		if(clockwise){
@@ -186,6 +187,7 @@ class HDRevolver:HDHandgun{
 			weaponstatus[BUGS_CYL5]=weaponstatus[BUGS_CYL6];
 			weaponstatus[BUGS_CYL6]=cylbak;
 		}
+		A_UpdateCylinders();
 	}
 	action void A_LoadRound(){
 		if(invoker.weaponstatus[BUGS_CYL1]>0)return;
@@ -198,17 +200,20 @@ class HDRevolver:HDHandgun{
 		A_TakeInventory(ammotype,1,TIF_NOTAKEINFINITE);
 		invoker.weaponstatus[BUGS_CYL1]=useninemil?BUGS_NINEMIL:BUGS_MASTERBALL;
 		A_StartSound("weapons/deinoload",8,CHANF_OVERLAP);
+		A_UpdateCylinders();
 	}
 	action void A_OpenCylinder(){
 		A_StartSound("weapons/deinoopen",8);
 		invoker.weaponstatus[0]&=~BUGF_COCKED;
 		invoker.cylinderopen=true;
 		A_SetHelpText();
+		A_UpdateCylinders();
 	}
 	action void A_CloseCylinder(){
 		A_StartSound("weapons/deinoclose",8);
 		invoker.cylinderopen=false;
 		A_SetHelpText();
+		A_UpdateCylinders();
 	}
 	action void A_HitExtractor(){
 		double cosp=cos(pitch);
@@ -338,6 +343,8 @@ class HDRevolver:HDHandgun{
 			}
 		}
 		if(invoker.cooldown>0)invoker.cooldown--;
+
+		A_UpdateCylinders();
 	}
 	action void A_RoundReady(int rndnm){
 		int gunframe=-1;
@@ -363,6 +370,38 @@ class HDRevolver:HDHandgun{
 		if(yes)invoker.weaponstatus[0]|=BUGF_COCKED;
 		else invoker.weaponstatus[0]&=~BUGF_COCKED;
 	}
+	action void A_UpdateCylinders() {
+        if (invoker.weaponstatus[BUGS_CYL1]==BUGS_MASTERBALL || invoker.weaponstatus[BUGS_CYL1]==BUGS_MASTERBALLSPENT) {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL1,"355round1");
+        } else {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL1,"9mmround1");
+        };
+        if (invoker.weaponstatus[BUGS_CYL2]==BUGS_MASTERBALL || invoker.weaponstatus[BUGS_CYL2]==BUGS_MASTERBALLSPENT) {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL2,"355round2");
+        } else {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL2,"9mmround2");
+        };
+        if (invoker.weaponstatus[BUGS_CYL3]==BUGS_MASTERBALL || invoker.weaponstatus[BUGS_CYL3]==BUGS_MASTERBALLSPENT) {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL3,"355round3");
+        } else {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL3,"9mmround3");
+        };
+        if (invoker.weaponstatus[BUGS_CYL4]==BUGS_MASTERBALL || invoker.weaponstatus[BUGS_CYL4]==BUGS_MASTERBALLSPENT) {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL4,"355round4");
+        } else {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL4,"9mmround4");
+        };
+        if (invoker.weaponstatus[BUGS_CYL5]==BUGS_MASTERBALL || invoker.weaponstatus[BUGS_CYL5]==BUGS_MASTERBALLSPENT) {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL5,"355round5");
+        } else {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL5,"9mmround5");
+        };
+        if (invoker.weaponstatus[BUGS_CYL6]==BUGS_MASTERBALL || invoker.weaponstatus[BUGS_CYL6]==BUGS_MASTERBALLSPENT) {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL6,"355round6");
+        } else {
+            A_Overlay(BUGS_OVRCYL+BUGS_CYL6,"9mmround6");
+        }
+    }
 
 
 /*
@@ -378,12 +417,18 @@ class HDRevolver:HDHandgun{
 	spawn:
 		REVL A -1;
 		stop;
-	round1:RVR1 A 1 A_RoundReady(BUGS_CYL1);wait;
-	round2:RVR2 A 1 A_RoundReady(BUGS_CYL2);wait;
-	round3:RVR3 A 1 A_RoundReady(BUGS_CYL3);wait;
-	round4:RVR4 A 1 A_RoundReady(BUGS_CYL4);wait;
-	round5:RVR5 A 1 A_RoundReady(BUGS_CYL5);wait;
-	round6:RVR6 A 1 A_RoundReady(BUGS_CYL6);wait;
+	9mmround1:9VR1 A 1 A_RoundReady(BUGS_CYL1);wait;
+	9mmround2:9VR2 A 1 A_RoundReady(BUGS_CYL2);wait;
+	9mmround3:9VR3 A 1 A_RoundReady(BUGS_CYL3);wait;
+	9mmround4:9VR4 A 1 A_RoundReady(BUGS_CYL4);wait;
+	9mmround5:9VR5 A 1 A_RoundReady(BUGS_CYL5);wait;
+	9mmround6:9VR6 A 1 A_RoundReady(BUGS_CYL6);wait;
+	355round1:RVR1 A 1 A_RoundReady(BUGS_CYL1);wait;
+	355round2:RVR2 A 1 A_RoundReady(BUGS_CYL2);wait;
+	355round3:RVR3 A 1 A_RoundReady(BUGS_CYL3);wait;
+	355round4:RVR4 A 1 A_RoundReady(BUGS_CYL4);wait;
+	355round5:RVR5 A 1 A_RoundReady(BUGS_CYL5);wait;
+	355round6:RVR6 A 1 A_RoundReady(BUGS_CYL6);wait;
 	select0:
 		REVG A 0{
 			if(!countinv("NulledWeapon"))invoker.wronghand=false;
@@ -405,12 +450,7 @@ class HDRevolver:HDHandgun{
 				}
 			}
 
-			A_Overlay(BUGS_OVRCYL+BUGS_CYL1,"round1");
-			A_Overlay(BUGS_OVRCYL+BUGS_CYL2,"round2");
-			A_Overlay(BUGS_OVRCYL+BUGS_CYL3,"round3");
-			A_Overlay(BUGS_OVRCYL+BUGS_CYL4,"round4");
-			A_Overlay(BUGS_OVRCYL+BUGS_CYL5,"round5");
-			A_Overlay(BUGS_OVRCYL+BUGS_CYL6,"round6");
+			A_UpdateCylinders();
 		}
 		---- A 1 A_Raise();
 		---- A 1 A_Raise(40);
