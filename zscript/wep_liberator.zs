@@ -327,7 +327,7 @@ class LiberatorRifle:AutoReloadingThingy{
 			}
 		}
 		if(!(hdw.weaponstatus[0]&LIBF_NOAUTO)){
-			string llba="RBRSA3A7";
+			string llba="STSEMAUT";
 			if(hdw.weaponstatus[0]&LIBF_FULLAUTO)llba="STFULAUT";
 			sb.drawimage(
 				llba,(-22,-10),

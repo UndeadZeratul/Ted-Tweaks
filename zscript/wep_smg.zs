@@ -92,7 +92,7 @@ class HDSMG:HDWeapon{
 			sb.drawnum(hpl.countinv("HD9mMag30"),-43,-8,sb.DI_SCREEN_CENTER_BOTTOM);
 		}
 		if(weaponstatus[SMGS_SWITCHTYPE]!=1)sb.drawwepcounter(hdw.weaponstatus[SMGS_AUTO],
-			-22,-10,"RBRSA3A7","STBURAUT","STFULAUT"
+			-22,-10,"STSEMAUT","STBURAUT","STFULAUT"
 		);
 		sb.drawwepnum(hdw.weaponstatus[SMGS_MAG],30);
 		if(hdw.weaponstatus[SMGS_CHAMBER]==2)sb.drawrect(-19,-11,3,1);
