@@ -50,6 +50,11 @@ AddOptionMenu "OptionsMenu"
     SubMenu "Ted Tweaks Options", "TedTweaks"
 }
 
+AddOptionMenu "HDAddonMenu"
+{
+    SubMenu "Ted Tweaks Options", "TedTweaks"
+}
+
 OptionValue "KeeperPercent"
 {
     0, "Disabled"
