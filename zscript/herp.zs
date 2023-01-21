@@ -189,7 +189,7 @@ class HERPBot:HDUPK{
 	}
 	void scanturn(){
 		if(battery<1){
-			message("Operational fault. Please check your manual for proper maintenance. (ERR-4fd92-00B) Power low.");
+			message(Stringtable.Localize("$HERP_NOBATTERY"));
 			setstatelabel("nopower");
 			return;
 		}
@@ -253,7 +253,7 @@ class HERPBot:HDUPK{
 			){
 				target=hitactor;
 				setstatelabel("ready");
-				message("IFF system alert: enemy pattern recognized.");
+				message(Stringtable.Localize("$HERP_ENEMY"));
 				if(hd_debug)A_Log(string.format("HERP targeted %s",hitactor.getclassname()));
 				return;
 			}
@@ -314,14 +314,14 @@ class HERPBot:HDUPK{
 				return;
 			}
 			herpbeep("herp/beep");
-			message("Establishing connection...");
+			message(Stringtable.Localize("$HERP_ESTABLISHING"));
 			A_SetTics(random(10,min(350,int(0.3*distance3d(master)))));
 		}
 		HERP A 20{
 			if(master){
 				bmissileevenmore=true;
 				herpbeep("herp/beepready");
-				message("Connected!");
+				message(Stringtable.Localize("$HERP_CONNECTED"));
 			}else{
 				setstatelabel("inputabort");
 				return;
@@ -337,7 +337,7 @@ class HERPBot:HDUPK{
 	inputabort:
 		HERP A 4{bmissileevenmore=false;}
 		HERP A 2 herpbeep("herp/beepready");
-		HERP A 20 message("Disconnected.");
+		HERP A 20 message(Stringtable.Localize("$HERP_DISCONNECTED"));
 		goto spawn;
 	ready:
 		HERP A 12 A_StartSound("weapons/vulcanup",CHAN_BODY,CHANF_OVERLAP);
@@ -366,7 +366,7 @@ class HERPBot:HDUPK{
 					&&!random(0,7)
 				)
 			){
-				message("Operational fault. Please check your manual for proper maintenance. (ERR-42392-41A) Cartridge empty. Shutting down...");
+				message(Stringtable.Localize("$HERP_NOMAG"));
 				if(currammoraw>100&&!random(0,3))ammo[0]--;
 				bmissilemore=random(0,15);
 				setstatelabel("off");
@@ -418,7 +418,7 @@ class HERPBot:HDUPK{
 				||nextmag==100
 				||(nextmag>100&&!random(0,3))
 			){
-				message("Operational fault. Please check your manual for proper maintenance. (ERR-42392-41A) Cartridge empty. Shutting down...");
+				message(Stringtable.Localize("$HERP_NOMAG"));
 				A_StartSound("weapons/vulcandown",8,CHANF_OVERLAP);
 				setstatelabel("off");
 			}else{
@@ -482,23 +482,23 @@ class HERPBot:HDUPK{
 			string yay="";
 			switch(random(0,8)){
 			case 0:
-				yay="Operational fault. Please check your manual for proper maintenance. (ERR-4fd92-00B) Power low.";break;
+				yay=Stringtable.Localize("$HERP_NOBATTERY");break;
 			case 1:
-				yay="Operational fault. Please check your manual for proper maintenance. (ERR-74x29-58A) Unsupported ammunition type.\n\n\cjPlease note: Reloading a 4.26 UAC Standard magazine or its components without the supervision of a Volt UAC Standard Certified Cartridge Professional(tm) is a breach of the Volt End User License Agreement.";break;
+				yay=Stringtable.Localize("$HERP_BADMAG");break;
 			case 2:
-				yay="Operational fault. Please check your manual for proper maintenance. (ERR-8w8i7-8VX) No interface detected.";break;
+				yay=Stringtable.Localize("$HERP_NOINTERFACE");break;
 			case 3:
-				yay="Illegal operation. Please check your manual for proper maintenance. (ERR-u0H85-6NN) System will restart.";break;
+				yay=Stringtable.Localize("$HERP_SYSTEMRESTART");break;
 			case 4:
-				yay="Illegal operation. Identify Friend/Foe system has been tampered with. Please contact your commanding officer immediately. (ERR-0023j-000) System will halt.";break;
+				yay=Stringtable.Localize("$HERP_TAMPEREDSYSTEM");break;
 			case 5:
-				yay="Formatting C:\\ (DBG-444j2-0A0)";break;
+				yay=Stringtable.Localize("$HERP_FORMATC");break;
 			case 6:
-				yay="Testing mode initialized.  (DBG-86nm8-BN5) Cache cleared.";break;
+				yay=Stringtable.Localize("$HERP_DEVMODE");break;
 			case 7:
-				yay="*** Fatal Error *** Address not mapped to object (signal 11) Address: 0x8";break;
+				yay=Stringtable.Localize("$HERP_OBJECTNOTMAPPED");break;
 			case 8:
-				yay="*** Fatal Error *** Segmentation fault (signal 11) Address: (nil)";break;
+				yay=Stringtable.Localize("$HERP_SEGMENTATIONFAULT");break;
 			}
 			if(!random(0,3))yay="\cg"..yay;
 			message(yay);
@@ -781,7 +781,7 @@ class HERPUsable:HDWeapon{
 			if(!pressingfire())setweaponstate("nope");
 			else if(PressingReload()){
 				if(invoker.weaponstatus[HERP_BATTERY]>=0){
-					message("Damaged beyond function. Remove battery before attempting repairs.");
+					message(Stringtable.Localize("$HERP_DAMAGEDBEYONDFUNCTION"));
 				}else setweaponstate("repairbash");
 			}
 		}
@@ -872,7 +872,7 @@ class HERPUsable:HDWeapon{
 			return;
 		}
 		if(invoker.weaponstatus[4]<1){
-			message("No power. Please load 1 cell pack before deploying.");
+			message(Stringtable.Localize("$HERP_NOPOWER"));
 			setweaponstate("nope");
 			return;
 		}
@@ -975,13 +975,13 @@ class HERPUsable:HDWeapon{
 						//fix
 						si.WeaponStatus[HDWEP_STATUSSLOTS*i]&=~HERPF_BROKEN;
 						if (fixbonus>0)fixbonus--;
-						owner.A_Log("You repair one of the broken H.E.R.P.s in your backpack.",true);
+						owner.A_Log(Stringtable.Localize("$HERP_REPAIRPACK"),true);
 					}else if(!random(0,7)){
 						fixbonus++;
 						//delete and restart
 						bp.Storage.RemoveItem(si,null,null,index:i);
 						i=0;
-						owner.A_Log("You destroy one of the broken H.E.R.P.s in your backpack in your repair efforts.",true);
+						owner.A_Log(Stringtable.Localize("$HERP_REPAIRPACK_FAIL"),true);
 						continue;
 					}
 				}
@@ -1021,7 +1021,7 @@ class HERPUsable:HDWeapon{
 		if(!random(0,failchance)){
 			weaponstatus[0]&=~HERPF_BROKEN;
 			owner.A_StartSound("herp/repair",CHAN_WEAPON);
-			owner.A_Log("You bring your H.E.R.P. back into working condition.",true);
+			owner.A_Log(Stringtable.Localize("$HERP_REPAIRED"),true);
 			//destroy one spare
 			if(
 				spareindex>=0
@@ -1030,7 +1030,7 @@ class HERPUsable:HDWeapon{
 				spw.weaponbulk.delete(spareindex);
 				spw.weapontype.delete(spareindex);
 				spw.weaponstatus.delete(spareindex);
-				owner.A_Log("Another H.E.R.P. was cannibalized for parts.",true);
+				owner.A_Log(Stringtable.Localize("$HERP_CANNIBALIZED"),true);
 			}
 		}else owner.A_StartSound("herp/repairtry",CHAN_WEAPONBODY,CHANF_OVERLAP,
 			volume:frandom(0.6,1.),pitch:frandom(0.7,1.4)
@@ -1053,7 +1053,7 @@ class HERPUsable:HDWeapon{
 					if(!random(0,max(0,7-fixbonus))){
 						if(fixbonus>0)fixbonus--;
 						wpstint&=~HERPF_BROKEN;
-						owner.A_Log("You repair one of your broken H.E.R.P.s.",true);
+						owner.A_Log(Stringtable.Localize("$HERP_REPAIRBROKEN"),true);
 						string newwepstat=spw.weaponstatus[i];
 						newwepstat=wpstint..newwepstat.mid(newwepstat.indexof(","));
 						spw.weaponstatus[i]=newwepstat;
@@ -1063,7 +1063,7 @@ class HERPUsable:HDWeapon{
 						spw.weaponbulk.delete(i);
 						spw.weapontype.delete(i);
 						spw.weaponstatus.delete(i);
-						owner.A_Log("You destroy one of your broken H.E.R.P.s in your repair efforts.",true);
+						owner.A_Log(Stringtable.Localize("$HERP_REPAIRBROKEN_FAIL"),true);
 						//go back to start
 						i=0;
 						continue;
@@ -1076,7 +1076,7 @@ class HERPUsable:HDWeapon{
 			&&!random(0,7-fixbonus)
 		){
 			weaponstatus[0]&=~HERPF_BROKEN;
-			owner.A_Log("You manage some improvised field repairs to your H.E.R.P. robot.",true);
+			owner.A_Log(Stringtable.Localize("$HERP_FIELDREPAIRS"),true);
 		}
 	}
 	override void DropOneAmmo(int amt){
@@ -1127,7 +1127,7 @@ extend class HDHandlers{
 			&&hpu.herps[hpu.weaponstatus[HERPS_INDEX]].battery>0
 			&&!hpu.herps[hpu.weaponstatus[HERPS_INDEX]].bmissilemore
 		)hpu.setownerweaponstate("hack");
-		else ppp.A_Log("No controller connection available. Bring up the interface with an idle H.E.R.P. connected first.",true);
+		else ppp.A_Log(Stringtable.Localize("$HERP_NOCONTROLLER"),true);
 	}
 	void SetHERP(hdplayerpawn ppp,int botcmd,int botcmdid,int achange){
 		let herpinv=HERPUsable(ppp.findinventory("HERPUsable"));
@@ -1136,7 +1136,7 @@ extend class HDHandlers{
 		if(botcmd<0){
 			if(!herpinv)return;
 			herpinv.weaponstatus[HERP_BOTID]=-botcmd;
-			ppp.A_Log(string.format("\cd[HERP] \cjNext HERP tag set to \cy%i",-botcmd),true);
+			ppp.A_Log(string.format(Stringtable.Localize("$HERP_NEXTTAG"),-botcmd),true);
 			return;
 		}
 		//give actual commands
@@ -1167,7 +1167,7 @@ extend class HDHandlers{
 							&&herp.ammo[2]<1
 						)
 					){
-						ppp.A_Log(string.format("\cd[HERP] \crERROR:\cj HERP at [\cj%i\cu,\cj%i\cu] out of ammo or cells, \cxNOT\cj activated.",herp.pos.x,herp.pos.y),true);
+						ppp.A_Log(string.format(Stringtable.Localize("$HERP_EMPTY"),herp.pos.x,herp.pos.y),true);
 					}else{
 						affected++;
 						herp.bmissilemore=true;
@@ -1180,7 +1180,7 @@ extend class HDHandlers{
 				}
 				else if(botcmd==3){
 					if(!achange){
-						ppp.A_Log(string.format("\cd[HERP] \crERROR:\cj No angle change indicated."),true);
+						ppp.A_Log(string.format(Stringtable.Localize("$HERP_NOANGLECHANGE")),true);
 					}else{
 						badcommand=false;
 						affected++;
@@ -1188,7 +1188,7 @@ extend class HDHandlers{
 						if(anet<0)anet+=360;
 						herp.startangle=anet;
 						herp.setstatelabel("off");
-						ppp.A_Log(string.format("\cd[HERP] \cj HERP at [\cj%i\cu,\cj%i\cu]\cj base angle now facing %s",herp.pos.x,herp.pos.y,hdmath.cardinaldirection(anet)),true);
+						ppp.A_Log(string.format(Stringtable.Localize("$HERP_NOWFACING"),herp.pos.x,herp.pos.y,hdmath.cardinaldirection(anet)),true);
 					}
 				}
 				else if(botcmd==4){
@@ -1198,11 +1198,11 @@ extend class HDHandlers{
 				}
 				else if(botcmd==123){
 					badcommand=false;
-					ppp.A_Log(string.format("\cd[HERP] \cu [\cj%i\cu,\cj%i\cu]\cj facing %s \cy%i\cj %s",
+					ppp.A_Log(string.format(Stringtable.Localize("$HERP_FACING"),
 						herp.pos.x,herp.pos.y,
 						hdmath.cardinaldirection(herp.startangle),
 						herp.botid,
-						herp.bmissilemore?"\cxACTIVE":"\cyinactive"
+						herp.bmissilemore?Stringtable.Localize("$HERP_ACTIVE"):Stringtable.Localize("$HERP_INACTIVE")
 					),true);
 				}
 				else{
@@ -1215,16 +1215,17 @@ extend class HDHandlers{
 			!badcommand
 			&&botcmd!=123
 		){
-			string verb="hacked";
-			if(botcmd==1)verb="\cxactivated";
-			else if(botcmd==2)verb="\cydeactivated";
-			else if(botcmd==3)verb="\curedirected";
+			string verb=Stringtable.Localize("$HERP_VERB1");
+			if(botcmd==1)verb=Stringtable.Localize("$HERP_VERB2");
+			else if(botcmd==2)verb=Stringtable.Localize("$HERP_VERB3");
+			else if(botcmd==3)verb=Stringtable.Localize("$HERP_VERB4");
+			else if(botcmd==4)verb=Stringtable.Localize("$HERP_VERB5");
 			ppp.A_Log(string.format(
-				"\cd[HERP] \cj%i HERP%s %s%s\cj.",affected,affected==1?"":"s",
-				botcmdid?string.format("with tag \ca%i\cj ",botcmdid):"",
+				Stringtable.Localize("$HERP_TAG1"),affected,affected==1?"":"s",
+				botcmdid?string.format(Stringtable.Localize("$HERP_TAG2"),botcmdid):"",
 				verb
 			),true);
-		}else if(badcommand)ppp.A_Log(string.format("\cd[HERP] \cj%sCommand format:\cu herp <option> <tag number> <direction>\n\cjOptions\n 1 = ON\n 2 = OFF\n 3 = DIRECTION (counterclockwise in degrees)\n 123 = QUERY\n -n = set tag number\n\cj  tag number on next deployment: \cy%i",anybots?"":"No HERPs currently deployed.\n",botid),true);
+		}else if(badcommand)ppp.A_Log(string.format(Stringtable.Localize("$HERP_BADCOMMAND1"),anybots?"":Stringtable.Localize("$HERP_BADCOMMAND2"),botid),true);
 	}
 }
 class HERPController:HDWeapon{
@@ -1256,7 +1257,7 @@ class HERPController:HDWeapon{
 				&&owner.player
 				&&owner.player.readyweapon==self
 			){
-				owner.A_Log("No H.E.R.P.s deployed. Abort.",true);
+				owner.A_Log(Stringtable.Localize("$HERP_NODEPLOYED"),true);
 				owner.A_SelectWeapon("HDFist");
 			}
 			destroy();
@@ -1276,7 +1277,7 @@ class HERPController:HDWeapon{
 		int newindex=weaponstatus[HERPS_INDEX]+1;
 		if(newindex>=herps.size())newindex=0;
 		if(weaponstatus[HERPS_INDEX]!=newindex){
-			owner.A_Log("Switching to next H.E.R.P. in the list.",true);
+			owner.A_Log(Stringtable.Localize("$HERP_NEXTLIST"),true);
 			weaponstatus[HERPS_INDEX]=newindex;
 		}
 		return newindex;

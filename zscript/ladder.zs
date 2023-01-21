@@ -98,7 +98,7 @@ class hdladdertop:hdactor{
 				if(!master)return;
 				if(pos.z-master.pos.z<108){
 					A_StartSound("misc/ladder");
-					master.A_Log(string.format("You hang up a ladder.%s",HDWeapon.CheckDoHelpText(master)?" Use the ladder to climb.":""),true);
+					master.A_Log(string.format(Stringtable.Localize("$LADDER_HANG"),HDWeapon.CheckDoHelpText(master)?Stringtable.Localize("$LADDER_HANG_HELPTEXT"):""),true);
 					master.A_TakeInventory("PortableLadder",1);
 					return;
 				}
@@ -107,7 +107,7 @@ class hdladdertop:hdactor{
 
 		//if there's no lower floor to drop the ladder, abort.
 		if(master){
-			master.A_Log("Can't hang a ladder here.",true);
+			master.A_Log(Stringtable.Localize("$LADDER_CANTHANG"),true);
 		}else{
 			actor hdl=spawn("PortableLadder",pos,ALLOW_REPLACE);
 			hdl.A_StartSound("misc/ladder");
@@ -169,7 +169,7 @@ class hdladderbottom:hdactor{
 		if (!thinker) thinker = HDLadderThinker(user.GiveInventoryType('HDLadderThinker'));
 		thinker.LinkToLadder(self);
 
-		user.A_Log(string.format("You climb the ladder.%s",HDWeapon.CheckDoHelpText(user)?" Use again or jump to disengage; crouch and jump to pull down the ladder with you.":""),true);
+		user.A_Log(string.format(Stringtable.Localize("$LADDER_CLIMB"),HDWeapon.CheckDoHelpText(user)?Stringtable.Localize("$LADDER_CLIMB_HELPTEXT"):""),true);
 		return true;
 	}
 	override void postbeginplay(){
@@ -205,7 +205,7 @@ class HDLadderThinker : Inventory {
 	void DisengageLadder(bool message = true) {
 		//hack to reset bob to 0 when falling
 		owner.vel += (owner.Vec2To(master).Unit()*0.3, 0);
-		if(message) owner.A_Log("Ladder disengaged.", true);
+		if(message) owner.A_Log(Stringtable.Localize("$LADDER_DISENGAGE"), true);
 		Destroy();
 	}
 
@@ -260,7 +260,7 @@ class HDLadderThinker : Inventory {
 			if(bt&BT_JUMP){
 				if(owner.player.crouchfactor<0.9){
 					owner.A_Log(
-						above? "Ladder taken up." : "Ladder taken down.",
+						above? Stringtable.Localize("$LADDER_UP") : Stringtable.Localize("$LADDER_DOWN"),
 						true
 					);
 

@@ -83,7 +83,7 @@ class DERPBot:HDUPK{
 		return(dlt.hitactor==target);
 	}
 	void DerpAlert(string msg="Derpy derp!"){
-		if(master)master.A_Log("\cd[DERP"..(botid?"(\cj"..botid.."\cd)":"").."]\cj  "..msg,true);
+		if(master)master.A_Log(Stringtable.Localize("$DERP_ALERT2")..(botid?Stringtable.Localize("$DERP_ALERT3")..botid..Stringtable.Localize("$DERP_ALERT4"):"")..Stringtable.Localize("$DERP_ALERT5")..msg,true);
 	}
 	void DerpShot(){
 		A_StartSound("weapons/pistol",CHAN_WEAPON);
@@ -349,7 +349,7 @@ class DERPBot:HDUPK{
 		loop;
 	aim:
 		DERP A 2 A_JumpIf(!DerpTargetCheck(),"noshot");
-		DERP A 0 DerpAlert("\cjEngaging hostile.");
+		DERP A 0 DerpAlert(Stringtable.Localize("$DERP_AIM"));
 	fire:
 		DERP A 0 A_JumpIfHealthLower(1,"dead");
 		DERP A 0 A_JumpIf(ammo>0,"noreallyfire");
@@ -365,7 +365,7 @@ class DERPBot:HDUPK{
 		DERP A 1{
 			A_FaceTarget(10,10,0,0,FAF_TOP,-4);
 			if(target&&target.health<1){
-				DerpAlert("\cf  Hostile eliminated.");
+				DerpAlert(Stringtable.Localize("$DERP_KILL"));
 			}
 		}
 	yourefired:
@@ -379,7 +379,7 @@ class DERPBot:HDUPK{
 		goto noshot;
 	death:
 		DERP A 0{
-			DerpAlert("\cg  Operational fault.\cj Standby for repairs.");
+			DerpAlert(Stringtable.Localize("$DERP_STANDBY"));
 			A_StartSound("weapons/bigcrack",CHAN_VOICE);
 			A_SpawnItemEx("HDSmoke",0,0,1, vel.x,vel.y,vel.z+1, 0,SXF_NOCHECKPOSITION|SXF_ABSOLUTEMOMENTUM);
 			A_SpawnChunks("BigWallChunk",12);
@@ -389,7 +389,7 @@ class DERPBot:HDUPK{
 	noammo:
 		DERP A 10{
 			A_ClearTarget();
-			DerpAlert("\cjOut of ammo. Await retrieval.");
+			DerpAlert(Stringtable.Localize("$DERP_NOAMMO"));
 		}goto spawn;
 	}
 }
@@ -460,21 +460,21 @@ class DERPUsable:HDWeapon{
 		if(ofs>30)return;
 		int mno=hdw.weaponstatus[DERPS_MODE];
 		string mode;
-		if(hdw.weaponstatus[0]&DERPF_BROKEN)mode="\cm<broken>";
-		else if(mno==DERP_IDLE)mode="\ccWAIT";
-		else if(mno==DERP_WATCH)mode="\ceLINE";
-		else if(mno==DERP_TURRET)mode="\caTURRET";
-		else if(mno==DERP_PATROL)mode="\cgPATROL";
+		if(hdw.weaponstatus[0]&DERPF_BROKEN)mode=Stringtable.Localize("$DERP_BROKEN");
+		else if(mno==DERP_IDLE)mode=Stringtable.Localize("$DERP_WAIT");
+		else if(mno==DERP_WATCH)mode=Stringtable.Localize("$DERP_LINE");
+		else if(mno==DERP_TURRET)mode=Stringtable.Localize("$DERP_TURRET");
+		else if(mno==DERP_PATROL)mode=Stringtable.Localize("$DERP_PATROL");
 		sb.drawstring(
 			sb.psmallfont,mode,(0,34)+bob,
 			sb.DI_TEXT_ALIGN_CENTER|sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER
 		);
 		sb.drawstring(
-			sb.psmallfont,"\cubotid \cy"..ddd.weaponstatus[DERPS_BOTID],(0,44)+bob,
+			sb.psmallfont,Stringtable.Localize("$DERP_BOTID")..ddd.weaponstatus[DERPS_BOTID],(0,44)+bob,
 			sb.DI_TEXT_ALIGN_CENTER|sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER
 		);
-		if(weaponstatus[DERPS_AMMO]<0)mode="\cm<no mag>";
-		else mode="Mag:  "..weaponstatus[DERPS_AMMO];
+		if(weaponstatus[DERPS_AMMO]<0)mode=Stringtable.Localize("$DERP_NOMAG");
+		else mode=Stringtable.Localize("$DERP_MAG")..weaponstatus[DERPS_AMMO];
 		sb.drawstring(
 			sb.psmallfont,mode,(0,54)+bob,
 			sb.DI_TEXT_ALIGN_CENTER|sb.DI_SCREEN_CENTER|sb.DI_ITEM_CENTER
@@ -521,13 +521,13 @@ class DERPUsable:HDWeapon{
 						//fix
 						si.WeaponStatus[HDWEP_STATUSSLOTS*i]&=~DERPF_BROKEN;
 						if (fixbonus>0)fixbonus--;
-						owner.A_Log("You repair one of the broken D.E.R.P.s in your backpack.",true);
+						owner.A_Log(Stringtable.Localize("$DERP_REPAIRPACK"),true);
 					}else if(!random(0,6)){
 						fixbonus++;
 						//delete and restart
 						bp.Storage.RemoveItem(si,null,null,index:i);
 						i=0;
-						owner.A_Log("You destroy one of the broken D.E.R.P.s in your backpack in your repair efforts.",true);
+						owner.A_Log(Stringtable.Localize("$DERP_REPAIRPACK_FAIL"),true);
 						continue;
 					}
 				}
@@ -552,7 +552,7 @@ class DERPUsable:HDWeapon{
 					if(!random(0,max(0,6-fixbonus))){
 						if(fixbonus>0)fixbonus--;
 						wpstint&=~DERPF_BROKEN;
-						owner.A_Log("You repair one of your broken D.E.R.P.s.",true);
+						owner.A_Log(Stringtable.Localize("$DERP_REPAIR"),true);
 						string newwepstat=spw.weaponstatus[i];
 						newwepstat=wpstint..newwepstat.mid(newwepstat.indexof(","));
 						spw.weaponstatus[i]=newwepstat;
@@ -562,7 +562,7 @@ class DERPUsable:HDWeapon{
 						spw.weaponbulk.delete(i);
 						spw.weapontype.delete(i);
 						spw.weaponstatus.delete(i);
-						owner.A_Log("You destroy one of your broken D.E.R.P.s in your repair efforts.",true);
+						owner.A_Log(Stringtable.Localize("$DERP_REPAIR_FAIL"),true);
 						//go back to start
 						i=0;
 						continue;
@@ -575,7 +575,7 @@ class DERPUsable:HDWeapon{
 			&&!random(0,7-fixbonus)
 		){
 			weaponstatus[0]&=~DERPF_BROKEN;
-			owner.A_Log("You manage some improvised field repairs to your D.E.R.P. robot.",true);
+			owner.A_Log(Stringtable.Localize("$DERP_FIELDREPAIR"),true);
 		}
 	}
 	override void DropOneAmmo(int amt){
@@ -701,7 +701,7 @@ class DERPUsable:HDWeapon{
 			if(!pressingfire())setweaponstate("nope");
 			else if(PressingReload()){
 				if(invoker.weaponstatus[DERPS_AMMO]>=0){
-					A_Log("Remove magazine before attempting repairs.",true);
+					A_Log(Stringtable.Localize("$DERP_REMOVEMAG"),true);
 				}else setweaponstate("repairbash");
 			}
 		}
@@ -728,7 +728,7 @@ class DERPUsable:HDWeapon{
 				invoker.weaponstatus[0]&=~DERPF_BROKEN;
 				A_SetHelpText();
 				A_StartSound("derp/repair",CHAN_WEAPON);
-				A_Log("You bring your D.E.R.P. back into working condition.",true);
+				A_Log(Stringtable.Localize("$DERP_REPAIRED"),true);
 				//destroy one spare
 				if(
 					spareindex>=0
@@ -737,7 +737,7 @@ class DERPUsable:HDWeapon{
 					spw.weaponbulk.delete(spareindex);
 					spw.weapontype.delete(spareindex);
 					spw.weaponstatus.delete(spareindex);
-					A_Log("Another D.E.R.P. was cannibalized for parts.",true);
+					A_Log(Stringtable.Localize("$DERP_CANNIBALIZED"),true);
 				}
 			}else A_StartSound("derp/repairtry",CHAN_WEAPONBODY,CHANF_OVERLAP,
 				volume:frandom(0.6,1.),pitch:frandom(1.2,1.4)
@@ -788,14 +788,14 @@ extend class HDHandlers{
 			&&ppp.player
 			&&ppp.player.readyweapon==dpu
 		)dpu.setownerweaponstate("hack");
-		else ppp.A_Log("No controller connection active. Bring up the interface first.",true);
+		else ppp.A_Log(Stringtable.Localize("$DERP_NOINTERFACE"),true);
 	}
 	void SetDERP(hdplayerpawn ppp,int cmd,int tag,int cmd2){
 		if(cmd<0){
 			let dpu=DERPUsable(ppp.findinventory("DERPUsable"));
 			if(dpu){
 				dpu.weaponstatus[DERPS_BOTID]=-cmd;
-				ppp.A_Log(string.format("\cd[DERP]  \cutag set to  \cy%i",-cmd),true);
+				ppp.A_Log(string.format(Stringtable.Localize("$DERP_TAGSET"),-cmd),true);
 			}
 			return;
 		}
@@ -808,7 +808,7 @@ extend class HDHandlers{
 			let dpu=DERPUsable(ppp.findinventory("DERPUsable"));
 			if(!dpu)return;
 			if(dpu.weaponstatus[0]&DERPF_BROKEN){
-				ppp.A_Log(string.format("\cd[DERP]  \cuIt's broken."),true);
+				ppp.A_Log(string.format(Stringtable.Localize("$DERP_ITSBROKEN")),true);
 				return;
 			}
 			flinetracedata dlt;
@@ -821,12 +821,12 @@ extend class HDHandlers{
 				!dlt.hitline
 				||HDF.linetracehitsky(dlt)
 			){
-				ppp.A_Log(string.format("\cd[DERP]  \cuUse this command to attach the D.E.R.P. to a wall or switch."),true);
+				ppp.A_Log(string.format(Stringtable.Localize("$DERP_555HELP")),true);
 				return;
 			}
 			let ddd=DERPBot(ppp.spawn("DERPBot",dlt.hitlocation-dlt.hitdir*4,ALLOW_REPLACE));
 			if(!ddd){
-				ppp.A_Log(string.format("\cd[DERP]  \cuCan't deploy here."),true);
+				ppp.A_Log(string.format(Stringtable.Localize("$DERP_CANTDEPLOY")),true);
 				return;
 			}
 			ddd.botid=tag?abs(tag):dpu.weaponstatus[DERPS_BOTID];
@@ -884,27 +884,27 @@ extend class HDHandlers{
 					derp.oldcmd=cmd;
 					string mode;
 					if(cmd==DERP_IDLE){
-						mode="cWAIT";
+						mode=Stringtable.Localize("$DERP_MODEWAIT");
 						derp.movestamina=1001;
 					}
 					else if(cmd==DERP_WATCH){
-						mode="eLINE";
+						mode=Stringtable.Localize("$DERP_MODELINE");
 						derp.movestamina=1001;
 					}
 					else if(cmd==DERP_TURRET){
-						mode="aTURRET";
+						mode=Stringtable.Localize("$DERP_MODETURRET");
 						derp.movestamina=1001;
 					}
 					else if(cmd==DERP_PATROL){
-						mode="gPATROL";
+						mode=Stringtable.Localize("$DERP_MODEPATROL");
 						derp.movestamina=0;
 					}
-					ppp.A_Log(string.format("\cd[DERP]  \c%s  \cjmode",mode),true);
+					ppp.A_Log(string.format(Stringtable.Localize("$DERP_MODE"),mode),true);
 				}else if(cmd==DERP_HEEL){
 					badcommand=false;
 					goalset=true;
 					derp.goalpoint=ppp.pos.xy;
-					ppp.A_Log("\cd[DERP]  \cugoal set to  \cyYOUR POSITION",true);
+					ppp.A_Log(Stringtable.Localize("$DERP_GOALSETPLAYER"),true);
 				}else if(cmd==DERP_GO){
 					badcommand=false;
 					flinetracedata derpgoal;
@@ -917,7 +917,7 @@ extend class HDHandlers{
 					if(derpgoal.hittype!=Trace_HitNone){
 						goalset=true;
 						derp.goalpoint=derpgoal.hitlocation.xy;
-						ppp.A_Log(string.format("\cd[DERP]  \cugoal set to  \cx[%i,%i]",derpgoal.hitlocation.x,derpgoal.hitlocation.y),true);
+						ppp.A_Log(string.format(Stringtable.Localize("$DERP_GOALSETTO"),derpgoal.hitlocation.x,derpgoal.hitlocation.y),true);
 					}
 				}else if(cmd>800&&cmd<810){
 					badcommand=false;
@@ -936,7 +936,7 @@ extend class HDHandlers{
 					if(goalset)derp.goalpoint=derp.goalpoint+which*64;
 					else derp.goalpoint=derp.pos.xy+which*64;
 					goalset=true;
-					ppp.A_Log(string.format("\cd[DERP]  \cugoal set to  \cx[%i,%i]",derp.goalpoint.x,derp.goalpoint.y),true);
+					ppp.A_Log(string.format(Stringtable.Localize("$DERP_GOALSETTO"),derp.goalpoint.x,derp.goalpoint.y),true);
 				}else if(
 					cmd==556&&derp.stuckline
 				){
@@ -945,7 +945,7 @@ extend class HDHandlers{
 				}else if(cmd==123){
 					badcommand=false;
 					int ammo=derp.ammo;
-					ppp.A_Log(string.format("\cd[DERP] \cjtag #\cx%i \cjreporting in at [\cx%i\cj,\cx%i\cj] with %s",derp.botid,derp.pos.x,derp.pos.y,ammo>0?string.format("\cy%i\cj bullets left!",derp.ammo):"\crno ammo left!\cj Help!"),true);
+					ppp.A_Log(string.format(Stringtable.Localize("$DERP_REPORTIN1"),derp.botid,derp.pos.x,derp.pos.y,ammo>0?string.format(Stringtable.Localize("$DERP_REPORTIN2"),derp.ammo):Stringtable.Localize("$DERP_REPORTIN3")),true);
 				}
 				if(goalset){
 					derp.movestamina=int(20-(level.vec2diff(derp.pos.xy,derp.goalpoint)).length()/derp.speed);
@@ -956,19 +956,7 @@ extend class HDHandlers{
 		}
 		if(badcommand){
 			let dpu=DERPUsable(ppp.findinventory("DERPUsable"));
-			ppp.A_Print(string.format("\cd[DERP]\cj List of available commands:
-\n             derpt    \cjidle mode  (1)
-\n             derpa    \cjwatch mode  (2)
-\n             derpp    \cjwatch360 mode  (3)
-\n             derpcome \cjpatrol mode (4)
-\n             derpcome \cjcome to user (5)
-\n             derpgo   \cjgo to point  (6)
-\n             derpmv*   \cjadvance in direction (n/s/ne/sw/etc.)  (5)
-\n             derptag  \cjset tag #   (-x)
-\n \cu(all of these can be shortened\n\cuwith \"d\" instead of \"derp\")
-\n\n \cuType \cdderp 123\cu to poll deployed DERPs.
-\n \cuCurrent tag is \cx%i.
-			",dpu?dpu.weaponstatus[DERPS_BOTID]:1),9);
+			ppp.A_Print(string.format(Stringtable.Localize("$DERP_BADCOMMAND"),dpu?dpu.weaponstatus[DERPS_BOTID]:1),9);
 		}
 	}
 }
@@ -1016,13 +1004,13 @@ class DERPController:HDWeapon{
 		int newindex=weaponstatus[DRPCS_INDEX]+1;
 		if(newindex>=derps.size())newindex=0;
 		if(weaponstatus[DRPCS_INDEX]!=newindex){
-			owner.A_Log("Switching to next D.E.R.P. in the list.",true);
+			owner.A_Log(Stringtable.Localize("$DERP_SWITCHING"),true);
 			weaponstatus[DRPCS_INDEX]=newindex;
 		}
 		return newindex;
 	}
 	action void Abort(){
-		A_Log("No D.E.R.P.s deployed. Abort.",true);
+		A_Log(Stringtable.Localize("$DERP_NODERPS"),true);
 		A_SelectWeapon("HDFist");
 		setweaponstate("nope");
 		dropinventory(invoker);
@@ -1097,7 +1085,7 @@ class DERPController:HDWeapon{
 			A_WeaponReady(WRF_NOFIRE|WRF_ALLOWUSER3);
 			derpbot ddd=invoker.derps[invoker.weaponstatus[DRPCS_INDEX]];
 			if(!ddd){
-				if(ddd=a_updatederps())A_Log("D.E.R.P. not found. Resetting list.",true);
+				if(ddd=a_updatederps())A_Log(Stringtable.Localize("$DERP_NOTFOUND"),true);
 				else{
 					Abort();
 				}
@@ -1112,7 +1100,7 @@ class DERPController:HDWeapon{
 					&&ddd.distance3d(self)>frandom(0.9,1.1)*DERP_CONTROLRANGE
 				)
 			){
-				A_Log("CONNECTION FAILURE, REBOOT REQUIRED!: D.E.R.P. last position given at ("..int(ddd.pos.x)+random(-100,100)..","..int(ddd.pos.y)+random(-100,100)..")",true);
+				A_Log(Stringtable.Localize("$DERP_LASTPOS1")..int(ddd.pos.x)+random(-100,100)..Stringtable.Localize("$DERP_LASTPOS2")..int(ddd.pos.y)+random(-100,100)..Stringtable.Localize("$DERP_LASTPOS3"),true);
 				ddd.cmd=ddd.oldcmd;
 				invoker.derps.delete(invoker.weaponstatus[DRPCS_INDEX]);
 				if(!invoker.derps.size()){
@@ -1125,14 +1113,14 @@ class DERPController:HDWeapon{
 			bool moved=false;
 			if(justpressed(BT_UNLOAD)){
 				cmd=2;
-				A_Log("Idle mode.",true);
+				A_Log(Stringtable.Localize("$DERP_IDLEMODE"),true);
 			}else if(justpressed(BT_RELOAD)){
 				cmd++;
 				if(cmd>4)cmd=1;
-				if(cmd==DERP_IDLE)A_Log("Idle mode.",true);
-				else if(cmd==DERP_WATCH)A_Log("Watch mode.",true);
-				else if(cmd==DERP_TURRET)A_Log("Watch360 mode.",true);
-				else if(cmd==DERP_PATROL)A_Log("Patrol mode.",true);
+				if(cmd==DERP_IDLE)A_Log(Stringtable.Localize("$DERP_IDLEMODE"),true);
+				else if(cmd==DERP_WATCH)A_Log(Stringtable.Localize("$DERP_WATCHMODE"),true);
+				else if(cmd==DERP_TURRET)A_Log(Stringtable.Localize("$DERP_WATCH360MODE"),true);
+				else if(cmd==DERP_PATROL)A_Log(Stringtable.Localize("$DERP_PATROLMODE"),true);
 			}
 			ddd.oldcmd=cmd;
 			if(bt&BT_FIREMODE){
@@ -1188,7 +1176,7 @@ class DERPController:HDWeapon{
 		---- A 0 A_MagManager("HD9mMag15");
 		goto ready;
 	hack:
-		---- A 5 A_Log("Fetching nearby devices...",true);
+		---- A 5 A_Log(Stringtable.Localize("$DERP_FETCHDEVICES"),true);
 		---- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 1 A_WeaponReady(WRF_NOFIRE|WRF_ALLOWUSER3);
 		---- AAAAAAAAAAAAAA 1 A_WeaponMessage("\cj"..random(10000,99999).." "..random(10000,99999),10);
 		---- A 0{
@@ -1223,9 +1211,9 @@ class DERPController:HDWeapon{
 					if(opponent){
 						let opcon=DERPController(opponent.findinventory("DERPController"));
 						if(opcon)opcon.updatederps(false);
-						opponent.A_Log("CONNECTION FAILURE, REBOOT REQUIRED!: D.E.R.P. last position given at ("..int(mo.pos.x)+random(-100,100)..","..int(mo.pos.y)+random(-100,100)..")",true);
+						opponent.A_Log(Stringtable.Localize("$DERP_CONNECTIONFAILURE1")..int(mo.pos.x)+random(-100,100)..Stringtable.Localize("$DERP_CONNECTIONFAILURE2")..int(mo.pos.y)+random(-100,100)..Stringtable.Localize("$DERP_CONNECTIONFAILURE3"),true);
 					}
-					owner.A_Log("D.E.R.P. connected at ("..int(mo.pos.x)+random(-100,100)..","..int(mo.pos.y)+random(-100,100)..").",true);
+					owner.A_Log(Stringtable.Localize("$DERP_CONNECTED1")..int(mo.pos.x)+random(-100,100)..Stringtable.Localize("$DERP_CONNECTED2")..int(mo.pos.y)+random(-100,100)..Stringtable.Localize("$DERP_CONNECTED3"),true);
 					mo.cmd=DERP_IDLE;
 					if(owner.player)mo.bfriendly=true;else mo.bfriendly=owner.bfriendly;
 					mo.A_StartSound("derp/hacked",69420);
@@ -1233,7 +1221,7 @@ class DERPController:HDWeapon{
 					return true;
 				}else{
 					mo.target=owner;
-					string omghax="D.E.R.P. connection attempt made by user "..owner.gettag().." at ("..int(owner.pos.x)+random(-10,10)..","..int(owner.pos.y)+random(-10,10)..")";
+					string omghax=Stringtable.Localize("$DERP_CONNECTIONATTEMPTMADE1")..owner.gettag()..Stringtable.Localize("$DERP_CONNECTIONATTEMPTMADE2")..int(owner.pos.x)+random(-10,10)..Stringtable.Localize("$DERP_CONNECTIONATTEMPTMADE3")..int(owner.pos.y)+random(-10,10)..Stringtable.Localize("$DERP_CONNECTIONATTEMPTMADE4");
 					if(opponent)opponent.A_Log(omghax,true);
 					else mo.cmd=DERP_PATROL;
 					owner.A_Log(omghax,true);
@@ -1241,7 +1229,7 @@ class DERPController:HDWeapon{
 				}
 			}
 		}
-		owner.A_Log("D.E.R.P. remote login attempt failed.",true);
+		owner.A_Log(Stringtable.Localize("$DERP_REMOTELOGINFAILED"),true);
 		return false;
 	}
 }

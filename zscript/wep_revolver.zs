@@ -635,11 +635,14 @@ class HDRevolverAmmo:HDPistolAmmo{
 	default{
 		xscale 0.7;
 		yscale 0.85;
-		inventory.pickupmessage "Picked up a .355 round.";
+//		inventory.pickupmessage "Picked up a .355 round.";
 		hdpickup.refid HDLD_355;
-		tag ".355 round";
+		tag "$TAG_REVOLVERAMMO";
 		hdpickup.bulk ENC_355;
 	}
+	override string PickupMessage(){
+		String pickupmessage = Stringtable.Localize("$PICKUP_RevolverAmmo");
+		return pickupmessage;}
 	override void GetItemsThatUseThis(){
 		itemsthatusethis.push("HDRevolver");
 	}

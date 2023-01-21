@@ -73,6 +73,7 @@ TAG_DERP="Volt \'D.E.R.P.\' robot";
 TAG_HERP="Volt \'H.E.R.P.\' robot";
 
 TAG_PISTOLAMMO="9x33mm Parumpudicum round";
+TAG_REVOLVERAMMO=".355 Magnum Round";
 TAG_SHOTGUNSHELLS="12-gauge Buckshot Shells";
 TAG_426AMMO="Volt 4.26mm UAC Standard round";
 TAG_7MMAMMO="G&C 7.76x54mm round";
@@ -144,6 +145,7 @@ PICKUP_HERP="Picked up a Volt Heavy Engagement Rotary Platform robot.";
 PICKUP_HERP_BROKEN=" It appears to be heavily damaged.";
 
 PICKUP_PistolAmmo="Picked up a 9x33mm Parumpudicum round.";
+PICKUP_RevolverAmmo="Picked up a .355 Magnum round.";
 PICKUP_9MBOX="Picked up some 9x33mm ammo.";
 PICKUP_ShotgunShell1="Picked up a 12-Gauge Buckshot shell.";
 PICKUP_ShotgunShell2="Picked up some 12-gauge buckshot shells.";
@@ -152,7 +154,7 @@ PICKUP_426Round1="Picked up a stray Volt 4.26mm UAC Standard round.";
 PICKUP_426Round2="Picked up a stray block of Volt 4.26mm UAC Standard rounds.";
 PICKUP_7MMAMMO="Picked up a G&C 7.76x54mm round.";
 PICKUP_7MMAMMOR="Picked up a recasted G&C 7.76x54mm round.";
-PICKUP_7MMAMMOR="Picked up some 7.76x54mm brass.";
+PICKUP_7MMBRASS="Picked up some 7.76x54mm brass.";
 PICKUP_BRONTOROUND="Picked up a 35x120mm \'Brontornis\' shell.";
 PICKUP_ROCKETGRENADE="Picked up a 40x54mm rocket grenade.";
 PICKUP_DUDROCKET="Picked up a defused 40x54mm rocket grenade.";
@@ -183,8 +185,239 @@ PICKUP_STIMPACK="Picked up a UAC Standard Emergency Stimpack.";
 PICKUP_ZERKPACK="Picked up a UAC Specialist \'Berserk\' pack.";
 PICKUP_MEDIKIT="Picked up a UAC Standard Medikit.";
 
-PICKUP_GARRISONARMOUR="Picked up a standard suit of garrison armour.";
-PICKUP_BATTLEARMOUR="Picked up a suit of battle armour.";
+PICKUP_GARRISONARMOUR="Picked up a standard suit of garrison armor.";
+PICKUP_BATTLEARMOUR="Picked up a suit of battle armor.";
+
+// Misc non-pickup and non-tag stuff down here. - [Ted]
+
+ARMOR_PUTON="You put on your %s armor. ";
+ARMOR_BATTLE="battle";
+ARMOR_GARRISON="garrison";
+DURABILITY_95="The UAC wouldn't like the condition of this.";
+DURABILITY_75="This armor does not fill you with confidence...";
+DURABILITY_6="At least it protects your guts.";
+DURABILITY_3="You cover your shameful scales with your filthy rags.";
+DURABILITY_1="Just don't get hit.";
+
+ARMOUR_REMOVE="Taking off your ";
+
+TALISMAN_SUMMON1="They shall stand again and hear there/a horn in the hills ringing./Whose shall the horn be?";
+TALISMAN_SUMMON2="For this war will last/through years uncounted/and you shall be summoned/once again ere the end.'";
+TALISMAN_SUMMON3="Faint cries I heard, and dim horns blowing,/and a murmur as of countless far voices;/it was like the echo of some forgotten battle/in the Dark Years long ago.";
+TALISMAN_SUMMON4="Pale swords were drawn; but I know not/whether their blades would still bite,/for the Dead needed no longer/any weapon but fear.'";
+
+BACKPACK_TOOFULL="Your backpack is too full to fit more in it.";
+
+MEDIKIT_USEUNWRAPPED="You pull out the medikit you've already unwrapped.";
+MEDIKIT_UNKNOWN="** UNKNOWN **";
+MEDIKIT_NOSUTURES="You are out of Auto-Sutures.";
+MEDIKIT_NOBURNS="You have no burns to treat.";
+MEDIKIT_NOWOUNDS="You have no wounds to treat.";
+MEDIKIT_FIRETOHEAL="\cg+++ \cjMEDIKIT \cg+++\c-\n\n\nPress and hold Fire\nto patch yourself up.";
+MEDIKIT_OTHERWOUNDS="They have no injuries to treat.";
+MEDIKIT_NOTHINGTOBEDONE="Nothing to be done here.\n\nHeal thyself? (press fire)";
+MEDIKIT_USEDSYRINGE="Run away!\n\n%s is trying to stab you\n\nwith a used syringe!!!";
+MEDIKIT_ATTACKUSED="Why are you attacking your teammate\n\nwith used medical equipment!?";
+MEDIKIT_OTHERUSEONYOU="%s is trying to use a medikit on you.\nStay still to let them or tell them to leave...";
+MEDIKIT_STAYSTILL="You'll need them to stay still...";
+MEDIKIT_TAKEOFF1="Get them to take off their ";
+MEDIKIT_TAKEOFF2=" first!\n\n(\cdhd_strip\c- in the console)";
+MEDIKIT_OTHERNOWOUNDS="They have no wounds to treat.";
+MEDIKIT_OTHERNOBURNS="They have no burns to treat.";
+MEDIKIT_TARGETNOPED="Target disconnected!";
+MEDIKIT_WOUNDSEALED="Wound successfully sealed.";
+MEDIKIT_AUTODIAGNOSTIC="\cdMedikit Auto-Diagnostic Tool engaged.\c-\n\n\ccScanning, please wait...";
+MEDIKIT_AUTODIAGNOSTICFAIL="\caMedikit Auto-Diagnostic Tool failed.";
+MEDIKIT_AUTODIAGNOSTICFOR="Medikit Auto-Diagnostic for \cy\n";
+MEDIKIT_WOUNDS="\n\n\ccWounds:\cg\cu";
+MEDIKIT_BURNS="\n\ccBurns: \cq";
+MEDIKIT_TISSUEDAMAGE="\n\ccTissue Damage: \cq";
+MEDIKIT_BLOODLOSS="\n\ccBlood loss: \ca";
+MEDIKIT_TRANSFUSIONUNITS=" \cctransfusion units";
+MEDIKIT_NONE=" none";
+
+BANDAGES_TEXT1="\cu--- \ccBANDAGING \cu---\c-\n\n\nPress and hold Fire\n\nwhile standing still\n\nto try to not die.";
+BANDAGES_TEXT2="\cu--- \ccBANDAGING \cu---\c-\n\n\nPress and hold Fire to bandage\n\nyourself when you are bleeding.\n\n\n\nPress and hold Altfire\n\nto bandage someone else.";
+BANDAGES_NOWOUNDS="There is no wound to treat.";
+BANDAGES_STAYSTILL="You must stay still\n\nto bandage yourself!";
+BANDAGES_NOTBLEEDING="You are not bleeding.";
+BANDAGES_STABLE="You seem to be stable.";
+BANDAGES_NOTHINGDONE="Nothing to be done here.\n\nHeal thyself?";
+BANDAGES_SOMEONEBANDAGING="%s is trying to bandage you.\n\nStay still to let them or\ntell them to leave...";
+BANDAGES_STAYSTILLOTHER="You'll need them to stay still...";
+BANDAGES_OTHERNOTBLEEDING="They're not bleeding.";
+BANDAGES_WORKINGON="Working on ";
+
+BLOODBAG_HOLDFIRE="\cr::: \cgSECOND BLOOD \cr:::\c-\n\n\nPress and hold Fire\nto attach.";
+BLOODBAG_NOVALIDPATIENT="No valid patient in range.";
+BLOODBAG_PATIENTHAS="Patient has";
+BLOODBAG_YOUHAVE="You have";
+BLOODBAG_INJECTORIN=" a blood injector already!";
+
+POTION_TEXT1="\ct\(\(\( \cnBLUE POTION \ct\)\)\)\c-\n\n\nNot made\nby human hands.\n\nDrink if you're brave.";
+BLUES_POWER="You feel power radiating out from you.";
+
+PICKUP_INFERIORMAG="Discarding an inferior mag to make room.";
+PICKUP_MAGFIREMODE="Firemode has been held but the target mag is not better. Swap aborted.";
+PICKUP_EXCEEDED=" exceeded.";
+PICKUP_POCKETSFULL="You have no room in your pockets!";
+
+HERP_NOBATTERY="Operational fault. Please check your manual for proper maintenance. (ERR-4fd92-00B) Power low.";
+HERP_NOMAG="Operational fault. Please check your manual for proper maintenance. (ERR-42392-41A) Cartridge empty. Shutting down...";
+HERP_BADMAG="Operational fault. Please check your manual for proper maintenance. (ERR-74x29-58A) Unsupported ammunition type.\n\n\cjPlease note: Reloading a 4.26 UAC Standard magazine or its components without the supervision of a Volt UAC Standard Certified Cartridge Professional(tm) is a breach of the Volt End User License Agreement.";
+HERP_NOINTERFACE="Operational fault. Please check your manual for proper maintenance. (ERR-8w8i7-8VX) No interface detected.";
+HERP_SYSTEMRESTART="Illegal operation. Please check your manual for proper maintenance. (ERR-u0H85-6NN) System will restart.";
+HERP_TAMPEREDSYSTEM="Illegal operation. Identify Friend/Foe system has been tampered with. Please contact your commanding officer immediately. (ERR-0023j-000) System will halt.";
+HERP_FORMATC="Formatting C:\\ (DBG-444j2-0A0)";
+HERP_DEVMODE="Testing mode initialized.  (DBG-86nm8-BN5) Cache cleared.";
+HERP_OBJECTNOTMAPPED="*** Fatal Error *** Address not mapped to object (signal 11) Address: 0x8";
+HERP_SEGMENTATIONFAULT="*** Fatal Error *** Segmentation fault (signal 11) Address: (nil)";
+HERP_ENEMY="IFF system alert: enemy pattern recognized.";
+HERP_ESTABLISHING="Establishing connection...";
+HERP_CONNECTED="Connected!";
+HERP_DISCONNECTED="Disconnected.";
+HERP_DAMAGEDBEYONDFUNCTION="Damaged beyond function. Remove battery before attempting repairs.";
+HERP_NOPOWER="No power. Please load 1 cell pack before deploying.";
+HERP_REPAIRPACK="You repair one of the broekn H.E.R.P.s in your backpack.";
+HERP_REPAIRPACK_FAIL="You destroy one of the broken H.E.R.P.s in your backpack in your repair efforts.";
+HERP_REPAIRED="You bring your H.E.R.P. back into working condition.";
+HERP_CANNIBALIZED="Another H.E.R.P. was cannibalized for parts.";
+HERP_REPAIRBROKEN="You repair one of your broken H.E.R.P.s.";
+HERP_REPAIRBROKEN_FAIL="You destroy one of your broken H.E.R.P.s in your repair efforts.";
+HERP_FIELDREPAIRS="You manage some improvised field repairs to your H.E.R.P. robot.";
+HERP_NOCONTROLLER="No controller connection available. Bring up the interface with an idle H.E.R.P. connected first.";
+HERP_NEXTTAG="\cd[HERP] \cjNext HERP tag set to \cy%i";
+HERP_EMPTY="\cd[HERP] \crERROR:\cj HERP at [\cj%i\cu,\cj%i\cu] out of ammo or cells, \cxNOT\cj activated.";
+HERP_NOANGLECHANGE="\cd[HERP] \crERROR:\cj No angle change indicated.";
+HERP_NOWFACING="\cd[HERP] \cj HERP at [\cj%i\cu,\cj%i\cu]\cj base angle now facing %s";
+HERP_FACING="\cd[HERP] \cu [\cj%i\cu,\cj%i\cu]\cj facing %s \cy%i\cj %s";
+HERP_INACTIVE="\cyinactive";
+HERP_ACTIVE="\cxACTIVE";
+HERP_BADCOMMAND1="\cd[HERP] \cj%sCommand format:\cu herp <option> <tag number> <direction>\n\cjOptions\n 1 = ON\n 2 = OFF\n 3 = DIRECTION (counterclockwise in degrees)\n 123 = QUERY\n -n = set tag number\n\cj  tag number on next deployment: \cy%i";
+HERP_BADCOMMAND2="No HERPs currently deployed.\n";
+HERP_TAG1="\cd[HERP] \cj%i HERP%s %s%s\cj.";
+HERP_TAG2="with tag \ca%i\cj ";
+HERP_VERB1="Hacked";
+HERP_VERB2="\cxActivated";
+HERP_VERB3="\cyDeactivated";
+HERP_VERB4="\cuRedirected";
+HERP_VERB5="\cbScan toggled";
+HERP_NODEPLOYED="No H.E.R.P.s deployed. Abort.";
+HERP_NEXTLIST="Switching to next H.E.R.P. in the list.";
+
+DERP_ALERT1="Derpy derp!";
+DERP_ALERT2="\cd[DERP";
+DERP_ALERT3="(\cj";
+DERP_ALERT4="\cd)";
+DERP_ALERT5="]\cj  ";
+DERP_AIM="\cjEngaging hostile.";
+DERP_KILL="\cf  Hostile eliminated.";
+DERP_STANDBY="\cg  Operational fault.\cj Standby for repairs.";
+DERP_NOAMMO="\cjOut of ammo. Await retrieval.";
+DERP_BROKEN="\cm<broken>";
+DERP_WAIT="\ccWAIT";
+DERP_LINE="\ceLINE";
+DERP_TURRET="\caTURRET";
+DERP_PATROL="\cgPATROL";
+DERP_BOTID="\cubotid \cy";
+DERP_NOMAG="\cm<no mag>";
+DERP_MAG="Mag:  ";
+DERP_REPAIRPACK="You repair one of the broken D.E.R.P.s in your backpack.";
+DERP_REPAIRPACK_FAIL="You destroy one of the broken D.E.R.P.s in your backpack in your repair efforts.";
+DERP_REPAIR="You repair one of your broken D.E.R.P.s.";
+DERP_REPAIR_FAIL="You destroy one of your broken D.E.R.P.s in your repair efforts.";
+DERP_FIELDREPAIR="You manage some improvised field repairs to your D.E.R.P. robot.";
+DERP_REMOVEMAG="Remove magazine before attempting repairs.";
+DERP_REPAIRED="You bring your D.E.R.P. back into working condition.";
+DERP_CANNIBALIZED="Another D.E.R.P. was cannibalized for parts.";
+DERP_NOINTERFACE="No controller connection active. Bring up the interface first.";
+DERP_TAGSET="\cd[DERP]  \cutag set to  \cy%i";
+DERP_ITSBROKEN="\cd[DERP]  \cuIt's broken.";
+DERP_555HELP="\cd[DERP]  \cuUse this command to attach the D.E.R.P. to a wall or switch.";
+DERP_CANTDEPLOY="\cd[DERP]  \cuCan't deploy here.";
+DERP_MODEWAIT="cWAIT";
+DERP_MODELINE="cLINE";
+DERP_MODETURRET="aTURRET";
+DERP_MODEPATROL="gPATROL";
+DERP_MODE="\cd[DERP]  \c%s  \cjmode";
+DERP_GOALSETPLAYER="\cd[DERP]  \cugoal set to  \cyYOUR POSITION";
+DERP_GOALSETTO="\cd[DERP]  \cugoal set to  \cx[%i,%i]";
+DERP_REPORTIN1="\cd[DERP] \cjtag #\cx%i \cjreporting in at [\cx%i\cj,\cx%i\cj] with %s";
+DERP_REPORTIN2="\cy%i\cj bullets left!";
+DERP_REPORTIN3="\crno ammo left!\cj Help!";
+DERP_BADCOMMAND="\cd[DERP]\cj List of available commands:\n             derpt    \cjidle mode  (1)\n             derpa    \cjwatch mode  (2)\n             derpp    \cjwatch360 mode  (3)\n             derpcome \cjpatrol mode (4)\n             derpcome \cjcome to user (5)\n             derpgo   \cjgo to point  (6)\n             derpmv*   \cjadvance in direction (n/s/ne/sw/etc.)  (5)\n             derptag  \cjset tag #   (-x)\n \cu(all of these can be shortened\n\cuwith \"d\" instead of \"derp\")\n\n \cuType \cdderp 123\cu to poll deployed DERPs.\n \cuCurrent tag is \cx%i.";
+DERP_SWITCHING="Switching to next D.E.R.P. in the list.";
+DERP_NODERPS="No D.E.R.P.s deployed. Abort.";
+DERP_NOTFOUND="D.E.R.P. not found. Resetting list.";
+DERP_LASTPOS1="CONNECTION FAILURE, REBOOT REQUIRED!: D.E.R.P. last position given at (";
+DERP_LASTPOS2=",";
+DERP_LASTPOS3=")";
+DERP_IDLEMODE="Idle mode.";
+DERP_WATCHMODE="Watch mode.";
+DERP_WATCH360MODE="Turret mode.";
+DERP_PATROLMODE="Patrol mode.";
+DERP_FETCHDEVICES="Fetching nearby devices...";
+DERP_CONNECTIONFAILURE1="CONNECTION FAILURE, REBOOT REQUIRED!: D.E.R.P. last position given at (";
+DERP_CONNECTIONFAILURE2=",";
+DERP_CONNECTIONFAILURE3=")";
+DERP_CONNECTED1="D.E.R.P. connected at (";
+DERP_CONNECTED2=",";
+DERP_CONNECTED3=").";
+DERP_CONNECTIONATTEMPTMADE1="D.E.R.P. connection attempt made by user ";
+DERP_CONNECTIONATTEMPTMADE2="at (";
+DERP_CONNECTIONATTEMPTMADE3=",";
+DERP_CONNECTIONATTEMPTMADE4=")";
+DERP_REMOTELOGINFAILED="D.E.R.P. remote login attempt failed.";
+
+MAGMANAGER_UITEXT="Mag Manager\n\nNo mags selected";
+MAGMANAGER_CONTROLS1="\cf///\c%s\cf\\\\\\\n\cqFire\cu/\cqAltfire\cu  select mag\n\cqFiremode\cu+\cqF\cu/\cqAF\cu  select type\n\cqReload\cu/\cqUnload\cu  load/unload selected\n\cqFM\cu+\cqR\cu/\cqU\cu  move to/from backpack\n\cqDrop\cu  drop current  \cqFM\cu+\cqDrop\cu  ...lowest\n\cqAlt.Reload\cu bring up lowest\n\cqDrop one\cu drop loose rounds";
+MAGMANAGER_CONTROLS2="y";
+MAGMANAGER_CONTROLS3="uNo mags selected.";
+
+PICKUPMANAGER_UITEXT="\cy\\\\\\\cfPickup Manager\cy///\n\n\n\n\n\n\cj%s";
+PICKUPMANAGER_ONDROP="\n\caOn drop: ";
+PICKUPMANAGER_NOITEMS="No item selected.";
+
+LITEAMP_GOGGLESAT="Goggles at ";
+LITEAMP_CHARGE="% charge and ";
+LITEAMP_INTEGRITY="% integrity.";
+LITEAMP_NOPOWER="No power for lite-amp. Need at least 1 battery on you.";
+
+LADDER_HANG="You hang up a ladder.%s";
+LADDER_HANG_HELPTEXT=" Use the ladder to climb.";
+LADDER_CANTHANG=" Use the ladder to climb.";
+LADDER_CLIMB="You climb the ladder.%s";
+LADDER_CLIMB_HELPTEXT=" Use again or jump to disengage; crouch and jump to pull down the ladder with you.";
+LADDER_DISENGAGE="Ladder disengaged.";
+LADDER_UP="Ladder taken up.";
+LADDER_DOWN="Ladder taken down.";
+
+STIMPACK_NONEED="They don't need it.";
+STIMPACK_NOTHINGTOBEDONE="Nothing to be done here.\n\nStimulate thyself? (press fire)";
+STIMPACK_TAKEOFFOTHER="You'll need them to take off their ";
+STIMPACK_ELIPSES="...";
+STIMPACK_OVERDOSEPLAYER="Run away!!!\n\n%s is trying to overdose you!";
+STIMPACK_FIDGETY="They seem a bit fidgety...";
+STIMPACK_STOPSQUIRMING="Stop squirming!\n\n%s only wants to\n\ngive you some drugs..."
+STIMPACK_STAYSTILLOTHER="You'll need them to stay still...";
+STIMPACK_SEEMFIDGETY="They seem a bit fidgety already...";
+
+IED_ONELIVEORDUD="You need at least one live or dud rocket grenade.";
+IED_DEPLOYED="\cd[IED] \cjDeployed with tag ID \cy%i\cj - \cgARMED AND SEEKING!\cj\n\cjUse \cdied 1 \cy%i\cj in the console to \cgde\cjactivate seeking or \cdied 999 \cy%i\cj to detonate immediately.";
+IED_DEPLOYED_HELPTEXT="\cd[IED] \cjDeployed with tag ID \cy%i\cj.\n\cjUse \cdied 1 \cy%i\cj in the console to activate seeking or \cdied 999 \cy%i\cj to detonate immediately.";
+IED_SETTAG="\cd[IED] \cjNext IED tag set to \cy%i";
+IED_IED="\cd[IED] \cu [\cj%i\cu,\cj%i\cu] \cy%i %s";
+IED_ACTIVE="\cgACTIVE";
+IED_PASSIVE="\cupassive";
+IED_VERB1="hacked";
+IED_VERB2="\crdetonated";
+IED_VERB3="\cxactivated";
+IED_VERB4="\cydeactivated";
+IED_IED2="\cd[IED] \cj%i IED%s %s%s\cj.";
+IED_WITHTAG="with tag \ca%i\cj ";
+IED_BADCOMMAND1="\cd[IED] \cj%sCommand format:\n\cu ied <option> <tag number> \n\cjOptions:\n 1 = ON\n 2 = OFF\n 999 = DETONATE\n 123 = QUERY\n -n = set tag number\n\cj  tag number on next deployment: \cy%i";
+IED_BADCOMMAND2="No IEDs currently deployed.\n";
+IED_S="s";
 
 // HDBulletLib-Recasted
 TAG_069BORE = ".454 \'Raging Hornet\' Shell";
@@ -208,6 +441,61 @@ TAG_10MMAUTO = "9.82x33mm \'Ausfallen\' round";
 TAG_10MMCASING = "9.82x33mm \'Ausfallen\' casing";
 TAG_4GS = "4-gauge Saboted Shotgun slug";
 TAG_4GB = "4-Gauge \'00\' Buckshot";
+
+// Reusable Ammo Boxes
+// Tags
+TAG_9MM_BOX = "Reusable 9x33mm Parumpudicum ammo box";
+TAG_SHELL_BOX = "Reusable 12-gauge Buckshot shell box";
+TAG_7MM_BOX = "Reusable G&C 7.76x54mm ammo box";
+TAG_355_BOX = "Reusable .355 ammo box";
+TAG_RPG_BOX = "Reusable 40x54mm rocket grenade box";
+
+// Pickup Messages
+PICKUP_9MM_BOX = "Picked up a box of 9x33mm Parumpudicum rounds.";
+PICKUP_SHELL_BOX = "Picked up a box of 12-Gauge Buckshot.";
+PICKUP_7MM_BOX = "Picked up a box of G&C 7.76x54mm rounds.";
+PICKUP_355_BOX = "Picked up a box of .355 rounds.";
+PICKUP_RPG_BOX = "Picked up a box of 40x54mm rocket grenades.";
+
+// Tags
+TAG_4G_SLUG_BOX = "Reusable 4-gauge Saboted Shotgun slug box";
+TAG_5MM_BOX = "Reusable 5x12mm Bumblebee Rimfire ammo box";
+TAG_6MM_BOX = "Reusable 6mm flechette ammo box";
+TAG_10MM_BOX = "Reusable 9.82x33mm \'Ausfallen\' ammo box";
+TAG_45ACP_BOX = "Reusable .39 SDC ammo box";
+TAG_45LC_BOX = "Reusable .42 CSD ammo box";
+TAG_50AE_BOX = "Reusable .65 Excelsius ammo box";
+TAG_50AM_BOX = "Reusable .50 AM ammo box";
+TAG_50OMG_BOX = "Reusable 13.8x118mm \'Czernobog\' ammo box";
+TAG_500_HEAVY_BOX = "Reusable .577 Strzygon ammo box";
+TAG_500_LIGHT_BOX = "Reusable .577 Strzyga ammo box";
+TAG_3006_BOX = "Reusable .32-18 \'Gdansk\' ammo box";
+TAG_069_BOX = "Reusable .454 \'Raging Hornet\' Buckshot box";
+TAG_420_BOX = "Reusable .462 \'Bucking Bronco\' ammo box";
+TAG_FLARE_BOX = "Reusable 12-Gauge recreational Flare Shell box";
+TAG_LESSLETHAL_BOX = "Reusable 14-Gauge \'Less-Lethal\' Beanbag Shell box";
+TAG_SLUG_BOX = "Reusable 12-Gauge Shotgun slug box";
+TAG_EXPLOSIVE_SHELL_BOX = "Reusable 12-Gauge HE-Slug box";
+
+// Pickup Messages
+PICKUP_4G_SLUG_BOX = "Picked up a box of 4-gauge Saboted Shotgun slugs.";
+PICKUP_5MM_BOX = "Picked up a box of 5x12mm Bumblebee Rimfire rounds.";
+PICKUP_SLUG_BOX = "Picked up a box of 12-Gauge Shotgun slugs.";
+PICKUP_EXPLOSIVE_SHELL_BOX = "Picked up a box of 12-Gauge HE-Slugs.";
+PICKUP_6MM_BOX = "Picked up a box of 6mm flechette rounds.";
+PICKUP_10MM_BOX = "Picked up a box of 9.82x33mm \'Ausfallen\' rounds.";
+PICKUP_45ACP_BOX = "Picked up a box of .39 SCD rounds.";
+PICKUP_45LC_BOX = "Picked up a box of .42 CSD rounds.";
+PICKUP_50AE_BOX = "Picked up a box of .65 Excelsius rounds.";
+PICKUP_50AM_BOX= "Picked up a box of .50 AM rounds.";
+PICKUP_50OMG_BOX = "Picked up a box of 13.8x118mm \'Czernobog\' rounds.";
+PICKUP_500_HEAVY_BOX = "Picked up a box of .577 Strzygon rounds.";
+PICKUP_500_LIGHT_BOX = "Picked up a box of .577 Strzyga rounds.";
+PICKUP_3006_BOX = "Picked up a box of .32-18 \'Gdansk\' rounds.";
+PICKUP_069_BOX = "Picked up a box of .454 \'Raging Hornet\' shells.";
+PICKUP_420_BOX = "Picked up a box of .462 \'Bucking Bronco\' rounds.";
+PICKUP_FLARE_BOX = "Picked up a box of 12-Gauge recreational Flare Shells.";
+PICKUP_LESSLETHAL_BOX = "Picked up a box of 14-Gauge \'Less-Lethal\' Beanbag Shells.";
 
 // Peppergrinder
 
@@ -757,7 +1045,7 @@ MENU_TITLELLH = "------ Bernoulli M1053 Less-Lethal Shotgun Options ------";
 MENU_LLHTEXT1 = "Control the spawn rate of the Less-Lethal Hunter on Shotguns";
 
 MENU_LLHLORE1 = "A polymer-based shotgun designed for riot control and crowd dispersion.";
-MENU_LLHLORE2 = "Chambered only for the use of less-lethal shells, which contain a load of rubberized buckshot pellets.";
+MENU_LLHLORE2 = "Chambered only for the use of less lethal shells, which contain a load of rubberized buckshot pellets.";
 MENU_LLHLORE3 = "Useful for situations where maintaining a low fatality count is crucial.";
 
 // Hecked zm66
@@ -793,3 +1081,33 @@ MENU_GREVVYTEXT1 = "Control the spawn rate of the Golden Single-Action on handgu
 MENU_GREVVYLORE1 = "A special golden version of the Single-Action \'Theropoda\' Revolver.";
 MENU_GREVVYLORE2 = "Not much is known about it due to their immense rarity.";
 MENU_GREVVYLORE3 = "...Though those who have found one talk highly about its power.";
+
+// Ted Tweaks Specific
+MENU_TTOPTIONS = "\c[Cyan]Ⓣ\c- Ted Tweaks";
+
+MENU_TTM_TITLE = "\c[Cyan]----- Ted Tweaks -----\c-";
+
+MENU_TTM_KEEPER = "Keeper Options";
+MENU_TTM_KEEPERTEXT1 = "All of these options are in percents!";
+MENU_TTM_KEEPERTEXT2 = "The higher the percent, the more you keep.";
+MENU_TTM_KEEPERTEXT3 = "This is intended for Power of Friendship multiplayer!";
+
+MENU_TTM_KEEPERWOUNDS = "Kept Wounds Amount:";
+MENU_TTM_KEEPERBURNS = "Kept Burns Amount:";
+MENU_TTM_KEEPERBLOODLOSS = "Kept Bloodloss Amount:";
+MENU_TTM_KEEPERBLUES = "Kept Blues Amount:";
+MENU_TTM_KEEPERAGGRO = "Kept Aggro Amount:";
+MENU_TTM_KEEPERDISEASE = "Kept Disease Amount:";
+
+MENU_TTM_KEEPERRESET = "Reset Keepers Options?";
+MENU_TTM_KEEPERRESETCONFIRM = "This will reset all of Keeper's options to their default!";
+
+MENU_TTM_MISC = "Misc. Options";
+
+MENU_TTM_MISC_INVUL = "Controls if Invulnerability Spheres can be broken to spawn friendly Necromancers";
+MENU_TTM_MISC_INVULBREAK = "No Invuln. Breaking:";
+MENU_TTM_MISC_RESETINVUL = "Reset Invuln. Breaking Option";
+
+MENU_TTM_MISC_VULCREP = "Controls if you can repair a vulcanette by tossing it on a soulsphere/megasphere.";
+MENU_TTM_MISC_VULCREP_TEXT = "Vulc Repairer:";
+MENU_TTM_MISC_VULCREP_RESET = "Reset Vulc Repairer Options";

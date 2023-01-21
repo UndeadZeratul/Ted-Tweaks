@@ -221,11 +221,11 @@ class PortableLiteAmp:HDMagAmmo replaces Infrared{
 			}else if(cmd&BT_USER3){
 				invoker.firsttolast();
 				int amt=invoker.mags[0];
-				A_Log("Goggles at "..amt*100/NITEVIS_MAGMAXCHARGE.."% charge and "..((amt%NITEVIS_CYCLEUNIT)>>2).."% integrity.",true);
+				A_Log(Stringtable.Localize("$LITEAMP_GOGGLESAT")..amt*100/NITEVIS_MAGMAXCHARGE..Stringtable.Localize("$LITEAMP_CHARGE")..((amt%NITEVIS_CYCLEUNIT)>>2)..Stringtable.Localize("$LITEAMP_INTEGRITY"),true);
 			}else{
 				A_SetBlend("01 00 00",0.8,16);
 				if(HDMagAmmo.NothingLoaded(self,"PortableLiteAmp")){
-					A_Log("No power for lite-amp. Need at least 1 battery on you.",true);
+					A_Log(Stringtable.Localize("$LITEAMP_NOPOWER"),true);
 					invoker.worn=false;
 					return;
 				}

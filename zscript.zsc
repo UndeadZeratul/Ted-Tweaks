@@ -1,11 +1,11 @@
-version "4.10.0"
+version "4.10"
 
-// I was originally going to do it that the old way that spicy air worked can be enabled, it's too big of a PITA to get working properly though so I'm just gonna scrap it. Only like 2 people would use it anyways. - [Ted]
-#include "zscript/additions/spicy_air.zsc"
+// This does not seem to work at all and it pisses me off. - [Ted]
+//#include "zscript/additions/spicy_air.zsc"
 // This holds anything relating to keeper. - [Ted]
 #include "zscript/additions/keeper.zsc"
-// This holds anything relating to helm-frag cleanup. - [Ted]
-#include "zscript/additions/bonuscleaner.zsc"
+// This holds anything relating to helm-frag cleanup. Gonna get rid of it temporarily. - [Ted]
+//#include "zscript/additions/bonuscleaner.zsc"
 // This holds anything relating to barrel purger. - [Ted]
 #include "zscript/additions/barrelpurger.zsc"
 // This holds anything relating to VulcFixer. - [Ted]
