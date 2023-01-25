@@ -19,8 +19,8 @@ class BFG9K:HDCellWeapon replaces BFG9000{
 		hdweapon.barrelsize 32,3.5,7;
 		hdweapon.refid HDLD_BFG;
 		tag "$TAG_BFG9000";
+		inventory.pickupmessage "$PICKUP_BFG9000";
 	}
-	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_BFG9000"); return pickupmessage;}
 	override string getobituary(actor victim,actor inflictor,name mod,bool playerattack){
 		String msg=Stringtable.Localize("OB_BFG9000");
 		if(bplayingid)msg=("OB_BFG9000ID");

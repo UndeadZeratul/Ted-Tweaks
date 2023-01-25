@@ -16,12 +16,11 @@ class HDRevolver:HDHandgun{
 		weapon.bobspeed 2.5;
 		weapon.bobstyle "normal";
 		obituary "$OB_REVOLVER";
-		inventory.pickupmessage "You got the revolver!";
+		inventory.pickupmessage "$PICKUP_REVOLVER";
 		tag "$TAG_REVOLVER";
 		hdweapon.refid HDLD_REVOLVER;
 		hdweapon.barrelsize 20,0.3,0.5; //physically longer than auto but can shoot at contact
 	}
-	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_REVOLVER"); return pickupmessage;}
 	override double gunmass(){
 		double blk=0;
 		for(int i=BUGS_CYL1;i<=BUGS_CYL6;i++){

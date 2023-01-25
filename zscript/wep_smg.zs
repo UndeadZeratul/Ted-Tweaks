@@ -17,7 +17,7 @@ class HDSMG:HDWeapon{
 		weapon.bobrangey 0.8;
 		weapon.bobspeed 2.5;
 		scale 0.55;
-		inventory.pickupmessage "You got the SMG!";
+		inventory.pickupmessage "$PICKUP_SMG";
 		hdweapon.barrelsize 26,0.5,1;
 		hdweapon.refid HDLD_SMG;
 		tag "$TAG_SMG";
@@ -30,7 +30,6 @@ class HDSMG:HDWeapon{
 			\cureflexsight - 0-1, no/yes
 			\cudot - 0-5";
 	}
-	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_SMG"); return pickupmessage;}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse,doselect);}
 	override double gunmass(){

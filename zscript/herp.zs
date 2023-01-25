@@ -562,14 +562,14 @@ class HERPUsable:HDWeapon{
 		inventory.maxamount 1;
 		inventory.icon "HERPEX";
 		inventory.pickupsound "misc/w_pkup";
-//		inventory.pickupmessage "Picked up a Heavy Engagement Rotary Platform robot.";
+		inventory.pickupmessage "$PICKUP_DERP";
 		tag "$TAG_HERP";
 		hdweapon.refid HDLD_HERPBOT;
 		weapon.selectionorder 1015;
 	}
 	override string pickupmessage(){
-		string msg=Stringtable.Localize("$PICKUP_HERP");
-		if(weaponstatus[0]&HERPF_BROKEN)msg=msg..Stringtable.Localize("$PICKUP_HERP_BROKEN");
+		string msg=Super.Pickupmessage();
+		if(weaponstatus[0]&HERPF_BROKEN)return msg..Stringtable.Localize("$PICKUP_HERP_BROKEN");
 		return msg;
 	}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}

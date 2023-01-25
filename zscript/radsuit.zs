@@ -180,14 +180,13 @@ class PortableRadsuit:HDPickup replaces RadSuit{
 		//$Title "Environment Suit"
 		//$Sprite "SUITA0"
 
-//		inventory.pickupmessage "Environmental shielding suit.";
+		inventory.pickupmessage "$PICKUP_RADSUIT";
 		inventory.pickupsound "weapons/pocket";
 		inventory.icon "SUITB0";
 		hdpickup.bulk 20;
 		tag "$TAG_RADSUIT";
 		hdpickup.refid HDLD_RADSUIT;
 	}
-	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_RADSUIT"); return pickupmessage;}
 	override void DetachFromOwner(){
 		owner.A_TakeInventory("PortableRadsuit");
 		owner.A_TakeInventory("WornRadsuit");

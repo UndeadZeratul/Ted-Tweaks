@@ -407,7 +407,7 @@ class DERPUsable:HDWeapon{
 		weapon.selectionorder 1014;
 		scale 0.6;
 		inventory.icon "DERPEX";
-//		inventory.pickupmessage "Picked up a Defence, Engagement, Reconnaissance and Patrol robot.";
+		inventory.pickupmessage "$PICKUP_DERP.";
 		inventory.pickupsound "derp/crawl";
 		translation 0;
 		tag "$TAG_DERP";
@@ -437,8 +437,8 @@ class DERPUsable:HDWeapon{
 		return ENC_DERP+(mgg<0?0:(ENC_9MAG_LOADED+mgg*ENC_9_LOADED));
 	}
 	override string pickupmessage(){
-		string msg=Stringtable.Localize("$PICKUP_DERP");
-		if(weaponstatus[0]&DERPF_BROKEN)msg=msg..Stringtable.Localize("PICKUP_DERP_BROKEN");
+		string msg=super.pickupmessage();
+		if(weaponstatus[0]&DERPF_BROKEN)return msg..Stringtable.Localize("PICKUP_DERP_BROKEN");
 		return msg;
 	}
 	override void detachfromowner(){

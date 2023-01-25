@@ -119,12 +119,11 @@ class AutoReloader:AutoReloadingThingy{
 		+inventory.invbar
 		+hdweapon.fitsinbackpack
 		inventory.pickupsound "misc/w_pkup";
-		inventory.pickupmessage "You got the 7.76 reloading machine!";
+		inventory.pickupmessage "$PICKUP_RELOADER";
 		scale 0.5;
 		hdweapon.refid HDLD_776RL;
 		tag "$TAG_RELOADER";
 	}
-	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_RELOADER"); return pickupmessage;}
 	override double gunmass(){return 0;}
 	override double weaponbulk(){
 		return 20*amount;
@@ -221,7 +220,7 @@ class LiberatorRifle:AutoReloadingThingy{
 		weapon.kickback 20;
 		weapon.selectionorder 27;
 		inventory.pickupsound "misc/w_pkup";
-		inventory.pickupmessage "You got the battle rifle!";
+		inventory.pickupmessage "$PICKUP_LIB";
 		weapon.bobrangex 0.22;
 		weapon.bobrangey 0.9;
 		scale 0.7;
@@ -242,7 +241,6 @@ class LiberatorRifle:AutoReloadingThingy{
 			\cuzoom - ??-70, 10x the resulting FOV in degrees
 			\cudot - 0-5";
 	}
-	override string PickupMessage() {String pickupmessage = Stringtable.Localize("$PICKUP_LIB"); return pickupmessage;}
 	override bool AddSpareWeapon(actor newowner){return AddSpareWeaponRegular(newowner);}
 	override hdweapon GetSpareWeapon(actor newowner,bool reverse,bool doselect){return GetSpareWeaponRegular(newowner,reverse,doselect);}
 	override void postbeginplay(){

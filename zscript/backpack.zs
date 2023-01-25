@@ -1132,16 +1132,13 @@ class HDBackpack:HDWeapon{
 		+hdweapon.hinderlegs
 		Weapon.SelectionOrder 1010;
 		Inventory.Icon "BPAKA0";
-//		Inventory.PickupMessage "Picked up a backpack to help fill your life with ammo!";
+		Inventory.PickupMessage "$PICKUP_BACKPACK";
 		Inventory.PickupSound "weapons/pocket";
 		Tag "$TAG_BACKPACK";
 		HDWeapon.RefId HDLD_BACKPAK;
 		HDBackpack.MaxCapacity HDCONST_BPMAX;
 		HDWeapon.wornlayer STRIP_BACKPACK;
 	}
-	override string PickupMessage(){
-		String pickupmessage = Stringtable.Localize("$PICKUP_BACKPACK");
-		return pickupmessage;}
 	States{
 	Spawn:
 		BPAK ABC -1 NoDelay{
