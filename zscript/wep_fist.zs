@@ -237,6 +237,10 @@ class HDFist:HDWeaponGrabber replaces Fist{
 		zerk=HDZerk.IsZerk(owner);
 		if(zerk){
 			strength*=1.2;
+			if(!random[zrkbs](0,70)){
+				string zrkbs[]={"$FIST_KILL1","$FIST_KILL2","$FIST_KILL3","$FIST_KILL4","$FIST_KILL5","$FIST_KILL6","$FIST_KILL7","$FIST_KILL8","$FIST_KILL9","$FIST_KILL10","$FIST_KILL11","$FIST_KILL12","$FIST_KILL13","$FIST_KILL14","$FIST_KILL15","$FIST_KILL16","$FIST_KILL17","$FIST_KILL18","$FIST_KILL19"};
+				hdp.usegametip("\cr"..Stringtable.Localize(zrkbs[random(0,zrkbs.size()-1)]));
+			}
 		}
 	}
 	action void A_CheckFistSprite(statelabel st,int layer=PSP_WEAPON){

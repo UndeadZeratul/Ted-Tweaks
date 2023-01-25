@@ -1215,11 +1215,11 @@ extend class HDHandlers{
 			!badcommand
 			&&botcmd!=123
 		){
-			string verb=Stringtable.Localize("$HERP_VERB1");
-			if(botcmd==1)verb=Stringtable.Localize("$HERP_VERB2");
-			else if(botcmd==2)verb=Stringtable.Localize("$HERP_VERB3");
-			else if(botcmd==3)verb=Stringtable.Localize("$HERP_VERB4");
-			else if(botcmd==4)verb=Stringtable.Localize("$HERP_VERB5");
+			string verb=Stringtable.Localize("$HERP_VHACKED");
+			if(botcmd==HERPC_ON)verb=Stringtable.Localize("$HERP_VON");
+			else if(botcmd==HERPC_OFF)verb=Stringtable.Localize("$HERP_VOFF");
+			else if(botcmd==HERPC_DIRECTED)verb=Stringtable.Localize("$HERP_VDIRECTED");
+			else if(botcmd==HERPC_SCANTOG)verb=Stringtable.Localize("$HERP_VSCANTOG");
 			ppp.A_Log(string.format(
 				Stringtable.Localize("$HERP_TAG1"),affected,affected==1?"":"s",
 				botcmdid?string.format(Stringtable.Localize("$HERP_TAG2"),botcmdid):"",
@@ -1511,4 +1511,9 @@ enum HERPControllerNums{
 	HERPS_AMMO=2,
 	HERPS_MODE=3,
 	HERPS_TIMER=4,
+	
+	HERPC_ON=1,
+	HERPC_OFF=2,
+	HERPC_DIRECTED=3,
+	HERPC_SCANTOG=4,
 }
